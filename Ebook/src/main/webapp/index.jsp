@@ -1,3 +1,5 @@
+<%@page import="com.DB.DBConnect"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -29,6 +31,8 @@
 		<h2 class="text-center text-danger">EBook Management System</h2>
 	</div>
 
+<% Connection conn = DBConnect.getConn();
+  out.println (conn );%>
 <!--  Star Recent Book-->
 
 
