@@ -20,8 +20,9 @@
 		</div>
 
 		<div class="col-md-3">
-			<a href="" class="btn btn-success">Login</a> <a href=""
-				class="btn btn-primary text-white">Register</a>
+			<a href="login.jsp" class="btn btn-success"><i class="fas fa-sign-in-alt"></i>Login</a> 
+			<a href="register.jsp"
+				class="btn btn-primary text-white"><i class="fas fa-user-plus"></i>Register</a>
 		</div>
 	</div>
 </div>
