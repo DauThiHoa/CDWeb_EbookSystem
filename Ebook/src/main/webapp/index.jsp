@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Ebook: Index</title>
+<title> Ebook: Index </title>
 <%@include file="all_component/allCss.jsp"%>
 <style type="text/css">
 .back-img {
@@ -31,8 +31,8 @@
 		<h2 class="text-center text-danger">EBook Management System</h2>
 	</div>
 
-<% Connection conn = DBConnect.getConn();
-  out.println (conn );%>
+<%-- <% Connection conn = DBConnect.getConn();
+  out.println (conn );%> --%>
 <!--  Star Recent Book-->
 
 

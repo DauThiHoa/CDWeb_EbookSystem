@@ -43,7 +43,7 @@ public class RegisterServlet extends HttpServlet{
 			
 			
 			if (f) {
-//				System.out.println("User Register Success ..." );
+				System.out.println("User Register Success ..." );
 				session.setAttribute("succMsg", "Registration Successfully ... ");
 				resp.sendRedirect("register.jsp");
 				
@@ -62,6 +62,7 @@ public class RegisterServlet extends HttpServlet{
 			
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
 
