@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<!-- 
+	Trong bai co nhung => Chay bi loi
+	 -->
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%@ page isELIgnored="false"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +22,20 @@
 					<div class="card-body">
 
 						<h4 class="text-center">Add Books</h4>
-						<form action="../AdminAddBookServlet" method="post"
+						
+						
+						<c:if test="${not empty succMsg }">
+							<h5 class="text-center text-success">${succMsg }</h5>
+							<c:remove var="succMsg" scope="session" />
+						</c:if>
+						
+						<c:if test="${not empty failedMsg }">
+							<h5 class="text-center text-danger">${failedMsg }</h5>
+							<c:remove var="failedMsg" scope="session" />
+						</c:if>
+						
+						
+						<form action="../add_books" method="post"
 							enctype="multipart/form-data">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Book Name*</label><input
@@ -40,7 +59,7 @@
 
 							<div class="form-group">
 								<label for="inputState">Book Categories</label> <select
-									id="inputState" name="btype" class="form-control">
+									id="inputState" name="categories" class="form-control">
 									<option selected>-- select --</option>
 									<option value="New">New Book</option>
 								</select>
@@ -49,7 +68,7 @@
 
 							<div class="form-group">
 								<label for="inputState">Book Status</label> <select
-									id="inputState" name="bstatus" class="form-control">
+									id="inputState" name="status" class="form-control">
 									<option selected>-- select --</option>
 									<option value="Active">Active</option>
 									<option value="Inactive">Inactive</option>
