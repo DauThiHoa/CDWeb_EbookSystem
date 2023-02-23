@@ -4,6 +4,13 @@
 <%@page import="com.DAO.BookDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	
+	<!-- 
+	Trong bai co nhung => Chay bi loi
+	 -->
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%@ page isELIgnored="false"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +21,16 @@
 <body style="background-color: #f0f2f2;">
 	<%@include file="navbar.jsp"%>
 	<h3 class="text-center">Hello Admin</h3>
+
+	<c:if test="${not empty succMsg }">
+		<h5 class="text-center text-success">${succMsg }</h5>
+		<c:remove var="succMsg" scope="session" />
+	</c:if>
+
+	<c:if test="${not empty failedMsg }">
+		<h5 class="text-center text-danger">${failedMsg }</h5>
+		<c:remove var="failedMsg" scope="session" />
+	</c:if>
 
 
 	<table class="table table-striped">
@@ -37,15 +54,16 @@
 			%>
 			<tr>
 				<th><%=b.getBookId()%></th>
-				 <td><img src="../book/<%=b.getPhotoName()%>"
-					style="width: 50px; height: 50px"></td>  
+				<td><img src="../book/<%=b.getPhotoName()%>"
+					style="width: 50px; height: 50px"></td>
 				<td><%=b.getBookName()%></td>
 				<td><%=b.getAuthor()%></td>
 				<td><%=b.getPrice()%></td>
 				<td><%=b.getBookCategory()%></td>
 				<td><%=b.getStatus()%></td>
-				<td><a href="#" class="btn btn-sm btn-primary">Edit</a> <a
-					href="#" class="btn btn-sm btn-danger">Delete</a></td>
+				<td><a href="edit_books.jsp?id=<%=b.getBookId()%>"
+					class="btn btn-sm btn-primary">Edit</a> <a href="../delete?id=<%=b.getBookId()%>"
+					class="btn btn-sm btn-danger">Delete</a></td>
 			</tr>
 			<%
 			}

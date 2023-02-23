@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@page isELIgnored="false"%>
+<!-- 
+	Trong bai co nhung => Chay bi loi
+	 -->
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%@ page isELIgnored="false"%>
 
 <!DOCTYPE html>
 <html>
