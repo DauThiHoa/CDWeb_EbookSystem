@@ -29,7 +29,7 @@
 		<c:if test="${not empty userobj }">
 			<div class="col-md-3">
 			
-			<a href="cart.jsp"><i class="fas fa-cart-plus fa-2x"></i></a>
+			<a href="checkout.jsp"><i class="fas fa-cart-plus fa-2x"></i></a>
 			
 				<a href="login.jsp" class="btn btn-success"><i
 					class="fas fa-user-plus"></i>${userobj.name }</a> <a
