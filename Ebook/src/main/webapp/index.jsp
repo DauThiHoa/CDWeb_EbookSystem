@@ -31,7 +31,8 @@
 	<%@include file="all_component/navbar.jsp"%>
 
 	<div class="container-fluid back-img p-5">
-		<h2 class="text-center text-success">EBook Management System</h2>
+	<!-- text-success  -->
+		<h2 class="text-center text-orange">EBook Management System</h2>
 	</div>
 
 	<%-- <% Connection conn = DBConnect.getConn();
@@ -97,8 +98,8 @@
 
 		</div>
 
-		<div class="text-center mt-1">
-			<a href="" class="btn btn-danger btn-sm text-while">View All</a>
+		<div class="text-center mt-3">
+			<a href="all_recent_book.jsp" class="btn btn-danger btn-sm text-while">View All</a>
 		</div>
 	</div>
 
@@ -150,8 +151,8 @@
 
 	</div>
 
-	<div class="text-center mt-1">
-		<a href="" class="btn btn-danger btn-sm text-while">View All</a>
+	<div class="text-center mt-3">
+		<a href="all_new_book.jsp" class="btn btn-danger btn-sm text-while">View All</a>
 	</div>
 	</div>
 
@@ -197,8 +198,8 @@
 
 		</div>
 
-		<div class="text-center mt-1">
-			<a href="" class="btn btn-danger btn-sm text-while">View All</a>
+		<div class="text-center mt-3">
+			<a href="all_old_book.jsp" class="btn btn-danger btn-sm text-while">View All</a>
 		</div>
 	</div>
 

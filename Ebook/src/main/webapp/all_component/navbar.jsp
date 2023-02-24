@@ -51,18 +51,18 @@
 			<!-- 		  <a class="navbar-brand" href="#"><i class="fa fa-home"></i>Home</a>
  -->
 
-			<li class="nav-item active"><a class="nav-link" href="#">
+			<li class="nav-item active"><a class="nav-link" href="index.jsp">
 					Home <span class="sr-only">(current)</span>
 			</a></li>
-			<li class="nav-item active"><a class="nav-link" href="#"><i
+			<li class="nav-item active"><a class="nav-link" href="all_recent_book.jsp"><i
 					class="fas fa-book-open"></i>Recent Book</a></li>
-			<li class="nav-item active"><a class="nav-link" href="#"><i
+			<li class="nav-item active"><a class="nav-link" href="all_new_book.jsp"><i
 					class="fas fa-book"></i>New Book</a></li>
 
 
 
 			<li class="nav-item active"><a class="nav-link disabled"
-				href="#"><i class="fas fa-book"></i>Old Book</a></li>
+				href="all_old_book.jsp"><i class="fas fa-book"></i>Old Book</a></li>
 		</ul>
 		<form class="form-inline my-2 my-lg-0">
 			<button class="btn btn-light my-2 my-sm-0" type="submit">

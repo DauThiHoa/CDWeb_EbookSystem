@@ -83,6 +83,7 @@ public class BookDAOImpl implements BookDAO {
 		return list;
 	}
 
+//	LAY SACH THEO MA ID 
 	@Override
 	public BookDtls getBookById(int id) {
 		// TODO Auto-generated method stub
@@ -163,7 +164,7 @@ public class BookDAOImpl implements BookDAO {
 	}
 
 	
-//	LAY DANH SACH CAC SACH MOI 
+//	LAY DANH SACH CAC SACH MOI  => GIOI HAN 4 QUYEN SACH
 	@Override
 	public List<BookDtls> getNewBook() {
 		// TODO Auto-generated method stub
@@ -199,7 +200,7 @@ public class BookDAOImpl implements BookDAO {
 		return list;
 	}
 
-//	LAY DANH SACH CAC SACH GAN DAY 
+//	LAY DANH SACH CAC SACH GAN DAY => GIOI HAN 4 QUYEN SACH
 	@Override
 	public List<BookDtls> getRecentBooks() {
 		// TODO Auto-generated method stub
@@ -235,7 +236,7 @@ public class BookDAOImpl implements BookDAO {
 		return list;
 	}
 
-//	LAY DANH SACH CAC SACH CU
+//	LAY DANH SACH CAC SACH CU => GIOI HAN 4 QUYEN SACH
 	@Override
 	public List<BookDtls> getOldBooks() {
 		// TODO Auto-generated method stub
@@ -261,6 +262,114 @@ public class BookDAOImpl implements BookDAO {
 				b.setEmail(rs.getString(8));
 				list.add(b);
 				i++;
+			}
+//			System.out.println(list);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+//	LAY DANH SACH TAT CA CAC LOAI SACH GAN DAY
+	@Override
+	public List<BookDtls> getAllRecentBook() {
+		// TODO Auto-generated method stub
+		List<BookDtls> list = new ArrayList<BookDtls>();
+		BookDtls b = null ;
+		
+		try {
+//			DESC
+			String sql = "select * from book_dtls where status =? order by bookId asc";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, "Active");
+//			ps.setString(2, "Active");
+			ResultSet rs = ps.executeQuery();
+//			int i = 1 ;
+			while (rs.next()) {
+				b = new BookDtls();
+				b.setBookId(rs.getInt(1));
+				b.setBookName(rs.getString(2));
+				b.setAuthor(rs.getString(3));
+				b.setPrice(rs.getDouble(4));
+				b.setBookCategory(rs.getString(5));
+				b.setStatus(rs.getString(6));
+				b.setPhotoName(rs.getString(7));
+				b.setEmail(rs.getString(8));
+				list.add(b);
+//				i++;
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+//	LAY DANH SACH TAT CA CAC LOAI SACH MOI
+	@Override
+	public List<BookDtls> getAllNewBook() {
+		// TODO Auto-generated method stub
+		List<BookDtls> list = new ArrayList<BookDtls>();
+		BookDtls b = null ;
+		
+		try {
+			String sql = "select * from book_dtls where bookCategory =? and status =? order by bookId DESC ";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, "New");
+			ps.setString(2, "Active");
+			ResultSet rs = ps.executeQuery();
+//			int i = 1 ;
+			while (rs.next() ) {
+				b = new BookDtls();
+				b.setBookId(rs.getInt(1));
+				b.setBookName(rs.getString(2));
+				b.setAuthor(rs.getString(3));
+				b.setPrice(rs.getDouble(4));
+				b.setBookCategory(rs.getString(5));
+				b.setStatus(rs.getString(6));
+				b.setPhotoName(rs.getString(7));
+				b.setEmail(rs.getString(8));
+				list.add(b);
+//				i++;
+			}
+//			System.out.println(list);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+//	LAY DANH SACH TAT CA CAC LOAI SACH CU
+	@Override
+	public List<BookDtls> getAllOldBook() {
+		// TODO Auto-generated method stub
+		List<BookDtls> list = new ArrayList<BookDtls>();
+		BookDtls b = null ;
+		
+		try {
+			String sql = "select * from book_dtls where bookCategory =? and status =? order by bookId DESC ";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, "Old");
+			ps.setString(2, "Active");
+			ResultSet rs = ps.executeQuery();
+//			int i = 1 ;
+			while (rs.next() ) {
+				b = new BookDtls();
+				b.setBookId(rs.getInt(1));
+				b.setBookName(rs.getString(2));
+				b.setAuthor(rs.getString(3));
+				b.setPrice(rs.getDouble(4));
+				b.setBookCategory(rs.getString(5));
+				b.setStatus(rs.getString(6));
+				b.setPhotoName(rs.getString(7));
+				b.setEmail(rs.getString(8));
+				list.add(b);
+//				i++;
 			}
 //			System.out.println(list);
 			
