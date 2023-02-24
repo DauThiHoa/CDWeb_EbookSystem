@@ -3,6 +3,12 @@
 <%@page import="com.DAO.BookDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<!-- 
+	Trong bai co nhung => Chay bi loi
+	 -->
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%@ page isELIgnored="false"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,9 +79,9 @@
 				if ("Old".equals(b.getBookCategory())) {
 				%>
 				<div class="text-center p-3">
-					<a href="index.jsp" class="btn btn-success"><i class="fas fa-cart-plus"></i>Continue
-						Shopping Cart</a> <a href="" class="btn btn-danger"><i
-						class="fas fa-rupee-sign"></i>200</a>
+					<a href="index.jsp" class="btn btn-success"><i
+						class="fas fa-cart-plus"></i>Continue Shopping Cart</a> <a href=""
+						class="btn btn-danger"><i class="fas fa-rupee-sign"></i>200</a>
 				</div>
 				<%
 				} else {

@@ -1,8 +1,15 @@
+<%@page import="com.entity.User"%>
 <%@page import="com.entity.BookDtls"%>
 <%@page import="java.util.List"%>
 <%@page import="com.DAO.BookDAOImpl"%>
 <%@page import="com.DB.DBConnect"%>
 <%@page import="java.sql.Connection"%>
+<!-- 
+	Trong bai co nhung => Chay bi loi
+	 -->
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%@ page isELIgnored="false"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -27,6 +34,10 @@
 
 </head>
 <body style="background-color: #f7f7f7;">
+
+	<%
+	User u = (User) session.getAttribute("userobj");
+	%>
 
 	<%@include file="all_component/navbar.jsp"%>
 	<div class="container-fluid">
@@ -53,9 +64,10 @@
 							Categories:
 							<%=b2.getBookCategory()%></p>
 						<div class="row">
-							<a href="view_books.jsp?id=<%=b2.getBookId()%>" class="btn btn-success btn-sm ml-5">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1"><%=b2.getPrice()%>
-								<i class="fas fa-rupee-sign"></i></a>
+							<a href="view_books.jsp?id=<%=b2.getBookId()%>"
+								class="btn btn-success btn-sm ml-5">View Details</a> <a href=""
+								class="btn btn-danger btn-sm ml-1"><%=b2.getPrice()%> <i
+								class="fas fa-rupee-sign"></i></a>
 						</div>
 
 						<%
@@ -64,8 +76,27 @@
 						Categories:
 						<%=b2.getBookCategory()%></p>
 						<div class="row">
-							<a href="" class="btn btn-danger btn-sm"><i
-								class="fas fa-cart-plus"></i>Add Cart</a> <a href="view_books.jsp?id=<%=b2.getBookId()%>"
+
+							<!-- NEU CHUA DANG NHAP VAO WEBSITE => KHONG CHO PHEP THEM VAO GIO HANG => DI CHUYEN VE TRANG LOGIN -->
+							<%
+							if (u == null) {
+							%>
+							<a href="login.jsp" class="btn btn-danger btn-sm"><i
+								class="fas fa-cart-plus"></i>Add Cart</a>
+							<%
+							} else {
+							%>
+							<!--  NGUOC LAI NEU DA DANG NHAP VAO TAI KHOAN => DI CHUYEN DEN TRANG CARTSERVLET ( XU LY SU KIEN THEM SAN PHAM VAO GIO HANG )-->
+							<a href="cart?bid=<%=b2.getBookId()%>&&uid=<%=u.getId()%>"
+								class="btn btn-danger btn-sm"><i class="fas fa-cart-plus"></i>Add
+								Cart</a>
+
+							<%
+							}
+							%>
+
+
+							<a href="view_books.jsp?id=<%=b2.getBookId()%>"
 								class="btn btn-success btn-sm">View Details</a> <a href=""
 								class="btn btn-danger btn-sm"><%=b2.getPrice()%><i
 								class="fas fa-rupee-sign"></i></a>

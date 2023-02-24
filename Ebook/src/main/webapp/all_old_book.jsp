@@ -3,6 +3,12 @@
 <%@page import="com.DAO.BookDAOImpl"%>
 <%@page import="com.DB.DBConnect"%>
 <%@page import="java.sql.Connection"%>
+<!-- 
+	Trong bai co nhung => Chay bi loi
+	 -->
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%@ page isELIgnored="false"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
