@@ -67,7 +67,7 @@
 							Categories:
 							<%=b2.getBookCategory()%></p>
 						<div class="row">
-							<a href="" class="btn btn-success btn-sm ml-5">View Details</a> <a
+							<a href="view_books.jsp?id=<%=b2.getBookId()%>" class="btn btn-success btn-sm ml-5">View Details</a> <a
 								href="" class="btn btn-danger btn-sm ml-1"><%=b2.getPrice()%>
 								<i class="fas fa-rupee-sign"></i></a>
 						</div>
@@ -79,7 +79,7 @@
 						<%=b2.getBookCategory()%></p>
 						<div class="row">
 							<a href="" class="btn btn-danger btn-sm"><i
-								class="fas fa-cart-plus"></i>Add Cart</a> <a href=""
+								class="fas fa-cart-plus"></i>Add Cart</a> <a href="view_books.jsp?id=<%=b2.getBookId()%>"
 								class="btn btn-success btn-sm">View Details</a> <a href=""
 								class="btn btn-danger btn-sm"><%=b2.getPrice()%><i
 								class="fas fa-rupee-sign"></i></a>
@@ -133,7 +133,7 @@
 						<div class="row">
 							<!-- ml-1 -->
 							<a href="" class="btn btn-danger btn-sm"><i
-								class="fas fa-cart-plus"></i>Add Cart</a> <a href=""
+								class="fas fa-cart-plus"></i>Add Cart</a> <a href="view_books.jsp?id=<%=b.getBookId()%>"
 								class="btn btn-success btn-sm ml-0">View Details</a> <a href=""
 								class="btn btn-danger btn-sm"><%=b.getPrice()%><i
 								class="fas fa-rupee-sign"></i></a>
@@ -183,7 +183,7 @@
 							Categories:
 							<%=b2.getBookCategory()%></p>
 						<div class="row">
-							<a href="" class="btn btn-success btn-sm ml-5">View Details</a> <a
+							<a href="view_books.jsp?id=<%=b2.getBookId()%>" class="btn btn-success btn-sm ml-5">View Details</a> <a
 								href="" class="btn btn-danger btn-sm ml-1"><%=b2.getPrice()%>
 								<i class="fas fa-rupee-sign"></i></a>
 						</div>

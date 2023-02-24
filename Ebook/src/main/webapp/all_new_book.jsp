@@ -50,7 +50,7 @@
 						<div class="row">
 							<!-- ml-1 -->
 							<a href="" class="btn btn-danger btn-sm"><i
-								class="fas fa-cart-plus"></i>Add Cart</a> <a href=""
+								class="fas fa-cart-plus"></i>Add Cart</a> <a href="view_books.jsp?id=<%=b2.getBookId()%>"
 								class="btn btn-success btn-sm ml-0">View Details</a> <a href=""
 								class="btn btn-danger btn-sm"><%=b.getPrice()%><i
 								class="fas fa-rupee-sign"></i></a>
