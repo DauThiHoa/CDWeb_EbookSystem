@@ -17,4 +17,11 @@ public interface BookDAO {
 	public boolean updateEditBooks (BookDtls b);
 //	XOA QUYEN SACH THEO MA
 	public boolean deleteBooks (int id);
+	
+//	LAY DANH SACH CAC SACH MOI 
+	public List<BookDtls> getNewBook ();
+//	LAY DANH SACH CAC SACH GAN DAY 
+	public List<BookDtls> getRecentBooks ();
+//	LAY DANH SACH CAC SACH CU
+	public List<BookDtls> getOldBooks ();
 }

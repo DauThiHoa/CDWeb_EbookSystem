@@ -18,8 +18,13 @@ a:hover {
 }
 </style>
 </head>
-<body>
+<body style="background-color: #f0f1f2">
 	<%@include file="navbar.jsp"%>
+
+<!--  PHUONG THUC BAT BUOC PHAI DANG NHAP ADMIN MOI VAO DC-->
+	<c:if test="${empty userobj }">
+		<c:redirect url="../login.jsp" />
+	</c:if>
 
 	<div class="container">
 		<div class="row p-5">
@@ -65,20 +70,59 @@ a:hover {
 
 
 			<div class="col-md-3">
-				<div class="card">
-					<div class="card-body text-center">
-						<i class="fas fa-sign-out-alt fa-3x text-primary"></i><br>
-						<h4>Logout</h4>
-						<p>--------------</p>
+				<a href="" data-toggle="modal" data-target="#exampleModalCenter">
+					<div class="card">
+						<div class="card-body text-center">
+							<i class="fas fa-sign-out-alt fa-3x text-primary"></i><br>
+							<h4>Logout</h4>
+							<p>--------------</p>
+						</div>
 					</div>
-				</div>
+				</a>
 			</div>
 
 		</div>
 	</div>
+
+
+
+	<!-- Begin Logout Modal -->
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1"
+		role="dialog" aria-labelledby="exampleModalCenterTitle"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle"></h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						<h4>Do You Want Logout</h4>
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+						<a href="../logout" type="button"
+							class="btn btn-primary text-white">Logout</a>
+
+					</div>
+
+				</div>
+				<div class="modal-footer"></div>
+			</div>
+		</div>
+	</div>
+	<!-- End Logout Modal -->
+
+
 	<!--  End Old Book-->
-	<div style="margin-top: 150px"> 
-	<%@include file="footer.jsp"%></div>
-	
+	<div style="margin-top: 150px">
+		<%@include file="footer.jsp"%></div>
+
 </body>
 </html>
