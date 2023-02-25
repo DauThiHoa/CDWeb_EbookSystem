@@ -24,6 +24,9 @@
 
 	<!--  --------------------------------------DO LOI NAY-------------------------------------------->
 	<!--  PHUONG THUC BAT BUOC PHAI DANG NHAP ADMIN MOI VAO DC-->
+	
+	 
+	
 	<c:if test="${empty userobj }">
 		<c:redirect url="login.jsp" />
 	</c:if>
@@ -74,7 +77,8 @@
 									<th scope="row"><%=c.getBookName()%></th>
 									<td><%=c.getAuthor()%></td>
 									<td><%=c.getPrice()%></td>
-									<td><a href="remove_book?bid=<%=c.getBid()%>&&uid=<%=c.getUserId() %>"
+									<td><a
+										href="remove_book?bid=<%=c.getBid()%>&&uid=<%=c.getUserId()%>&&cid=<%=c.getCid()%>"
 										class="btn btn-sm btn-danger">Remove</a></td>
 								</tr>
 
@@ -105,11 +109,13 @@
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Name</label> <input type="text"
-										class="form-control" id="inputEmail4" value="<%=u.getName()%>" readonly="readonly">
+										class="form-control" id="inputEmail4" value="<%=u.getName()%>"
+										readonly="readonly">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Email</label> <input type="email"
-										class="form-control" id="inputPassword4" value="<%=u.getEmail()%>" readonly="readonly">
+										class="form-control" id="inputPassword4"
+										value="<%=u.getEmail()%>" readonly="readonly">
 								</div>
 							</div>
 
@@ -117,11 +123,13 @@
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Phone Number</label> <input
-										type="number" class="form-control" id="inputEmail4" value="<%=u.getPhno()%>">
+										type="number" class="form-control" id="inputEmail4"
+										value="<%=u.getPhno()%>">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Address</label> <input type="text"
-										class="form-control" id="inputPassword4" value="<%=u.getAddress()%>">
+										class="form-control" id="inputPassword4"
+										value="<%=u.getAddress()%>">
 								</div>
 							</div>
 
@@ -130,11 +138,13 @@
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Landmark</label> <input type="text"
-										class="form-control" id="inputEmail4" value="<%=u.getLandmark()%>">
+										class="form-control" id="inputEmail4"
+										value="<%=u.getLandmark()%>">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">City</label> <input type="text"
-										class="form-control" id="inputPassword4" value="<%=u.getCity()%>">
+										class="form-control" id="inputPassword4"
+										value="<%=u.getCity()%>">
 								</div>
 							</div>
 
@@ -144,11 +154,13 @@
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">State</label> <input type="text"
-										class="form-control" id="inputEmail4" value="<%=u.getState()%>">
+										class="form-control" id="inputEmail4"
+										value="<%=u.getState()%>">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Pin code</label> <input type="text"
-										class="form-control" id="inputPassword4" value="<%=u.getPincode()%>">
+										class="form-control" id="inputPassword4"
+										value="<%=u.getPincode()%>">
 								</div>
 							</div>
 
@@ -156,7 +168,7 @@
 							<div class="form-group">
 								<label>Payment Mode</label> <select class="form-control">
 									<option>--- Select ---</option>
-									<option>Cash On Dlivery</option>
+									<option>Cash On Delivery</option>
 								</select>
 							</div>
 

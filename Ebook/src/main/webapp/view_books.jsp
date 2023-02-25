@@ -1,3 +1,4 @@
+<%@page import="com.entity.User"%>
 <%@page import="com.entity.BookDtls"%>
 <%@page import="com.DB.DBConnect"%>
 <%@page import="com.DAO.BookDAOImpl"%>
@@ -20,6 +21,10 @@
 
 	<%@include file="all_component/navbar.jsp"%>
 
+<%
+	User u = (User) session.getAttribute("userobj");
+	%>
+	
 	<%
 	int id = Integer.parseInt(request.getParameter("id"));
 	BookDAOImpl dao = new BookDAOImpl(DBConnect.getConn());

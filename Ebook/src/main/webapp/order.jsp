@@ -46,6 +46,10 @@ a:hover {
 
 	<%@include file="all_component/navbar.jsp"%>
 	
+	<%
+	User u = (User) session.getAttribute("userobj");
+	%>
+	
 	<div class="container p-1">
 	<h3 class="text-center text-primary">Your Order</h3>
 	

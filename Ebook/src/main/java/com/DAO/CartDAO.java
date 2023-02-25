@@ -13,5 +13,5 @@ public interface CartDAO {
 //	LAY THONG TIN SACH THEM THONG TIN => MA ID NGUOI DUNG THEM SAN PHAM
 	public List<Cart> getBookByUser (int userId);
 //	XOA SAN PHAM TRONG GIO HANG
-	public boolean deleteBook (int bid , int uid);
+	public boolean deleteBook (int bid , int uid , int cid);
 }

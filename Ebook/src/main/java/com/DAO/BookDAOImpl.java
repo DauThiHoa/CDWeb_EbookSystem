@@ -379,5 +379,68 @@ public class BookDAOImpl implements BookDAO {
 		}
 		return list;
 	}
-	 
+
+	
+//	LAY DANH SACH CAC SACH CU VOI EMAIL NGUOI DUNG
+	@Override
+	public List<BookDtls> getBookByOld(String email, String cate) {
+		// TODO Auto-generated method stub
+		List<BookDtls> list = new ArrayList<BookDtls>();
+		BookDtls b = null ;
+		
+		try {
+			String sql = "select * from book_dtls where bookCategory =? and email =? ";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, cate);
+			ps.setString(2, email);
+			
+			ResultSet rs = ps.executeQuery();
+//		 
+			while (rs.next() ) {
+				b = new BookDtls();
+				b.setBookId(rs.getInt(1));
+				b.setBookName(rs.getString(2));
+				b.setAuthor(rs.getString(3));
+				b.setPrice(rs.getDouble(4));
+				b.setBookCategory(rs.getString(5));
+				b.setStatus(rs.getString(6));
+				b.setPhotoName(rs.getString(7));
+				b.setEmail(rs.getString(8));
+				list.add(b);
+//			 
+			}
+			System.out.println(list);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return list;
+	}
+	 public static void main(String[] args) {
+//		 getBookByOld("19130075@st.hcmuaf.edu.vn", "Old");
+	}
+
+//		XOA QUYEN SACH CU VOI EMAIL NGUOI DUNG 
+	@Override
+	public boolean oldBookDelete(String email, String cate, int id) {
+		// TODO Auto-generated method stub
+		boolean f = false;
+		try {
+			String sql = "delete from book_dtls where bookCategory =? and email =? and bookId =?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, cate);
+			ps.setString(2, email);
+			ps.setInt(3, id);
+			
+			int i = ps.executeUpdate();
+			if ( i == 1 ) {
+				f = true;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return f;
+	}
 }

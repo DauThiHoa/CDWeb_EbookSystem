@@ -46,11 +46,16 @@ a:hover {
 
 	<!--  --------------------------------------DO LOI NAY-------------------------------------------->
 	<!--  PHUONG THUC BAT BUOC PHAI DANG NHAP ADMIN MOI VAO DC-->
+	<%
+	User u = (User) session.getAttribute("userobj");
+	%>
+	
 	<c:if test="${empty userobj }">
 		<c:redirect url="login.jsp" />
 	</c:if>
 
 	<%@include file="all_component/navbar.jsp"%>
+
 
 	<div class="container">
 		<c:if test="${not empty userobj }">
@@ -59,7 +64,7 @@ a:hover {
 		<div class="row p-5">
 
 
-			<div class="col-md-6">
+			<div class="col-md-4">
 				<a href="sell_book.jsp">
 					<div class="card">
 						<div class="card-body text-center">
@@ -72,7 +77,20 @@ a:hover {
 				</a>
 			</div>
 
-			<div class="col-md-6">
+			<div class="col-md-4">
+				<a href="old_book.jsp">
+					<div class="card">
+						<div class="card-body text-center">
+							<div class="text-primary">
+								<i class="fas fa-book-open fa-3x"></i>
+							</div>
+							<h4>Old Book</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-md-4">
 				<a href="edit_profile.jsp">
 					<div class="card">
 						<div class="card-body text-center">

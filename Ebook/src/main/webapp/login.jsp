@@ -1,3 +1,4 @@
+<%@page import="com.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!-- 
@@ -16,6 +17,11 @@
 <body style="background-color: #f0f1f2;">
 	<%@include file="all_component/navbar.jsp"%>
 
+<%
+	User u = (User) session.getAttribute("userobj");
+	%>
+	
+	
 	<div class="container">
 		<div class="row mt-2">
 			<div class="col-md-4 offset-md-4">

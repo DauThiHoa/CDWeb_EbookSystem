@@ -45,6 +45,11 @@ a:hover {
 <body style="background-color: #f7f7f7;">
 
 	<%@include file="all_component/navbar.jsp"%>
+	
+	<%
+	User u = (User) session.getAttribute("userobj");
+	%>
+	
 	<div class="container">
 		<div class="row p-3">
 			<div class="col-md-6 offset-md-3">

@@ -82,14 +82,15 @@ public class CartDAOImpl implements CartDAO {
 
 //	XOA SAN PHAM TRONG GIO HANG
 	@Override
-	public boolean deleteBook(int bid, int uid) {
+	public boolean deleteBook(int bid, int uid , int cid) {
 		// TODO Auto-generated method stub
 		boolean f = false;
 		try {
-			String sql = "delete from cart where bid = ? and uid = ? ";
+			String sql = "delete from cart where bid = ? and uid = ? and cid = ? ";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, bid);
 			ps.setInt(2, uid);
+			ps.setInt(3, cid);
 			
 			int i = ps.executeUpdate();
 			if ( i == 1 ) {

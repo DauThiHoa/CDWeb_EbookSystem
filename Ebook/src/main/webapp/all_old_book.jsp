@@ -1,3 +1,4 @@
+<%@page import="com.entity.User"%>
 <%@page import="com.entity.BookDtls"%>
 <%@page import="java.util.List"%>
 <%@page import="com.DAO.BookDAOImpl"%>
@@ -35,6 +36,11 @@
 <body style="background-color: #f7f7f7;">
 
 	<%@include file="all_component/navbar.jsp"%>
+	
+	<%
+	User u = (User) session.getAttribute("userobj");
+	%>
+	
 	<div class="container-fluid">
 		<div class="row p-5">
 			<%

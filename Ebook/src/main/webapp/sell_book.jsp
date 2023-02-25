@@ -48,6 +48,12 @@ a:hover {
 
 	<!--  --------------------------------------DO LOI NAY-------------------------------------------->
 	<!--  PHUONG THUC BAT BUOC PHAI DANG NHAP ADMIN MOI VAO DC-->
+	
+	<%
+	User u = (User) session.getAttribute("userobj");
+	%>
+	
+	
 	<c:if test="${empty userobj }">
 		<c:redirect url="login.jsp" />
 	</c:if>

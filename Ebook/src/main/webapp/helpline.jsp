@@ -46,7 +46,11 @@ a:hover {
 
 	<%@include file="all_component/navbar.jsp"%>
 
-
+<%
+	User u = (User) session.getAttribute("userobj");
+	%>
+	
+	
 	<div class="container">
 		<div class="row p-5">
 			<div class="col-md-4 offset-md-4 text-center">

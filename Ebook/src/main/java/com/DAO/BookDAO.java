@@ -31,4 +31,11 @@ public interface BookDAO {
 	public List<BookDtls> getAllNewBook ();
 //	LAY DANH SACH TAT CA CAC LOAI SACH CU
 	public List<BookDtls> getAllOldBook ();
+	
+//	LAY DANH SACH CAC SACH CU VOI EMAIL NGUOI DUNG 
+	public List<BookDtls> getBookByOld (String email, String cate);
+//	XOA QUYEN SACH CU VOI EMAIL NGUOI DUNG 
+	public boolean oldBookDelete (String email, String cate, int id);
+	
+	
 }
