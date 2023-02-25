@@ -74,4 +74,54 @@ public class UserDAOImpl implements UserDAO {
 		return us;
 	}
 
+//	KIEM TRA MAT KHAU CO DUNG HAY KHONG?
+	@Override
+	public boolean checkPassword(int id, String ps) {
+		// TODO Auto-generated method stub
+		boolean f = false ;
+		try {
+			
+			String sql = "select * from user where id =? and password =?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, id);
+			pst.setString(2, ps);
+			
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				f= true;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return f;
+	}
+
+	
+//	CAP NHAT THONG TIN NGUOI DUNG
+	@Override
+	public boolean updateProfile(User us) {
+		// TODO Auto-generated method stub
+		boolean f = false ;
+		try {
+//			THEM DU LIEU VAO CO SO DU LIEU
+			String sql = "update user set name=?, email=?, phno=? where id =?";
+		    PreparedStatement ps = conn.prepareStatement(sql);
+		    ps.setString(1, us.getName());
+		    ps.setString(2, us.getEmail());
+		    ps.setString(3, us.getPhno());
+		    ps.setInt(4, us.getId());
+
+//		    UPDATE BANG USER
+            int i = ps.executeUpdate();
+            if ( i == 1 ) {
+            	f= true ;
+            }
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return f;
+	}
+
 }
