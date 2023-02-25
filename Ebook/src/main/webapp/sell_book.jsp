@@ -46,14 +46,35 @@ a:hover {
 
 	<%@include file="all_component/navbar.jsp"%>
 
+	<!--  --------------------------------------DO LOI NAY-------------------------------------------->
+	<!--  PHUONG THUC BAT BUOC PHAI DANG NHAP ADMIN MOI VAO DC-->
+	<c:if test="${empty userobj }">
+		<c:redirect url="login.jsp" />
+	</c:if>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 offset-md-4">
 				<div class="card">
 					<div class="card-body">
 					<h5 class="text-center text-primary p-1">Sell Old Book</h5>
-					<form action="../add_books" method="post"
+					
+						<c:if test="${not empty succMsg }">
+							<h5 class="text-center text-success">${succMsg }</h5>
+							<c:remove var="succMsg" scope="session" />
+						</c:if>
+						
+						<c:if test="${not empty failedMsg }">
+							<h5 class="text-center text-danger">${failedMsg }</h5>
+							<c:remove var="failedMsg" scope="session" />
+						</c:if>
+						
+						
+						<form action="add_old_book" method="post"
 							enctype="multipart/form-data">
+
+							<input type="hidden" value="${userobj.email }" name="user">
+
 							<div class="form-group">
 								<label for="exampleInputEmail1">Book Name*</label><input
 									name="bname" type="text" class="form-control"
@@ -72,7 +93,7 @@ a:hover {
 									name="price" type="double" class="form-control"
 									id="exampleInputPassword1">
 							</div>
- 
+
 
 							<div class="form-group">
 								<label for="exampleFormControlFile1">Upload Photo</label><input
@@ -83,8 +104,8 @@ a:hover {
 							<button type="submit" class="btn btn-primary">Sell</button>
 
 						</form>
-						
-						
+
+
 					</div>
 				</div>
 			</div>
