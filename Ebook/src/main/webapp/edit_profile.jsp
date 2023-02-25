@@ -1,44 +1,59 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@page import="com.entity.User"%>
+<%@page import="com.entity.BookDtls"%>
+<%@page import="java.util.List"%>
+<%@page import="com.DAO.BookDAOImpl"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="java.sql.Connection"%>
 <!-- 
 	Trong bai co nhung => Chay bi loi
 	 -->
 <%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
 <%@ page isELIgnored="false"%>
 
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>EBook: Register</title>
+<title>Ebook: Setting - EditProfile</title>
+
 <%@include file="all_component/allCss.jsp"%>
+<style type="text/css">
+a {
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.back-img {
+	background: url("img/bak.jpg");
+	height: 50vh;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.crd-ho:hover {
+	background-color: #fcf7f7;
+}
+</style>
+
 </head>
-<body style="background-color: #f0f1f2;">
+<body style="background-color: #f7f7f7;">
+
 	<%@include file="all_component/navbar.jsp"%>
-	<div class="container p-5">
+
+	<div class="container">
 		<div class="row">
 			<div class="col-md-4 offset-md-4">
 				<div class="card">
 					<div class="card-body">
-						<h4 class="text-center">Registration Page</h4>
-
-						<!-- Begin Register Servlet - Xu ly form DangKi  -->
-
-						<c:if test="${ not empty succMsg }">
-							<p class="text-center text-success">${succMsg }</p>
-							<c:remove var="succMsg" scope="session" />
-						</c:if>
-
-						<c:if test="${ not empty failedMsg }">
-							<p class="text-center text-danger">${failedMsg }</p>
-							<c:remove var="failedMsg" scope="session" />
-						</c:if>
-
-
-						<!-- End Register Servlet - Xu ly form DangKi  -->
-
-						<form action="register" method="post">
+					
+					<h4 class="text-center text-primary">Edit Profile</h4>
+					<form action="register" method="post">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Enter Full Name</label> <input
 									type="text" class="form-control" id="exampleInputEmail1"
@@ -59,15 +74,10 @@
 									type="password" class="form-control" id="exampleInputPassword1"
 									placeholder="Password" required="required" name="password">
 							</div>
-							<div class="form-check">
-								<input type="checkbox" class="form-check-input" name="check"
-									id="exampleCheck1"> <label class="form-check-label"
-									for="exampleCheck1">Agree terms & Condition</label>
-							</div>
-							<button type="submit" class="btn btn-primary">Register</button>
+							 
+							<button type="submit" class="btn btn-primary">Update</button>
 						</form>
-
-
+						
 					</div>
 				</div>
 			</div>
@@ -77,6 +87,3 @@
 	<%@include file="all_component/footer.jsp"%>
 </body>
 </html>
-
-
-

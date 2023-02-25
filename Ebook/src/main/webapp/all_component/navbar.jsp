@@ -89,9 +89,9 @@
 				href="all_old_book.jsp"><i class="fas fa-book"></i>Old Book</a></li>
 		</ul>
 		<form class="form-inline my-2 my-lg-0">
-			<button class="btn btn-light my-2 my-sm-0" type="submit">
+			<a href="setting.jsp" class="btn btn-light my-2 my-sm-0" type="submit">
 				<i class="fas fa-cog"></i>Setting
-			</button>
+			</a>
 			<button class="btn btn-light my-2 my-sm-0 ml-1" type="submit">
 				<i class="fas fa-phone-square-alt"></i>Contact Us
 			</button>
