@@ -97,7 +97,7 @@ a:hover {
 							<div class="text-primary">
 								<i class="fas fa-edit fa-3x"></i>
 							</div>
-							<h4>Login & Security (Edit Profile)</h4>
+							<h4>Edit Profile</h4>
 						</div>
 					</div>
 				</a>
@@ -105,7 +105,7 @@ a:hover {
 
 
 			<!-- BEGIN HANG CUOI -->
-			<div class="col-md-4 mt-3">
+			<!-- <div class="col-md-4 mt-3">
 				<a href="user_address.jsp">
 					<div class="card">
 						<div class="card-body text-center">
@@ -117,9 +117,9 @@ a:hover {
 						</div>
 					</div>
 				</a>
-			</div>
+			</div> -->
 
-			<div class="col-md-4 mt-3">
+			<div class="col-md-6 mt-3">
 				<a href="order.jsp">
 					<div class="card">
 						<div class="card-body text-center">
@@ -133,11 +133,11 @@ a:hover {
 				</a>
 			</div>
 
-			<div class="col-md-4 mt-3">
+			<div class="col-md-6 mt-3">
 				<a href="helpline.jsp">
 					<div class="card">
 						<div class="card-body text-center">
-							<div class="text-primary">
+							<div class="text-warning">
 								<i class="fas fa-user-circle fa-3x"></i>
 							</div>
 							<h4>Help Center</h4>
