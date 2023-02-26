@@ -124,4 +124,29 @@ public class UserDAOImpl implements UserDAO {
 		return f;
 	}
 
+	
+//  KIEM TRA XEM EMAIL DANG KI TAI KHOAN DA CO TRONG CSDL HAY CHUA
+	@Override
+	public boolean checkUser(String em) {
+		// TODO Auto-generated method stub
+		boolean f = true ;
+		try {
+//			CAU TRUY VAN
+			String sql = "select * from user where email = ?";
+		    PreparedStatement ps = conn.prepareStatement(sql);
+		    ps.setString(1, em); 
+
+//		    NEU CO TRONG CSDL => TRA VE FALSE
+		    ResultSet rs = ps.executeQuery();
+		    while (rs.next()) {
+		    	f = false;
+		    }
+            
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return f;
+	}
+
 }

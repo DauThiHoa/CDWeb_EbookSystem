@@ -1,3 +1,17 @@
+<%@page import="com.entity.Book_Order"%>
+<%@page import="com.DAO.BookOrderImpl"%>
+<%@page import="com.entity.User"%>
+<%@page import="com.entity.BookDtls"%>
+<%@page import="java.util.List"%>
+<%@page import="com.DAO.BookDAOImpl"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="java.sql.Connection"%>
+<!-- 
+	Trong bai co nhung => Chay bi loi
+	 -->
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%@ page isELIgnored="false"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -9,6 +23,16 @@
 </head>
 <body style="background-color: #f0f2f2;">
 	<%@include file="navbar.jsp"%>
+	
+	<!--  --------------------------------------DO LOI NAY-------------------------------------------->
+	<!--  PHUONG THUC BAT BUOC PHAI DANG NHAP ADMIN MOI VAO DC-->
+
+
+
+	<c:if test="${empty userobj }">
+		<c:redirect url="login.jsp" />
+	</c:if>
+	
 	<h3 class="text-center">Hello Admin</h3>
 
 
@@ -27,39 +51,32 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td>Mark</td>
-				<td>Otto</td>
-				<td>@mdo</td>
-				<td>Otto</td>
-				<td>@mdo</td>
-				<td>@mdo</td>
-				<td>Otto</td>
-				<td>@mdo</td>
+		
+		
+				<%
+			 
+				BookOrderImpl dao = new BookOrderImpl(DBConnect.getConn());
+				List<Book_Order> blist = dao.getAllOrder();
+				for (Book_Order b : blist) {
+				%>
+				<tr>
+				
+					<th scope="row"><%=b.getOrderId()%></th>
+					<td><%=b.getUserName()%></td>
+					<td><%=b.getEmail()%></td>
+					<td><%=b.getFulladd()%></td>
+					<td><%=b.getPhno()%></td>
+					<td><%=b.getBookName()%></td>
+					<td><%=b.getAuthor()%></td>
+					<td><%=b.getPrice()%></td>
+					<td><%=b.getPaymentType()%></td>
+
 				</tr>
-			<tr>
-				<th scope="row">2</th>
-				<td>Jacob</td>
-				<td>Thornton</td>
-				<td>@fat</td>
-				<td>Otto</td>
-				<td>@mdo</td>
-				<td>@mdo</td>
-				<td>Otto</td>
-				<td>@mdo</td>
-			</tr>
-			<tr>
-				<th scope="row">3</th>
-				<td>Larry</td>
-				<td>the Bird</td>
-				<td>@twitter</td>
-				<td>Otto</td>
-				<td>@mdo</td>
-				<td>@mdo</td>
-				<td>Otto</td>
-				<td>@mdo</td>
-			</tr>
+				<%
+				}
+				%>
+				
+			 
 		</tbody>
 	</table>
 

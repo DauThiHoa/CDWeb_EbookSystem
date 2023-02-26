@@ -45,46 +45,54 @@ public class OrderServlet extends HttpServlet {
 			CartDAOImpl dao = new CartDAOImpl(DBConnect.getConn());
 			
 			List<Cart> blist = dao.getBookByUser(id);
-			BookOrderImpl dao2 = new BookOrderImpl(DBConnect.getConn());
-			int i = dao2.getOrderNo();
-
 			
-			ArrayList<Book_Order> orderList = new ArrayList<Book_Order>();
-			for(Cart c : blist) {
-				 Book_Order o = new Book_Order();
-				 
-				 o.setOrderId("BOOK-ORD-00" + i);
-				 o.setUserName(name);
-				 o.setEmail(email);
-				 o.setPhno(phno);
-				 o.setFulladd(fullAdd);
-				 o.setBookName(c.getBookName());
-				 o.setAuthor(c.getAuthor());
-				 o.setPrice(c.getPrice());
-				 o.setPaymentType(paymentType);
-				 orderList.add(o);
-				 i++;
-//				 System.out.println(orderList);
-			}
-			
-			if ("noselect".equals(paymentType)) {
-				session.setAttribute("failedMsg", "Please Choose Payment Method");
+			if (blist.isEmpty()) {
+				session.setAttribute("failedMsg", "Add Item");
 				resp.sendRedirect("checkout.jsp");
 			}else {
-				boolean f = dao2.saveOrder(orderList);
 				
-				if (f) {
-					session.setAttribute("succMsg", "Add Order Success ");
-					resp.sendRedirect("order_success.jsp");
-					
-					System.out.println("order_success.jsp");
-					
-				}else {
-					session.setAttribute("failedMsg", "Your Order Failed");
-					resp.sendRedirect("checkout.jsp");
-					
-					System.out.println("Order Failed");
+				BookOrderImpl dao2 = new BookOrderImpl(DBConnect.getConn());
+				int i = dao2.getOrderNo();
+
+				
+				ArrayList<Book_Order> orderList = new ArrayList<Book_Order>();
+				for(Cart c : blist) {
+					 Book_Order o = new Book_Order();
+					 
+					 o.setOrderId("BOOK-ORD-00" + i);
+					 o.setUserName(name);
+					 o.setEmail(email);
+					 o.setPhno(phno);
+					 o.setFulladd(fullAdd);
+					 o.setBookName(c.getBookName());
+					 o.setAuthor(c.getAuthor());
+					 o.setPrice(c.getPrice());
+					 o.setPaymentType(paymentType);
+					 orderList.add(o);
+					 i++;
+//					 System.out.println(orderList);
 				}
+				
+				if ("noselect".equals(paymentType)) {
+					session.setAttribute("failedMsg", "Please Choose Payment Method");
+					resp.sendRedirect("checkout.jsp");
+				}else {
+					boolean f = dao2.saveOrder(orderList);
+					
+					if (f) {
+						session.setAttribute("succMsg", "Add Order Success ");
+						resp.sendRedirect("order_success.jsp");
+						
+						System.out.println("order_success.jsp");
+						
+					}else {
+						session.setAttribute("failedMsg", "Your Order Failed");
+						resp.sendRedirect("checkout.jsp");
+						
+						System.out.println("Order Failed");
+					}
+				}
+				
 			}
 			
 		} catch (Exception e) {

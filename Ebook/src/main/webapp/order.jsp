@@ -1,3 +1,5 @@
+<%@page import="com.entity.Book_Order"%>
+<%@page import="com.DAO.BookOrderImpl"%>
 <%@page import="com.entity.User"%>
 <%@page import="com.entity.BookDtls"%>
 <%@page import="java.util.List"%>
@@ -45,14 +47,22 @@ a:hover {
 <body style="background-color: #f7f7f7;">
 
 	<%@include file="all_component/navbar.jsp"%>
-	
+
 	<%
-	User u = (User) session.getAttribute("userobj");
+	User u1 = (User) session.getAttribute("userobj");
 	%>
-	
+	<!--  --------------------------------------DO LOI NAY-------------------------------------------->
+	<!--  PHUONG THUC BAT BUOC PHAI DANG NHAP ADMIN MOI VAO DC-->
+
+
+
+	<c:if test="${empty userobj }">
+		<c:redirect url="login.jsp" />
+	</c:if>
+
 	<div class="container p-1">
-	<h3 class="text-center text-primary">Your Order</h3>
-	
+		<h3 class="text-center text-primary">Your Order</h3>
+
 		<table class="table table-striped mt-3">
 			<thead class="bg-primary text-white">
 				<tr>
@@ -65,17 +75,26 @@ a:hover {
 				</tr>
 			</thead>
 			<tbody>
-			
+
+				<%
+				User u = (User) session.getAttribute("userobj");
+				BookOrderImpl dao = new BookOrderImpl(DBConnect.getConn());
+				List<Book_Order> blist = dao.getBook(u.getEmail());
+				for (Book_Order b : blist) {
+				%>
 				<tr>
-					<th scope="row">1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-					
+					<th scope="row"><%=b.getOrderId()%></th>
+					<td><%=b.getUserName()%></td>
+					<td><%=b.getBookName()%></td>
+					<td><%=b.getAuthor()%></td>
+					<td><%=b.getPrice()%></td>
+					<td><%=b.getPaymentType()%></td>
+
 				</tr>
-				 
+				<%
+				}
+				%>
+
 			</tbody>
 		</table>
 	</div>

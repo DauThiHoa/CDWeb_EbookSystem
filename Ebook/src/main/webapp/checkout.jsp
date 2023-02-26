@@ -112,12 +112,12 @@
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Name</label> <input type="text"
 										class="form-control" id="inputEmail4" value="${userobj.name }"
-										name="username">
+										name="username" required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Email</label> <input type="email"
 										class="form-control" id="inputPassword4"
-										value="${userobj.email }" name="email">
+										value="${userobj.email }" name="email" required>
 								</div>
 							</div>
 
@@ -126,12 +126,12 @@
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Phone Number</label> <input
 										type="number" class="form-control" id="inputEmail4"
-										value="${userobj.phno }" name="phno">
+										value="${userobj.phno }" name="phno" required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Address</label> <input type="text"
 										class="form-control" id="inputPassword4"
-										value="${userobj.address }" name="address">
+										value="${userobj.address }" name="address" required>
 								</div>
 							</div>
 
@@ -141,12 +141,12 @@
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Landmark</label> <input type="text"
 										class="form-control" id="inputEmail4"
-										value="<%=u.getLandmark()%>" name="landmark">
+										value="<%=u.getLandmark()%>" name="landmark" required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">City</label> <input type="text"
 										class="form-control" id="inputPassword4"
-										value="<%=u.getCity()%>" name="city">
+										value="<%=u.getCity()%>" name="city" required>
 								</div>
 							</div>
 
@@ -157,12 +157,12 @@
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">State</label> <input type="text"
 										class="form-control" id="inputEmail4"
-										value="<%=u.getState()%>" name="state">
+										value="<%=u.getState()%>" name="state" required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Pin code</label> <input type="text"
 										class="form-control" id="inputPassword4"
-										value="<%=u.getPincode()%>" name="pincode">
+										value="<%=u.getPincode()%>" name="pincode" required>
 								</div>
 							</div>
 

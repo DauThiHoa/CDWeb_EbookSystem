@@ -11,4 +11,8 @@ public interface BookOrderDAO {
 //	LUU DON HANG 
 	public boolean saveOrder (List<Book_Order> bList);
 	
+//	LAY DANH SACH CAC SAN PHAM TRONG DON HANG THEO EMAIL NGUOI DUNG
+	public List<Book_Order> getBook (String email);
+//	LAY DANH SACH CAC SAN PHAM TRONG DON HANG => admin
+	public List<Book_Order> getAllOrder ();
 }

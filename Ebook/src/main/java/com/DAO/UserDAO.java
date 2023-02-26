@@ -13,4 +13,7 @@ public interface UserDAO {
 	public boolean checkPassword (int id , String ps);
 //	CAP NHAT THONG TIN NGUOI DUNG
 	public boolean updateProfile (User us);
+	
+//  KIEM TRA XEM EMAIL DANG KI TAI KHOAN DA CO TRONG CSDL HAY CHUA
+	public boolean checkUser (String em);
 }
