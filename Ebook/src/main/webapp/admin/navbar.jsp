@@ -2,9 +2,10 @@
 <!-- 
 	Trong bai co nhung => Chay bi loi
 	 -->
-<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isELIgnored="false"%>
 
+ 
 <div class="container-fluid"
 	style="height: 10px; background-color: #303f9f"></div>
 

@@ -4,7 +4,7 @@
 <!-- 
 	Trong bai co nhung => Chay bi loi
 	 -->
-<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isELIgnored="false"%>
 
 
@@ -12,6 +12,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+
+<!-- BIEU TUONG TRANG WEB -->
+ <link rel="icon" href="img/icon2.png" type="image/png" class="icon">
+ 
 <title>EBook: Register</title>
 <%@include file="all_component/allCss.jsp"%>
 </head>

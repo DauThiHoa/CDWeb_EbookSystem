@@ -9,7 +9,7 @@
 <!-- 
 	Trong bai co nhung => Chay bi loi
 	 -->
-<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isELIgnored="false"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -19,6 +19,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Admin : All Orders</title>
+
+<!-- BIEU TUONG TRANG WEB -->
+ <link rel="icon" href="img/favicon.png" type="image/png" class="icon">
+ 
+ 
 <%@include file="allCss.jsp"%>
 </head>
 <body style="background-color: #f0f2f2;">

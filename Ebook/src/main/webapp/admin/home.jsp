@@ -1,10 +1,25 @@
+<%@page import="com.entity.BookDtls"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.DAO.BookDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<!-- 
+	Trong bai co nhung => Chay bi loi
+	 -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Admin : Home</title>
+
+
+<!-- BIEU TUONG TRANG WEB -->
+ <link rel="icon" href="img/favicon.png" type="image/png" class="icon">
+ 
+ 
 <%@include file="allCss.jsp"%>
 <style type="text/css">
 a {

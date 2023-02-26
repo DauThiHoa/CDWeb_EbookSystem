@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/search")
+@WebServlet("/searchBook")
 public class SearchBookServlet extends HttpServlet {
 
 	@Override

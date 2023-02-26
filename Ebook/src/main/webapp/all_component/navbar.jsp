@@ -1,7 +1,7 @@
 <!-- 
 	Trong bai co nhung => Chay bi loi
 	 -->
-<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isELIgnored="false"%>
 
 
