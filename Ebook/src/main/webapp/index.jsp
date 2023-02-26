@@ -18,8 +18,8 @@
 <meta charset="ISO-8859-1">
 
 <!-- BIEU TUONG TRANG WEB -->
- <link rel="icon" href="img/icon2.png" type="image/png" class="icon">
- 
+<link rel="icon" href="img/icon2.png" type="image/png" class="icon">
+
 <title>Ebook: Index</title>
 <%@include file="all_component/allCss.jsp"%>
 <style type="text/css">
@@ -50,6 +50,34 @@
 		<h2 class="text-center text-orange">EBook Management System</h2>
 	</div>
 
+
+
+
+	<div class="carousel-inner">
+		<c:forEach var="item" items="4" varStatus="index">
+
+			<c:if test="${index.first }">
+				<div class="item active">
+			</c:if>
+			<c:if test="${not index.first }">
+				<div class="item">
+			</c:if>
+
+		</c:forEach>
+		<div class="item active">
+			<img style="width: 100%" alt="bootstrap ecommerce templates"
+				src="img/slide/backBook1.jpg">
+			<div class="carousel-caption">
+				<h4>Twitter Bootstrap cart</h4>
+				<p>
+					<span>Very easy to integrate and expand</span>
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+
 	<%-- <% Connection conn = DBConnect.getConn();
   out.println (conn );%> --%>
 	<!--  Star Recent Book-->
@@ -69,8 +97,11 @@
 			<div class="col-md-3">
 				<div class="card crd-ho">
 					<div class="card-body text-center">
+
 						<img alt="" src="book/<%=b2.getPhotoName()%>"
 							style="width: 100%; height: 170px" class="img-thumblin">
+
+
 						<p><%=b2.getBookName()%></p>
 						<p><%=b2.getAuthor()%></p>
 						<p>
@@ -94,8 +125,8 @@
 						Categories:
 						<%=b2.getBookCategory()%></p>
 						<div class="row">
-						
-						
+
+
 							<!-- NEU CHUA DANG NHAP VAO WEBSITE => KHONG CHO PHEP THEM VAO GIO HANG => DI CHUYEN VE TRANG LOGIN -->
 							<%
 							if (u == null) {
@@ -106,15 +137,15 @@
 							} else {
 							%>
 							<!--  NGUOC LAI NEU DA DANG NHAP VAO TAI KHOAN => DI CHUYEN DEN TRANG CARTSERVLET ( XU LY SU KIEN THEM SAN PHAM VAO GIO HANG )-->
-							<a href="cart?bid=<%=b2.getBookId() %>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm"><i
-								class="fas fa-cart-plus"></i>Add Cart</a>
+							<a href="cart?bid=<%=b2.getBookId()%>&&uid=<%=u.getId()%>"
+								class="btn btn-danger btn-sm"><i class="fas fa-cart-plus"></i>Add
+								Cart</a>
 
 							<%
 							}
 							%>
-							
-							<a
-								href="view_books.jsp?id=<%=b2.getBookId()%>"
+
+							<a href="view_books.jsp?id=<%=b2.getBookId()%>"
 								class="btn btn-success btn-sm">View Details</a> <a href=""
 								class="btn btn-danger btn-sm"><%=b2.getPrice()%><i
 								class="fas fa-rupee-sign"></i></a>
@@ -179,8 +210,9 @@
 							} else {
 							%>
 							<!--  NGUOC LAI NEU DA DANG NHAP VAO TAI KHOAN => DI CHUYEN DEN TRANG CARTSERVLET ( XU LY SU KIEN THEM SAN PHAM VAO GIO HANG )-->
-							<a href="cart?bid=<%=b.getBookId() %>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm"><i
-								class="fas fa-cart-plus"></i>Add Cart</a>
+							<a href="cart?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>"
+								class="btn btn-danger btn-sm"><i class="fas fa-cart-plus"></i>Add
+								Cart</a>
 
 							<%
 							}

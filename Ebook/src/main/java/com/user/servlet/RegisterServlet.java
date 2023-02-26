@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import com.DAO.UserDAOImpl;
 import com.DB.DBConnect;
 import com.entity.User;
@@ -28,12 +30,15 @@ public class RegisterServlet extends HttpServlet {
 			String check = req.getParameter("check");
 
 //			System.out.println(name + " | " + email  + " | " + phno  + " | " + password  + " | " + check);
-
+//			System.out.println("MA HOA MAT KHAU : ");
+			String hash = BCrypt.hashpw(password, BCrypt.gensalt(5));
+//			System.out.println("BCrypt hash: " + hash);
+			
 			User us = new User();
 			us.setName(name);
 			us.setEmail(email);
 			us.setPhno(phno);
-			us.setPassword(password);
+			us.setPassword(hash);
 
 			HttpSession session = req.getSession();
 

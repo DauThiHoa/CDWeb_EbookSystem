@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import com.entity.User;
 
 public class UserDAOImpl implements UserDAO {
@@ -47,11 +49,27 @@ public class UserDAOImpl implements UserDAO {
 	public User login(String email, String password) {
 		// TODO Auto-generated method stub
 		User us = null ;
+		
 		try {
+			boolean valuate = false;
+			String hash = null;
+			
+			String sql1 = "select * from user where email = ?";
+			PreparedStatement ps1 = conn.prepareStatement(sql1);
+			ps1.setString(1, email);
+			ResultSet rs1 = ps1.executeQuery();
+			while (rs1.next()) { 
+				hash = (String) rs1.getString(5);
+				System.out.println("hash : " + hash + " Pass : " + password);
+				valuate = BCrypt.checkpw(password, hash); 
+			}
+			
+			if (valuate) {
+			
 			String sql = "select * from user where email = ? and password = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, email);
-			ps.setString(2, password);
+			ps.setString(2, hash);
 			
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
@@ -66,6 +84,10 @@ public class UserDAOImpl implements UserDAO {
 				us.setCity(rs.getString(8));
 				us.setState(rs.getString(9));
 				us.setPincode(rs.getString(10));
+			}
+			
+			}else {
+				us = null;
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

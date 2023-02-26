@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import com.DAO.UserDAOImpl;
 import com.DB.DBConnect;
 import com.entity.User;
@@ -29,10 +31,19 @@ public class LoginServlet extends HttpServlet {
 			String email = req.getParameter("email");
 			String password = req.getParameter("password");
 
-			System.out.println(email + password);
+			System.out.println(email +" - " + password);
+			
+//			System.out.println("MA HOA MAT KHAU : ");
+//			String hash = BCrypt.hashpw(password, BCrypt.gensalt(5));
+//			System.out.println("BCrypt hash: " + hash);
+			
+//			System.out.println("GIAI MA : ");
+//			boolean valuate = BCrypt.checkpw(password, hash); 
+//			System.out.println(valuate);
+			
 			
 //			NEU LA LOGIN BANG TAI KHOAN ADMIN
-			if ("admin@gmail.com".equals(email) && "admin".equals(password)) { 
+				if ("admin@gmail.com".equals(email) && "admin".equals(password)) { 
 				User us = new User();
 				us.setName("Admin");
 				session.setAttribute("userobj", us);
@@ -50,6 +61,7 @@ public class LoginServlet extends HttpServlet {
 //				resp.sendRedirect("index.jsp");
 			}
 //			System.out.println("HEEELO");
+
 
 		} catch (Exception e) {
 			// TODO: handle exception
