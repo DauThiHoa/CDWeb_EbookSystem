@@ -22,9 +22,7 @@ html {
 section {
   padding: 3rem 9%;
 }
-
-.heading {
-  background: url(../image/heading-bg.jpg) no-repeat;
+.heading { 
   background-size: cover;
   background-position: center;
   text-align: center;

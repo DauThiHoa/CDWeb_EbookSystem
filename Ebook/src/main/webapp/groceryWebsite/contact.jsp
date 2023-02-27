@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>contact</title>
-
+<link rel="icon" href="../img/icon2.png" type="image/png" class="icon">
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -104,23 +104,18 @@
     <div class="icons-container">
 
         <div class="icons">
-            <i class="fas fa-phone"></i>
-            <h3>our number</h3>
-            <p>+123-456-7890</p>
-            <p>+111-222-3333</p>
+            <img src="image1/icon-1.png" alt="">
+            <h3>7:00am to 10:30pm</h3>
         </div>
 
         <div class="icons">
-            <i class="fas fa-envelope"></i>
-            <h3>our email</h3>
-            <p>shaikhanas#gmail.com</p>
-            <p>anasbhai@gmail.com</p>
+            <img src="image1/icon-2.png" alt="">
+            <h3>+123-456-7890</h3>
         </div>
 
         <div class="icons">
-            <i class="fas fa-map-marker-alt"></i>
-            <h3>our address</h3>
-            <p>mumbai, india - 400104</p>
+            <img src="image1/icon-3.png" alt="">
+            <h3>mumbai, india - 400104</h3>
         </div>
 
     </div>

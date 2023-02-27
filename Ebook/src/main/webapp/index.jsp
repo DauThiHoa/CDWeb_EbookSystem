@@ -49,33 +49,7 @@
 		<!-- text-success  -->
 		<h2 class="text-center text-orange">EBook Management System</h2>
 	</div>
-
-
-
-
-	<div class="carousel-inner">
-		<c:forEach var="item" items="4" varStatus="index">
-
-			<c:if test="${index.first }">
-				<div class="item active">
-			</c:if>
-			<c:if test="${not index.first }">
-				<div class="item">
-			</c:if>
-
-		</c:forEach>
-		<div class="item active">
-			<img style="width: 100%" alt="bootstrap ecommerce templates"
-				src="img/slide/backBook1.jpg">
-			<div class="carousel-caption">
-				<h4>Twitter Bootstrap cart</h4>
-				<p>
-					<span>Very easy to integrate and expand</span>
-				</p>
-			</div>
-		</div>
-	</div>
-
+ 
 
 
 	<%-- <% Connection conn = DBConnect.getConn();

@@ -180,7 +180,7 @@
         <a href="#" class="btn">order now</a>
     </div>
 
-    <div class="image1">
+    <div class="image">
         <img src="image1/home-img.png" alt="" class="home-img">
         <img src="image1/home-parallax-img.png" alt="" class="home-parallax-img">
     </div>
@@ -232,7 +232,7 @@
 
 <section class="about" id="about">
 
-    <div class="image1">
+    <div class="image">
         <img src="image1/about-img.png" alt="">
     </div>
 
@@ -278,7 +278,7 @@
 
         <div class="box">
             <a href="#" class="fas fa-heart"></a>
-            <div class="image1">
+            <div class="image">
                 <img src="image1/food-1.png" alt="">
             </div>
             <div class="content">
@@ -298,7 +298,7 @@
 
         <div class="box">
             <a href="#" class="fas fa-heart"></a>
-            <div class="image1">
+            <div class="image">
                 <img src="image1/food-2.png" alt="">
             </div>
             <div class="content">
@@ -318,7 +318,7 @@
 
         <div class="box">
             <a href="#" class="fas fa-heart"></a>
-            <div class="image1">
+            <div class="image">
                 <img src="image1/food-3.png" alt="">
             </div>
             <div class="content">
@@ -338,7 +338,7 @@
 
         <div class="box">
             <a href="#" class="fas fa-heart"></a>
-            <div class="image1">
+            <div class="image">
                 <img src="image1/food-4.png" alt="">
             </div>
             <div class="content">
@@ -358,7 +358,7 @@
 
         <div class="box">
             <a href="#" class="fas fa-heart"></a>
-            <div class="image1">
+            <div class="image">
                 <img src="image1/food-5.png" alt="">
             </div>
             <div class="content">
@@ -378,7 +378,7 @@
 
         <div class="box">
             <a href="#" class="fas fa-heart"></a>
-            <div class="image1">
+            <div class="image">
                 <img src="image1/food-6.png" alt="">
             </div>
             <div class="content">
@@ -398,7 +398,7 @@
 
         <div class="box">
             <a href="#" class="fas fa-heart"></a>
-            <div class="image1">
+            <div class="image">
                 <img src="image1/food-7.png" alt="">
             </div>
             <div class="content">
@@ -418,7 +418,7 @@
 
         <div class="box">
             <a href="#" class="fas fa-heart"></a>
-            <div class="image1">
+            <div class="image">
                 <img src="image1/food-8.png" alt="">
             </div>
             <div class="content">
@@ -544,6 +544,23 @@
                 <div class="price">$40.00</div>
             </div>
         </a>
+        
+         <a href="#" class="box">
+            <img src="image1/menu-6.png" alt="">
+            <div class="content">
+                <h3>delicious food</h3>
+                <div class="price">$40.00</div>
+            </div>
+        </a>
+
+        <a href="#" class="box">
+            <img src="image1/menu-5.png" alt="">
+            <div class="content">
+                <h3>delicious food</h3>
+                <div class="price">$40.00</div>
+            </div>
+        </a>
+        
 
     </div>
 
@@ -643,7 +660,7 @@
     <div class="box-container">
 
         <div class="box">
-            <div class="image1">
+            <div class="image">
                 <h3> <i class="fas fa-calendar"></i> 21st may, 2021 </h3>
                 <img src="image1/blog-1.jpg" alt="">
             </div>
@@ -660,7 +677,7 @@
         </div>
 
         <div class="box">
-            <div class="image1">
+            <div class="image">
                 <h3> <i class="fas fa-calendar"></i> 21st may, 2021 </h3>
                 <img src="image1/blog-2.jpg" alt="">
             </div>
@@ -677,7 +694,7 @@
         </div>
 
         <div class="box">
-            <div class="image1">
+            <div class="image">
                 <h3> <i class="fas fa-calendar"></i> 21st may, 2021 </h3>
                 <img src="image1/blog-3.jpg" alt="">
             </div>

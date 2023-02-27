@@ -546,7 +546,7 @@
         </a>
         
          <a href="#" class="box">
-            <img src="image1/menu-7.png" alt="">
+            <img src="image1/menu-6.png" alt="">
             <div class="content">
                 <h3>delicious food</h3>
                 <div class="price">$40.00</div>
@@ -554,7 +554,7 @@
         </a>
 
         <a href="#" class="box">
-            <img src="image1/menu-8.png" alt="">
+            <img src="image1/menu-5.png" alt="">
             <div class="content">
                 <h3>delicious food</h3>
                 <div class="price">$40.00</div>

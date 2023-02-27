@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blogs</title>
-<link rel="icon" href="../img/icon2.png" type="image/png" class="icon">
+    <title>home</title>
+
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -19,8 +19,10 @@
 
 <header class="header">
 
+<!--  logo -->
     <a href="home.jsp" class="logo"> <i class="fas fa-shopping-basket"></i> groco </a>
 
+<!--  THANH menu  -->
     <nav class="navbar">
         <a href="home.jsp">home</a>
         <a href="shop.jsp">shop</a>
@@ -30,6 +32,7 @@
         <a href="contact.jsp">contact</a>
     </nav>
 
+<!-- CAC ICON SEARCH - LOGIN  -->
     <div class="icons">
         <div id="menu-btn" class="fas fa-bars"></div>
         <div id="search-btn" class="fas fa-search"></div>
@@ -37,11 +40,13 @@
         <div id="login-btn" class="fas fa-user"></div>
     </div>
 
+<!--  SEARCH -->
     <form action="" class="search-form">
         <input type="search" placeholder="search here..." id="search-box">
         <label for="search-box" class="fas fa-search"></label>
     </form>
 
+<!-- shopping-cart -->
     <div class="shopping-cart">
         <div class="box">
             <i class="fas fa-times"></i>
@@ -94,107 +99,77 @@
 
 <!-- header section ends -->
 
-<div class="heading">
-    <h1>our blogs</h1>
-    <p> <a href="home.jsp">home >></a> blogs </p>
-</div>
+<section class="home">
 
-<section class="blogs">
+    <div class="slides-container">
 
-    <h1 class="title"> our <span>blogs</span> <a href="#">view all >></a> </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <div class="image">
-                <img src="image/blog-1.jpg" alt="">
-            </div>
+        <div class="slide active">
             <div class="content">
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2021 </a>
-                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
-                </div>
-                <h3>blogs title goes here</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, dolor!</p>
-                <a href="#" class="btn">read more</a>
+                <span>fresh and organic</span>
+                <h3>upto 50% off</h3>
+                <a href="#" class="btn">shop now</a>
+            </div>
+            <div class="image">
+                <img src="image/home-img-1.png" alt="">
             </div>
         </div>
 
-        <div class="box">
-            <div class="image">
-                <img src="image/blog-2.jpg" alt="">
-            </div>
+        <div class="slide">
             <div class="content">
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2021 </a>
-                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
-                </div>
-                <h3>blogs title goes here</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, dolor!</p>
-                <a href="#" class="btn">read more</a>
+                <span>fresh and organic</span>
+                <h3>upto 50% off</h3>
+                <a href="#" class="btn">shop now</a>
+            </div>
+            <div class="image">
+                <img src="image/home-img-2.png" alt="">
             </div>
         </div>
 
-        <div class="box">
-            <div class="image">
-                <img src="image/blog-3.jpg" alt="">
-            </div>
+        <div class="slide">
             <div class="content">
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2021 </a>
-                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
-                </div>
-                <h3>blogs title goes here</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, dolor!</p>
-                <a href="#" class="btn">read more</a>
+                <span>fresh and organic</span>
+                <h3>upto 50% off</h3>
+                <a href="#" class="btn">shop now</a>
+            </div>
+            <div class="image">
+                <img src="image/home-img-3.png" alt="">
             </div>
         </div>
 
-        <div class="box">
-            <div class="image">
-                <img src="image/blog-4.jpg" alt="">
-            </div>
-            <div class="content">
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2021 </a>
-                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
-                </div>
-                <h3>blogs title goes here</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, dolor!</p>
-                <a href="#" class="btn">read more</a>
-            </div>
-        </div>
+    </div>
 
-        <div class="box">
-            <div class="image">
-                <img src="image/blog-5.jpg" alt="">
-            </div>
-            <div class="content">
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2021 </a>
-                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
-                </div>
-                <h3>blogs title goes here</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, dolor!</p>
-                <a href="#" class="btn">read more</a>
-            </div>
-        </div>
+    <div id="next-slide" class="fas fa-angle-right" onclick="next()"></div>
+    <div id="prev-slide" class="fas fa-angle-left" onclick="next()"></div>
 
-        <div class="box">
-            <div class="image">
-                <img src="image/blog-6.jpg" alt="">
-            </div>
-            <div class="content">
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2021 </a>
-                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
-                </div>
-                <h3>blogs title goes here</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, dolor!</p>
-                <a href="#" class="btn">read more</a>
-            </div>
-        </div>
+</section>
 
+<section class="banner-container">
+
+    <div class="banner">
+        <img src="image/banner-1.jpg" alt="">
+        <div class="content">
+            <span>limited sales</span>
+            <h3>upto 50% off</h3>
+            <a href="#" class="btn">shop now</a>
+        </div>
+    </div>
+
+    <div class="banner">
+        <img src="image/banner-2.jpg" alt="">
+        <div class="content">
+            <span>limited sales</span>
+            <h3>upto 50% off</h3>
+            <a href="#" class="btn">shop now</a>
+        </div>
+    </div>
+
+    <div class="banner">
+        <img src="image/banner-3.jpg" alt="">
+        <div class="content">
+            <span>limited sales</span>
+            <h3>upto 50% off</h3>
+            <a href="#" class="btn">shop now</a>
+        </div>
     </div>
 
 </section>
