@@ -13,7 +13,7 @@
 <meta charset="ISO-8859-1">
 
 <!-- BIEU TUONG TRANG WEB -->
- <link rel="icon" href="img/icon2.png" type="image/png" class="icon">
+ <link rel="icon" href="img/icon1.png" type="image/png" class="icon">
  
 <title>EBook: Login</title>
 <%@include file="all_component/allCss.jsp"%>
@@ -43,7 +43,7 @@
 							<c:remove var="succMsg" scope="session" />
 						</c:if>
 
-						<form action="login" method="post">
+						<form action="login" method="post" >
 							<div class="form-group">
 								<label for="exampleInputEmail1">Email address</label> <input
 									type="email" class="form-control" id="exampleInputEmail1"
