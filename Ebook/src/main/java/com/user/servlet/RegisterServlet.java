@@ -41,10 +41,10 @@ public class RegisterServlet extends HttpServlet {
 			us.setPassword(hash);
 
 			HttpSession session = req.getSession();
-
-			if (check != null) {
+			UserDAOImpl dao = new UserDAOImpl(DBConnect.getConn()); 
+			
+			if (check != null ) {
 				
-				UserDAOImpl dao = new UserDAOImpl(DBConnect.getConn());
 				boolean f2 = dao.checkUser(email);
 				if (f2)
 				{
@@ -53,7 +53,7 @@ public class RegisterServlet extends HttpServlet {
 					if (f) {
 						System.out.println("User Register Success ...");
 						session.setAttribute("succMsg", "Registration Successfully ... ");
-						resp.sendRedirect("register.jsp");
+						resp.sendRedirect("login.jsp");
 
 					} else {
 //					System.out.println("Something wrong on server ..." );

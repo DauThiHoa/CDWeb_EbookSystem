@@ -35,25 +35,44 @@ public class CartServlet extends HttpServlet {
 			c.setBid(bid);
 			c.setUserId(uid);
 			c.setBookName(b.getBookName());
+			c.setImage(b.getPhotoName());
 			c.setAuthor(b.getAuthor());
+			c.setQuantity(1);
 			c.setPrice(b.getPrice());
 			c.setTotalPrice(b.getPrice());
 
 //			THEM 1 SAN PHAM VAO DANH SACH
 			CartDAOImpl dao2 = new CartDAOImpl(DBConnect.getConn());
-			boolean f = dao2.addCart(c);
-
+//			KIEM TRA XEM SACH DA DUOC THEM VAO CSDL HAY CHUA 
+			boolean checkIdBook = dao2.checkBookCart(bid, uid);
 			HttpSession session = req.getSession();
 			
-//			KIEM TRA
-			if (f) {
-				session.setAttribute("addCart" , "Book Added To Cart");
-				resp.sendRedirect("all_new_book.jsp");
-//				System.out.println("Add Cart Sucess");
+			if (checkIdBook) { // NEU TRUE => CO THEM SO LUONG SAN PHAM TRONG CSDL 
+				boolean success = dao2.updateBookCart(bid, uid);
+//				KIEM TRA
+					if (success) {
+						session.setAttribute("addCart", "Book Update To Cart");
+						resp.sendRedirect("all_new_book.jsp");
+//					System.out.println("Add Cart Sucess");
+					} else {
+						session.setAttribute("failed", "Something Wrong On Server");
+						resp.sendRedirect("all_new_book.jsp");
+//					System.out.println("Not Added To Cart");
+					}
+				 
 			} else {
-				session.setAttribute("failed" , "Something Wrong On Server");
-				resp.sendRedirect("all_new_book.jsp");
+				boolean f = dao2.addCart(c);
+
+//			KIEM TRA
+				if (f) {
+					session.setAttribute("addCart", "Book Added To Cart");
+					resp.sendRedirect("all_new_book.jsp");
+//				System.out.println("Add Cart Sucess");
+				} else {
+					session.setAttribute("failed", "Something Wrong On Server");
+					resp.sendRedirect("all_new_book.jsp");
 //				System.out.println("Not Added To Cart");
+				}
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

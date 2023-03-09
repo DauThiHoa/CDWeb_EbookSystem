@@ -6,18 +6,23 @@ public class Cart {
 	private int bid ;
 	private int userId ;
 	private String bookName ;
+	private String image ;
 	private String author ;
+	private int quantity ;
 	private Double price ;
 	private Double totalPrice ;
-	
-	
-	public Cart(int cid, int bid, int userId, String bookName, String author, Double price, Double totalPrice) {
+
+
+	public Cart(int cid, int bid, int userId, String bookName, String image, String author, int quantity, Double price,
+			Double totalPrice) {
 		super();
 		this.cid = cid;
 		this.bid = bid;
 		this.userId = userId;
 		this.bookName = bookName;
+		this.image = image;
 		this.author = author;
+		this.quantity = quantity;
 		this.price = price;
 		this.totalPrice = totalPrice;
 	}
@@ -98,12 +103,32 @@ public class Cart {
 	}
 
 
+	public int getQuantity() {
+		return quantity;
+	}
+
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+
+	public String getImage() {
+		return image;
+	}
+
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Cart [cid=" + cid + ", bid=" + bid + ", userId=" + userId + ", bookName=" + bookName + ", author="
-				+ author + ", price=" + price + ", totalPrice=" + totalPrice + "]";
+		return "Cart [cid=" + cid + ", bid=" + bid + ", userId=" + userId + ", bookName=" + bookName + ", image="
+				+ image + ", author=" + author + ", quantity=" + quantity + ", price=" + price + ", totalPrice="
+				+ totalPrice + "]";
 	}
-	
-	
+ 
 	
 }

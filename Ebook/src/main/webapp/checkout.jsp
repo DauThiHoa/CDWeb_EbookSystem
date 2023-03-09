@@ -3,13 +3,13 @@
 <%@page import="com.DB.DBConnect"%>
 <%@page import="com.DAO.CartDAOImpl"%>
 <%@page import="com.entity.User"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
 <!-- 
 	Trong bai co nhung => Chay bi loi
 	 -->
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isELIgnored="false"%>
 
 <!DOCTYPE html>
@@ -18,13 +18,39 @@
 <meta charset="ISO-8859-1">
 
 <!-- BIEU TUONG TRANG WEB -->
- <link rel="icon" href="img/icon2.png" type="image/png" class="icon">
- 
+<link rel="icon" href="img/icon2.png" type="image/png" class="icon">
+
 <title>EBook: Cart Page</title>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+<!-- font awesome cdn link  -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- custom css file link  -->
+<!-- <link rel="stylesheet" href="css/style1.css">
+<link rel="stylesheet" href="css/style.css">  -->
+
+<script>
+  
+</script>
+
 <%@include file="all_component/allCss.jsp"%>
 </head>
+
+<!-- AJAX - Update Quantity -->
+
+
+
 <body style="background-color: #f0f1f2;">
-	<%@include file="all_component/navbar.jsp"%>
+
+	<%-- <%@include file="all_component/navbar.jsp"%> --%>
+
+
 
 	<!--  --------------------------------------DO LOI NAY-------------------------------------------->
 	<!--  PHUONG THUC BAT BUOC PHAI DANG NHAP ADMIN MOI VAO DC-->
@@ -50,18 +76,22 @@
 
 
 
-	<div class="container">
+	<div class="container ">
 		<div class="row">
-			<div class="col-md-6">
-				<h3 class="text-center text-success">Your Selected Item</h3>
-				<div class="card bg-white">
+			<div class="col-md-6"> 
+				<div class="card bg-white" style="width: 125%; margin-left: -25%">
 					<div class="card-body">
 						<table class="table table-striped">
+						
+						<h3 class="text-center text-success">Your Selected Item</h3>
 							<thead>
 								<tr>
+									<th scope="col">Image</th>
 									<th scope="col">Book Name</th>
 									<th scope="col">Author</th>
+									<th scope="col">Quantity</th>
 									<th scope="col">Price</th>
+									<th scope="col">Total</th>
 									<th scope="col">Action</th>
 								</tr>
 							</thead>
@@ -74,13 +104,28 @@
 								List<Cart> cart = dao.getBookByUser(u.getId());
 								Double totalPrice = 0.0;
 								for (Cart c : cart) {
-									totalPrice = c.getTotalPrice();
+									totalPrice += c.getTotalPrice();
 								%>
 
 								<tr>
+									<th scope="row"><img alt="" src="book/<%=c.getImage()%>"
+										style="width: 50px; height: 65px"></th>
 									<th scope="row"><%=c.getBookName()%></th>
 									<td><%=c.getAuthor()%></td>
+
+									<td>
+										<form action="updateQuantity" method="get">
+											<input name="quantity" type="number"
+												value="<%=c.getQuantity()%>"
+												style="width: 50%; text-align: center;"> <input
+												type="hidden" name="bid" value="<%=c.getBid()%>"> <input
+												type="hidden" name="uid" value="<%=c.getUserId()%>"> <input
+												type="hidden" name="cid" value="<%=c.getCid()%>">
+										</form>
+									</td>
+
 									<td><%=c.getPrice()%></td>
+									<td><%=c.getTotalPrice()%></td>
 									<td><a
 										href="remove_book?bid=<%=c.getBid()%>&&uid=<%=c.getUserId()%>&&cid=<%=c.getCid()%>"
 										class="btn btn-sm btn-danger">Remove</a></td>
@@ -94,6 +139,8 @@
 									<td>Total Price</td>
 									<td></td>
 									<td></td>
+									<td></td>
+									<td></td>
 									<td><%=totalPrice%></td>
 								</tr>
 
@@ -105,8 +152,8 @@
 
 
 			<div class="col-md-6">
-				<div class="card">
-					<div class="card-body">
+				<div class="card" style="width: 125%; margin-right: -25%">
+					<div class="card-body ">
 						<h3 class="text-center text-success">Your Details For Order</h3>
 						<form action="order" method="post">
 							<input type="hidden" value="${userobj.id }" name="id">
@@ -185,6 +232,7 @@
 									Shopping</a>
 							</div>
 
+
 						</form>
 					</div>
 				</div>
@@ -192,5 +240,16 @@
 
 		</div>
 	</div>
+
+
+	<script type="text/javascript">
+ 
+function edit_Quantity()() {
+	alert("editQuantity");
+}
+
+
+</script>
 </body>
+
 </html>

@@ -15,13 +15,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta >
 
 <!-- BIEU TUONG TRANG WEB -->
 <link rel="icon" href="img/icon2.png" type="image/png" class="icon">
+<!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <title>Ebook: Index</title>
+   
+  <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/style.css">
+    
 <%@include file="all_component/allCss.jsp"%>
+
 <style type="text/css">
 .back-img {
 	background: url("img/bak.jpg");
@@ -44,17 +52,97 @@
 	%>
 
 	<%@include file="all_component/navbar.jsp"%>
-
-	<div class="container-fluid back-img p-5">
-		<!-- text-success  -->
-		<h2 class="text-center text-orange">EBook Management System</h2>
-	</div>
  
+	<!-- <div class="container-fluid back-img p-5">
+		text-success 
+		<h2 class="text-center text-orange">EBook Management System</h2>
+	</div> -->
+
+
+
+<!-- header section ends -->
+
+<section class="home">
+
+    <div class="slides-container">
+
+        <div class="slide active">
+            <div class="content">
+                <span>fresh and organic</span>
+                <h3>upto 50% off</h3>
+                <a href="#" class="btn">shop now</a>
+            </div>
+            <div class="image">
+                <img src="image/home-img-1.png" alt="">
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content">
+                <span>fresh and organic</span>
+                <h3>upto 50% off</h3>
+                <a href="#" class="btn">shop now</a>
+            </div>
+            <div class="image">
+                <img src="image/home-img-2.png" alt="">
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content">
+                <span>fresh and organic</span>
+                <h3>upto 50% off</h3>
+                <a href="#" class="btn">shop now</a>
+            </div>
+            <div class="image">
+                <img src="image/home-img-3.png" alt="">
+            </div>
+        </div>
+
+    </div>
+
+    <div id="next-slide" class="fas fa-angle-right" onclick="next()"></div>
+    <div id="prev-slide" class="fas fa-angle-left" onclick="prev()"></div>
+
+</section>
+
+<section class="banner-container">
+
+    <div class="banner">
+        <img src="image/banner-1.jpg" alt="">
+        <div class="content">
+            <span>limited sales</span>
+            <h3>upto 50% off</h3>
+            <a href="#" class="btn">shop now</a>
+        </div>
+    </div>
+
+    <div class="banner">
+        <img src="image/banner-2.jpg" alt="">
+        <div class="content">
+            <span>limited sales</span>
+            <h3>upto 50% off</h3>
+            <a href="#" class="btn">shop now</a>
+        </div>
+    </div>
+
+    <div class="banner">
+        <img src="image/banner-3.jpg" alt="">
+        <div class="content">
+            <span>limited sales</span>
+            <h3>upto 50% off</h3>
+            <a href="#" class="btn">shop now</a>
+        </div>
+    </div>
+
+</section>
 
 
 	<%-- <% Connection conn = DBConnect.getConn();
   out.println (conn );%> --%>
 	<!--  Star Recent Book-->
+
+
 
 
 	<div class="container">
@@ -268,6 +356,55 @@
 
 	<%@include file="all_component/footer.jsp"%>
 
+<script>
+    function formSubmit(){
+        var name = document.getElementById("name").value;
+        var message = document.getElementById("message").value;
+        var dataString = 'name='+ name + '&message=' + message;
+        jQuery.ajax({
+            url: "submit.php",
+            data: dataString,
+            type: "POST",
+            success: function(data){
+                $("#myForm").html(data);
+            },
+            error: function (){}
+        });
+    return true;
+    } 
+    
+
+     
+
+
+    function next(){
+    	
+    	let slides = document.querySelectorAll('.home .slides-container .slide');
+        let index = 0;
+        
+    	console.log ("jjjjjjjjjjjj");
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+    }
+
+    function prev(){
+    	let slides = document.querySelectorAll('.home .slides-container .slide');
+        let index = 0;
+        
+        slides[index].classList.remove('active');
+        index = (index - 1 + slides.length) % slides.length;
+        slides[index].classList.add('active');
+    }
+    
+</script>
+  
+  
+<!-- custom css file link  -->
+<script src="js/script.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/script1.js"></script>
 
 </body>
 </html>

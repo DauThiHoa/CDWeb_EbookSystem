@@ -117,7 +117,9 @@ function showToast(content) {
 
 
 
-	<%@include file="all_component/navbar.jsp"%>
+	<%@include file="all_component/navbar.jsp"%> 
+	<%-- <%@include file="navbar.jsp" %> --%>
+	
 	<div class="container-fluid">
 		<div class="row p-5">
 			<%BookDAOImpl dao = new BookDAOImpl(DBConnect.getConn());

@@ -1,100 +1,135 @@
+<%@page import="com.entity.Cart"%>
+<%@page import="java.util.List"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.DAO.CartDAOImpl"%>
+<%@page import="com.entity.User"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
 <!-- 
 	Trong bai co nhung => Chay bi loi
 	 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isELIgnored="false"%>
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>FOOD WEBSITE</title>
+<!-- BIEU TUONG TRANG WEB -->
+<link rel="icon" href="../img/icon2.png" type="image/png" class="icon">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css"> -->
 
-<div class="container-fluid"
-	style="height: 10px; background-color: #303f9f"></div>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> -->
+
+<!-- font awesome cdn link  -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- custom css file link  -->
+<link rel="stylesheet" href="css/style1.css">
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+
+	<!--  --------------------------------------DO LOI NAY-------------------------------------------->
+	<!--  PHUONG THUC BAT BUOC PHAI DANG NHAP ADMIN MOI VAO DC-->
 
 
 
+	<%-- <c:if test="${empty userobj }">
+		<c:redirect url="login.jsp" />
+	</c:if> --%>
 
-<div class="container-fluid p-3 bg-light">
-	<div class="row">
-		<div class="col-md-3 text-success">
-			<h3>
-				<i class="fas fa-book"></i> Ebooks
-			</h3>
-		</div>
-		<div class="col-md-6">
-			<form class="form-inline my-2 my-lg-0" action="search.jsp" method="post">
-				<input class="form-control mr-sm-2" type="search" name="ch"
-					placeholder="Search" aria-label="Search">
-				<button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-			</form>
-		</div>
+
+	<!-- header section starts  -->
+
+	<header class="header">
+
+		<!--  logo -->
+		<a href="home.jsp" class="logo"> <span><img alt=""
+				style="width: 20%; height: 20%" src="img/icon1.png"></span> EBOOK
+		</a>
+
+		<!--  THANH menu  -->
+		<nav class="navbar">
+			<a href="home.jsp">home</a> <a href="shop.jsp">shop</a> <a
+				href="about.jsp">about</a> <a href="review.jsp">review</a> <a
+				href="blog.jsp">blog</a> <a href="contact.jsp">contact</a>
+		</nav>
+
+
 
 		<c:if test="${not empty userobj }">
-			<div class="col-md-3">
-			
-			<a href="checkout.jsp"><i class="fas fa-cart-plus fa-2x"></i></a>
-			
-				<a href="login.jsp" class="btn btn-success"><i
-					class="fas fa-user-plus"></i>${userobj.name }</a> <a
-					href="logout" class="btn btn-primary text-white"><i
-					class="fas fa-sign-in-alt"></i>Logout</a>
+
+			<!-- CAC ICON SEARCH - LOGIN  -->
+			<div class="icons">
+				<div id="menu-btn" class="fas fa-bars"></div>
+				<div id="search-btn" class="fas fa-search"></div>
+
+				<a href="checkout.jsp">
+					<div id="cart-btn" class="fas fa-shopping-cart"></div>
+				</a> <a href="login.jsp">
+					<div id="login-btn" class="fas fa-user"></div>
+
+
+				</a> <a href="logout">
+					<div id="login-btn" class="fas fa-sign-in-alt"></div>
+				</a> <a href="setting.jsp">
+					<div id="login-btn" class="fas fa-cog"></div>
+				</a>
 			</div>
 		</c:if>
+
 
 		<c:if test="${empty userobj }">
-			<div class="col-md-3">
-				<a href="login.jsp" class="btn btn-success"><i
-					class="fas fa-sign-in-alt"></i>Login</a> <a href="register.jsp"
-					class="btn btn-primary text-white"><i class="fas fa-user-plus"></i>Register</a>
+
+			<!-- CAC ICON SEARCH - LOGIN  -->
+			<div class="icons">
+				<div id="menu-btn" class="fas fa-bars"></div>
+				<div id="search-btn" class="fas fa-search"></div>
+
+				</a> <a href="login.jsp">
+					<div id="login-btn" class="fas fa-user"></div>
+				</a> <a href="register.jsp">
+					<div id="login-btn" class="fas fa-user-plus"></div>
+				</a> <a href="setting.jsp">
+					<div id="login-btn" class="fas fa-cog"></div>
+				</a>
 			</div>
 		</c:if>
 
 
-	</div>
-</div>
-
-
-
-
-
-
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-custom">
-
-	<a class="navbar-brand" href="#"><i class="fa fa-home"></i></a>
-
-
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarSupportedContent"
-		aria-controls="navbarSupportedContent" aria-expanded="false"
-		aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
-
-			<!-- 		  <a class="navbar-brand" href="#"><i class="fa fa-home"></i>Home</a>
- -->
-
-			<li class="nav-item active"><a class="nav-link" href="index.jsp">
-					Home <span class="sr-only">(current)</span>
-			</a></li>
-			<li class="nav-item active"><a class="nav-link"
-				href="all_recent_book.jsp"><i class="fas fa-book-open"></i>Recent
-					Book</a></li>
-			<li class="nav-item active"><a class="nav-link"
-				href="all_new_book.jsp"><i class="fas fa-book"></i>New Book</a></li>
-
-
-
-			<li class="nav-item active"><a class="nav-link disabled"
-				href="all_old_book.jsp"><i class="fas fa-book"></i>Old Book</a></li>
-		</ul>
-		<form class="form-inline my-2 my-lg-0">
-			<a href="setting.jsp" class="btn btn-light my-2 my-sm-0" type="submit">
-				<i class="fas fa-cog"></i>Setting
-			</a>
-			<button class="btn btn-light my-2 my-sm-0 ml-1" type="submit">
-				<i class="fas fa-phone-square-alt"></i>Contact Us
-			</button>
+		<!--  SEARCH -->
+		<form action="search.jsp" method="post" class="search-form">
+			<input type="search" placeholder="Search here..." id="search-box"
+				name="ch" aria-label="Search">
+			<!-- <label for="search-box" class="fas fa-search" id="search" type="submit"></label> -->
+			<button class="btn btn-success my-2 my-sm-0" id="search"
+				type="submit" style="margin-left: -5%">Search</button>
 		</form>
-	</div>
-</nav>
+
+
+
+	</header>
+
+
+
+
+
+	<!-- header section ends -->
+
+	<!-- custom css file link  -->
+	<script src="js/script.js"></script>
+	<script src="js/script1.js"></script>
+
+
+</body>
+</html>

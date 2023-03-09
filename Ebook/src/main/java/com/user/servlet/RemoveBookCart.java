@@ -27,7 +27,7 @@ public class RemoveBookCart extends HttpServlet{
 			int uid = Integer.parseInt(req.getParameter("uid"));
 			int cid = Integer.parseInt(req.getParameter("cid"));
 			
-//			THEM 1 SAN PHAM VAO DANH SACH
+//			XOA SAN PHAM TRONG GIO HANG
 			CartDAOImpl dao = new CartDAOImpl(DBConnect.getConn());
 			boolean f = dao.deleteBook(bid, uid, cid);
 

@@ -12,7 +12,6 @@ public class UserDAOImpl implements UserDAO {
 
 	private Connection conn ;
 	
-	
 	public UserDAOImpl(Connection conn) {
 		super();
 		this.conn = conn;
@@ -60,7 +59,7 @@ public class UserDAOImpl implements UserDAO {
 			ResultSet rs1 = ps1.executeQuery();
 			while (rs1.next()) { 
 				hash = (String) rs1.getString(5);
-				System.out.println("hash : " + hash + " Pass : " + password);
+//				System.out.println("hash : " + hash + " Pass : " + password);
 				valuate = BCrypt.checkpw(password, hash); 
 			}
 			
@@ -165,6 +164,59 @@ public class UserDAOImpl implements UserDAO {
 		    }
             
 		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return f;
+	}
+
+//	THAY DOI MAT KHAU USER
+	@Override
+	public boolean updateChangePass (String email,String password) {
+		
+		// TODO Auto-generated method stub
+		boolean f = false ;
+		try {
+			
+//			THEM DU LIEU VAO CO SO DU LIEU
+			String sql = "update user set password = ? where email =?";
+		    PreparedStatement ps = conn.prepareStatement(sql);
+		    ps.setString(1, password);
+		    ps.setString(2, email); 
+
+//		    UPDATE BANG USER
+            int i = ps.executeUpdate();
+            if ( i == 1 ) {
+            	f= true ;
+            }
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return f;
+	}
+
+	
+//	KIEM TRA XEM MAT KHAU NHAP VAO CO DUNG HAY KHONG
+	@Override
+	public boolean checkPasswordEmail(String email, String password) {
+		// TODO Auto-generated method stub
+		boolean f = false ;
+		try {
+			 
+				String hash = null;
+				
+				String sql1 = "select * from user where email = ?";
+				PreparedStatement ps1 = conn.prepareStatement(sql1);
+				ps1.setString(1, email);
+				ResultSet rs1 = ps1.executeQuery();
+				while (rs1.next()) { 
+					hash = (String) rs1.getString(5);
+//					System.out.println("hash : " + hash + " Pass : " + password);
+					f = BCrypt.checkpw(password, hash); 
+				}
+				 
+		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
