@@ -75,6 +75,12 @@
 									id="inputState" name="categories" class="form-control">
 									<option selected>-- select --</option>
 									<option value="New">New Book</option>
+									
+									<option value="Foreign language books">Foreign language books</option>
+									<option value="Literature">Literature</option>
+									<option value="Life skills book">Life skills book</option>
+									<option value="Book of art - architecture">Book of art - architecture</option>
+									<option value="Medicine & sport books">Medicine & sport books</option>
 								</select>
 							</div>
 

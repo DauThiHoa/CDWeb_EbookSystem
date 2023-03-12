@@ -47,4 +47,28 @@ public interface BookDAO {
 
 //  TIM KIEM SAN PHAM THEO TEN 
 	public List<BookDtls> getBookBySearch (String ch);
+	
+	
+//	PRODUCT LIST getAllBooksDescPrice - getAllBooksAscPrice - getAllBooksDescName - getAllBooksAscName
+//	SAP XEP DANH SACH THEO GIA GIAM DAN 
+	public List<BookDtls> getAllBooksDescPrice ();
+//	SAP XEP DANH SACH THEO GIA TANG DAN 
+	public List<BookDtls> getAllBooksAscPrice ();
+//	SAP XEP DANH SACH THEO TEN GIAM DAN 
+	public List<BookDtls> getAllBooksDescName ();
+//	SAP XEP DANH SACH THEO TEN TANG DAN 
+	public List<BookDtls> getAllBooksAscName ();
+
+
+// TAO DANH SACH PHAN TRANG //Pages number 1->4 or 5->8 ..
+	public List<BookDtls> getAllBooksAscName(int first, int last);
+	public List<BookDtls> getAllBooksDescName(int first, int last);
+	public List<BookDtls> getAllBooksAscPrice(int first, int last);
+	public List<BookDtls> getAllBooksDescPrice(int first, int last);
+	
+//Total product number
+	public int getCount() ;
+	
+	// LOC SACH THEO THE LOAI   //Pages number 1->4 or 5->8 ..
+	public List<BookDtls> getAllBooksfilterCate(String category ,int first, int last);
 }

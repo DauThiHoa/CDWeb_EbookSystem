@@ -19,10 +19,10 @@
 
 <header class="header">
 
-    <a href="home.jsp" class="logo"> <i class="fas fa-shopping-basket"></i> groco </a>
+    <a href="index.jsp" class="logo"> <i class="fas fa-shopping-basket"></i> groco </a>
 
     <nav class="navbar">
-        <a href="home.jsp">home</a>
+        <a href="index.jsp">home</a>
         <a href="shop.jsp">shop</a>
         <a href="about.jsp">about</a>
         <a href="review.jsp">review</a>
@@ -96,7 +96,7 @@
 
 <div class="heading">
     <h1>contact us</h1>
-    <p> <a href="home.jsp">home >></a> contact </p>
+    <p> <a href="index.jsp">home >></a> contact </p>
 </div>
 
 <section class="contact">
@@ -172,7 +172,7 @@
 
         <div class="box">
             <h3>quick links</h3>
-            <a href="home.jsp"> <i class="fas fa-arrow-right"></i> home</a>
+            <a href="index.jsp"> <i class="fas fa-arrow-right"></i> home</a>
             <a href="shop.jsp"> <i class="fas fa-arrow-right"></i> shop</a>
             <a href="about.jsp"> <i class="fas fa-arrow-right"></i> about</a>
             <a href="review.jsp"> <i class="fas fa-arrow-right"></i> review</a>

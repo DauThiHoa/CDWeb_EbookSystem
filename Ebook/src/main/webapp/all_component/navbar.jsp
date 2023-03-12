@@ -54,15 +54,31 @@
 	<header class="header">
 
 		<!--  logo -->
-		<a href="home.jsp" class="logo"> <span><img alt=""
+		<a href="index.jsp" class="logo"> <span><img alt=""
 				style="width: 20%; height: 20%" src="img/icon1.png"></span> EBOOK
 		</a>
 
 		<!--  THANH menu  -->
 		<nav class="navbar">
-			<a href="home.jsp">home</a> <a href="shop.jsp">shop</a> <a
-				href="about.jsp">about</a> <a href="review.jsp">review</a> <a
-				href="blog.jsp">blog</a> <a href="contact.jsp">contact</a>
+			<a href="index.jsp">home</a> 
+			<a href="shop.jsp">shop</a> 
+
+			<!-- <div class="btn-group">
+				<button type="button" class="btn btn-secondary dropdown-toggle"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					shop</button>
+				<div class="dropdown-menu dropdown-menu-right">
+					<button class="dropdown-item" type="button">Action</button>
+					<button class="dropdown-item" type="button">Another action</button>
+					<button class="dropdown-item" type="button">Something else
+						here</button>
+				</div>
+			</div> -->
+
+			<a href="about.jsp">about</a> 
+			<a href="review.jsp">review</a>
+			<a href="blog.jsp">blog</a> 
+			<a href="contact.jsp">contact</a> 
 		</nav>
 
 
@@ -86,6 +102,7 @@
 					<div id="login-btn" class="fas fa-cog"></div>
 				</a>
 			</div>
+			
 		</c:if>
 
 

@@ -12,12 +12,13 @@
   -webkit-transition: .2s linear;
   transition: .2s linear;
 }
-
+ 
 html {
   font-size: 62.5%;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
 
 section {
   padding: 3rem 9%;
@@ -146,7 +147,7 @@ section {
 }
 
 .header .icons div:hover {
-  color:#27ae60;
+  color:rgb(255, 255, 255);
 }
 
 .header .search-form {
@@ -1114,7 +1115,9 @@ section {
   
   
   /*  NEW FILE */
-  
+  *:hover {
+	 text-decoration: none;
+}
   
 }
 
@@ -1128,5 +1131,8 @@ section {
   .contact .row form .inputBox input {
     width: 100%;
   }
+  *:hover {
+	 text-decoration: none;
+}
 }
 /*# sourceMappingURL=style.css.map */

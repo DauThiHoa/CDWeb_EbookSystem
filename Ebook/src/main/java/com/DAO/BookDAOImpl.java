@@ -178,7 +178,7 @@ public class BookDAOImpl implements BookDAO {
 			ps.setString(2, "Active");
 			ResultSet rs = ps.executeQuery();
 			int i = 1 ;
-			while (rs.next() && i <= 4 ) {
+			while (rs.next() && i <= 8 ) {
 				b = new BookDtls();
 				b.setBookId(rs.getInt(1));
 				b.setBookName(rs.getString(2));
@@ -215,7 +215,7 @@ public class BookDAOImpl implements BookDAO {
 //			ps.setString(2, "Active");
 			ResultSet rs = ps.executeQuery();
 			int i = 1 ;
-			while (rs.next() && i <= 4 ) {
+			while (rs.next() && i <= 8 ) {
 				b = new BookDtls();
 				b.setBookId(rs.getInt(1));
 				b.setBookName(rs.getString(2));
@@ -250,7 +250,7 @@ public class BookDAOImpl implements BookDAO {
 			ps.setString(2, "Active");
 			ResultSet rs = ps.executeQuery();
 			int i = 1 ;
-			while (rs.next() && i <= 4 ) {
+			while (rs.next() && i <= 8 ) {
 				b = new BookDtls();
 				b.setBookId(rs.getInt(1));
 				b.setBookName(rs.getString(2));
@@ -483,4 +483,355 @@ public class BookDAOImpl implements BookDAO {
 		}
 		return list;
 	}
+
+	@Override
+	public List<BookDtls> getAllBooksDescPrice() {
+		// TODO Auto-generated method stub
+				List<BookDtls> list = new ArrayList<BookDtls>();
+				BookDtls b = null ;
+				
+				try {
+					
+					String sql = "select * from book_dtls order by price desc";
+					PreparedStatement ps = conn.prepareStatement(sql);
+					
+					ResultSet rs = ps.executeQuery();
+					while( rs.next() ) 
+					{
+						b = new BookDtls();
+						b.setBookId(rs.getInt(1));
+						b.setBookName(rs.getString(2));
+						b.setAuthor(rs.getString(3));
+						b.setPrice(rs.getDouble(4));
+						b.setBookCategory(rs.getString(5));
+						b.setStatus(rs.getString(6));
+						b.setPhotoName(rs.getString(7));
+						b.setEmail(rs.getString(8));
+						list.add(b);
+						
+						
+					}
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
+				return list;
+	}
+
+	@Override
+	public List<BookDtls> getAllBooksAscPrice() {
+		// TODO Auto-generated method stub
+		List<BookDtls> list = new ArrayList<BookDtls>();
+		BookDtls b = null ;
+		
+		try {
+			
+			String sql = "select * from book_dtls order by price asc";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ResultSet rs = ps.executeQuery();
+			while( rs.next() ) 
+			{
+				b = new BookDtls();
+				b.setBookId(rs.getInt(1));
+				b.setBookName(rs.getString(2));
+				b.setAuthor(rs.getString(3));
+				b.setPrice(rs.getDouble(4));
+				b.setBookCategory(rs.getString(5));
+				b.setStatus(rs.getString(6));
+				b.setPhotoName(rs.getString(7));
+				b.setEmail(rs.getString(8));
+				list.add(b);
+				
+				
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public List<BookDtls> getAllBooksDescName() {
+		// TODO Auto-generated method stub
+		List<BookDtls> list = new ArrayList<BookDtls>();
+		BookDtls b = null ;
+		
+		try {
+			
+			String sql = "select * from book_dtls order by bookname desc";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ResultSet rs = ps.executeQuery();
+			while( rs.next() ) 
+			{
+				b = new BookDtls();
+				b.setBookId(rs.getInt(1));
+				b.setBookName(rs.getString(2));
+				b.setAuthor(rs.getString(3));
+				b.setPrice(rs.getDouble(4));
+				b.setBookCategory(rs.getString(5));
+				b.setStatus(rs.getString(6));
+				b.setPhotoName(rs.getString(7));
+				b.setEmail(rs.getString(8));
+				list.add(b);
+				
+				
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public List<BookDtls> getAllBooksAscName() {
+		// TODO Auto-generated method stub
+		List<BookDtls> list = new ArrayList<BookDtls>();
+		BookDtls b = null ;
+		
+		try {
+			
+			String sql = "select * from book_dtls order by bookname asc";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ResultSet rs = ps.executeQuery();
+			while( rs.next() ) 
+			{
+				b = new BookDtls();
+				b.setBookId(rs.getInt(1));
+				b.setBookName(rs.getString(2));
+				b.setAuthor(rs.getString(3));
+				b.setPrice(rs.getDouble(4));
+				b.setBookCategory(rs.getString(5));
+				b.setStatus(rs.getString(6));
+				b.setPhotoName(rs.getString(7));
+				b.setEmail(rs.getString(8));
+				list.add(b);
+				
+				
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	
+	//Pages number 1->4 or 5->8 ..
+	@Override
+	public List<BookDtls> getAllBooksAscName(int first , int last) {
+		// TODO Auto-generated method stub
+		List<BookDtls> list = new ArrayList<BookDtls>();
+		BookDtls b = null ;
+		
+		try {
+			
+			String sql = "select * from book_dtls order by bookname asc limit ?,?";
+//			Limit ?,?
+//			String sql = "select * from book_dtls limit ?,? order by bookname asc ";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, first);
+			ps.setInt(2, last);
+			
+			ResultSet rs = ps.executeQuery();
+			while( rs.next() ) 
+			{
+				b = new BookDtls();
+				b.setBookId(rs.getInt(1));
+				b.setBookName(rs.getString(2));
+				b.setAuthor(rs.getString(3));
+				b.setPrice(rs.getDouble(4));
+				b.setBookCategory(rs.getString(5));
+				b.setStatus(rs.getString(6));
+				b.setPhotoName(rs.getString(7));
+				b.setEmail(rs.getString(8));
+				list.add(b);
+				
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return list;
+	}
+ 
+
+	@Override
+	public List<BookDtls> getAllBooksDescName(int first, int last) {
+		// TODO Auto-generated method stub
+				List<BookDtls> list = new ArrayList<BookDtls>();
+				BookDtls b = null ;
+				
+				try {
+					
+					String sql = "select * from book_dtls order by bookname desc limit ?,?";
+//					Limit ?,?
+//					String sql = "select * from book_dtls limit ?,? order by bookname asc ";
+					
+					PreparedStatement ps = conn.prepareStatement(sql);
+					ps.setInt(1, first);
+					ps.setInt(2, last);
+					
+					ResultSet rs = ps.executeQuery();
+					while( rs.next() ) 
+					{
+						b = new BookDtls();
+						b.setBookId(rs.getInt(1));
+						b.setBookName(rs.getString(2));
+						b.setAuthor(rs.getString(3));
+						b.setPrice(rs.getDouble(4));
+						b.setBookCategory(rs.getString(5));
+						b.setStatus(rs.getString(6));
+						b.setPhotoName(rs.getString(7));
+						b.setEmail(rs.getString(8));
+						list.add(b);
+						
+					}
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
+				return list;
+	}
+
+	@Override
+	public List<BookDtls> getAllBooksAscPrice(int first, int last) {
+		// TODO Auto-generated method stub
+				List<BookDtls> list = new ArrayList<BookDtls>();
+				BookDtls b = null ;
+				
+				try {
+					
+					String sql = "select * from book_dtls order by price asc limit ?,?";
+//					Limit ?,?
+//					String sql = "select * from book_dtls limit ?,? order by bookname asc ";
+					
+					PreparedStatement ps = conn.prepareStatement(sql);
+					ps.setInt(1, first);
+					ps.setInt(2, last);
+					
+					ResultSet rs = ps.executeQuery();
+					while( rs.next() ) 
+					{
+						b = new BookDtls();
+						b.setBookId(rs.getInt(1));
+						b.setBookName(rs.getString(2));
+						b.setAuthor(rs.getString(3));
+						b.setPrice(rs.getDouble(4));
+						b.setBookCategory(rs.getString(5));
+						b.setStatus(rs.getString(6));
+						b.setPhotoName(rs.getString(7));
+						b.setEmail(rs.getString(8));
+						list.add(b);
+						
+					}
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
+				return list;
+	}
+
+	@Override
+	public List<BookDtls> getAllBooksDescPrice(int first, int last) {
+		// TODO Auto-generated method stub
+				List<BookDtls> list = new ArrayList<BookDtls>();
+				BookDtls b = null ;
+				
+				try {
+					
+					String sql = "select * from book_dtls order by price desc limit ?,?";
+//					Limit ?,?
+//					String sql = "select * from book_dtls limit ?,? order by bookname asc ";
+					
+					PreparedStatement ps = conn.prepareStatement(sql);
+					ps.setInt(1, first);
+					ps.setInt(2, last);
+					
+					ResultSet rs = ps.executeQuery();
+					while( rs.next() ) 
+					{
+						b = new BookDtls();
+						b.setBookId(rs.getInt(1));
+						b.setBookName(rs.getString(2));
+						b.setAuthor(rs.getString(3));
+						b.setPrice(rs.getDouble(4));
+						b.setBookCategory(rs.getString(5));
+						b.setStatus(rs.getString(6));
+						b.setPhotoName(rs.getString(7));
+						b.setEmail(rs.getString(8));
+						list.add(b);
+						
+					}
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
+				return list;
+	}
+	
+
+	//Total product number
+	@Override
+	public int getCount() {
+//	    Connection conn = DBUtil.getConnection();
+//	    ArrayList<Shop> list = new ArrayList();
+//	    String sql = "SELECT count(id) FROM product.shop";
+	    int count = 0;
+	    try {
+	    	String sql = "SELECT count(bookId) FROM book_dtls";
+	        PreparedStatement stmt = conn.prepareStatement(sql);
+	        ResultSet rs = stmt.executeQuery();
+	        while (rs.next()) {
+//	        	count ++;
+	            count = rs.getInt(1);
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return count;
+	}
+
+	@Override
+	public List<BookDtls> getAllBooksfilterCate(String category , int first, int last) {
+		// TODO Auto-generated method stub
+				List<BookDtls> list = new ArrayList<BookDtls>();
+				BookDtls b = null ;
+				
+				try {
+					String sql = "select * from book_dtls where bookCategory like ? limit ?,?  ";
+					PreparedStatement ps = conn.prepareStatement(sql);
+					ps.setString(1, "%" + category + "%");
+					ps.setInt(2, first);
+					ps.setInt(3, last); 
+					
+					ResultSet rs = ps.executeQuery();
+//				 
+					while (rs.next() ) {
+						b = new BookDtls();
+						b.setBookId(rs.getInt(1));
+						b.setBookName(rs.getString(2));
+						b.setAuthor(rs.getString(3));
+						b.setPrice(rs.getDouble(4));
+						b.setBookCategory(rs.getString(5));
+						b.setStatus(rs.getString(6));
+						b.setPhotoName(rs.getString(7));
+						b.setEmail(rs.getString(8));
+						list.add(b);
+//					 
+					}
+//					System.out.println(list);
+					
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
+				return list;
+	}
+	
 }

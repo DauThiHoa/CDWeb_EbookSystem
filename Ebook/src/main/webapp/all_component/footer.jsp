@@ -6,7 +6,7 @@
 
         <div class="box">
             <h3>quick links</h3>
-            <a href="home.jsp"> <i class="fas fa-arrow-right"></i> home</a>
+            <a href="index.jsp"> <i class="fas fa-arrow-right"></i> home</a>
             <a href="shop.jsp"> <i class="fas fa-arrow-right"></i> shop</a>
             <a href="about.jsp"> <i class="fas fa-arrow-right"></i> about</a>
             <a href="review.jsp"> <i class="fas fa-arrow-right"></i> review</a>
@@ -36,7 +36,7 @@
             <h3>newsletter</h3>
             <p>subscribe for latest updates</p>
             <form action="">
-                <input type="email" placeholder="enter your email">
+                <input type="email" placeholder="Enter your email">
                 <input type="submit" value="subscribe" class="btn">
             </form>
             <img src="image/payment.png" class="payment" alt="">
