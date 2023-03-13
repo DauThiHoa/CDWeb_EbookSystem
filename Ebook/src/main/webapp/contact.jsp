@@ -1,11 +1,20 @@
+<%@page import="com.entity.User"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!-- 
+	Trong bai co nhung => Chay bi loi
+	 -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
+
 <!DOCTYPE jsp>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contact</title>
-<link rel="icon" href="../img/icon2.png" type="image/png" class="icon">
+    <title>Contact</title>
+<link rel="icon" href="img/icon2.png" type="image/png" class="icon">
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -14,91 +23,29 @@
 
 </head>
 <body>
-    
-<!-- header section starts  -->
+      
+    <%
+	User u = (User) session.getAttribute("userobj");
+	%>
 
-<header class="header">
+	<%@include file="all_component/navbar.jsp"%>
 
-    <a href="index.jsp" class="logo"> <i class="fas fa-shopping-basket"></i> groco </a>
-
-    <nav class="navbar">
-        <a href="index.jsp">home</a>
-        <a href="shop.jsp">shop</a>
-        <a href="about.jsp">about</a>
-        <a href="review.jsp">review</a>
-        <a href="blog.jsp">blog</a>
-        <a href="contact.jsp">contact</a>
-    </nav>
-
-    <div class="icons">
-        <div id="menu-btn" class="fas fa-bars"></div>
-        <div id="search-btn" class="fas fa-search"></div>
-        <div id="cart-btn" class="fas fa-shopping-cart"></div>
-        <div id="login-btn" class="fas fa-user"></div>
-    </div>
-
-    <form action="" class="search-form">
-        <input type="search" placeholder="search here..." id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
-    </form>
-
-    <div class="shopping-cart">
-        <div class="box">
-            <i class="fas fa-times"></i>
-            <img src="image/cart-1.jpg" alt="">
-            <div class="content">
-                <h3>organic food</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">$18.99</span>
-            </div>
-        </div>
-        <div class="box">
-            <i class="fas fa-times"></i>
-            <img src="image/cart-2.jpg" alt="">
-            <div class="content">
-                <h3>organic food</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">$18.99</span>
-            </div>
-        </div>
-        <div class="box">
-            <i class="fas fa-times"></i>
-            <img src="image/cart-3.jpg" alt="">
-            <div class="content">
-                <h3>organic food</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">$18.99</span>
-            </div>
-        </div>
-        <h3 class="total"> total : <span>56.97</span> </h3>
-        <a href="#" class="btn">checkout cart</a>
-    </div>
-
-    <form action="" class="login-form">
-        <h3>login form</h3>
-        <input type="email" placeholder="enter your email" class="box">
-        <input type="password" placeholder="enter your password" class="box">
-        <div class="remember">
-            <input type="checkbox" name="" id="remember-me">
-            <label for="remember-me">remember me</label>
-        </div>
-        <input type="submit" value="login now" class="btn">
-        <p>forget password? <a href="#">click here</a></p>
-        <p>don't have an account? <a href="#">create one</a></p>
-    </form>
-
-</header>
-
-<!-- header section ends -->
 
 <div class="heading">
-    <h1>contact us</h1>
+    <h1>Contact us</h1>
     <p> <a href="index.jsp">home >></a> contact </p>
 </div>
 
+	            <c:if test="${not empty failedMsg }">
+					<h5 class="text-center text-danger">${failedMsg }</h5>
+					<c:remove var="failedMsg" scope="session" />
+				</c:if>
+
+				<c:if test="${not empty succMsg }">
+					<h5 class="text-center text-success">${succMsg }</h5>
+					<c:remove var="succMsg" scope="session" />
+				</c:if>
+				
 <section class="contact">
 
     <div class="icons-container">
@@ -115,117 +62,63 @@
 
         <div class="icons">
             <img src="image1/icon-3.png" alt="">
-            <h3>mumbai, india - 400104</h3>
+            <h3>Ho Chi Minh City</h3>
         </div>
 
     </div>
 
     <div class="row">
 
-        <form action="">
-            <h3>get in touch</h3>
+        <form action="contact" method="post">
+            <h3>Get in touch</h3>
             <div class="inputBox">
-                <input type="text" placeholder="enter your name" class="box">
-                <input type="email" placeholder="enter your email" class="box">
+                            <%
+							if (u == null) {
+							%>
+							 <input type="text" name="name" placeholder="Enter your name" class="box" required >
+                             <input type="email" name="email" placeholder="Enter your email" class="box" required>
+							
+							<%
+							} else {
+							%>
+							<input type="text" name="name" placeholder="Enter your name" class="box" value="<%=u.getName()%>">
+                             <input type="email" name="email" placeholder="Enter your email" class="box" value="<%=u.getEmail()%>">
+							<%
+							}
+							%>
             </div>
             <div class="inputBox">
-                <input type="number" placeholder="enter your number" class="box">
-                <input type="text" placeholder="enter your subject" class="box">
+           
+                            <%
+							if (u == null) {
+							%>
+							 <input type="number" name="number" placeholder="Enter your number" class="box" required>
+							 <%
+							} else {
+							%>
+							<input type="number" name="number" placeholder="Enter your number" class="box" value="<%=u.getPhno()%>">
+							<%
+							}
+							%>
+                <input type="text" name="subject" placeholder="Enter your subject" required class="box">
             </div>
-            <textarea placeholder="your message" cols="30" rows="10"></textarea>
-            <input type="submit" value="send message" class="btn">
+            <textarea name="message"  placeholder="Your message" cols="30" rows="10" required></textarea>
+            <button type="submit" value="Send message" class="btn">Send message</button>
         </form>
 
-        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30153.788252261566!2d72.82321484621745!3d19.141690214227783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63aceef0c69%3A0x2aa80cf2287dfa3b!2sJogeshwari%20West%2C%20Mumbai%2C%20Maharashtra%20400047!5e0!3m2!1sen!2sin!4v1633968347413!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+        <iframe class="map" 
+        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3919.6222423427866!2d106.65440106462233!3d10.763568992330226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4bqnbmcgNCwgdMOyYSBuaMOgIEZsZW1pbmd0b24sIHPhu5EgMTgyLCDEkcaw4budbmcgTMOqIMSQ4bqhaSBIw6BuaCwgcGjGsOG7nW5nIDE1LCBxdeG6rW4gMTEsIFRwLiBI4buTIENow60gTWluaA!5e0!3m2!1svi!2s!4v1639496942948!5m2!1svi!2s" allowfullscreen="" loading="lazy"></iframe>
 
     </div>
 
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 <!-- footer section starts  -->
 
-<section class="footer">
-
-    <div class="box-container">
-
-        <div class="box">
-            <h3>quick links</h3>
-            <a href="index.jsp"> <i class="fas fa-arrow-right"></i> home</a>
-            <a href="shop.jsp"> <i class="fas fa-arrow-right"></i> shop</a>
-            <a href="about.jsp"> <i class="fas fa-arrow-right"></i> about</a>
-            <a href="review.jsp"> <i class="fas fa-arrow-right"></i> review</a>
-            <a href="blog.jsp"> <i class="fas fa-arrow-right"></i> blog</a>
-            <a href="contact.jsp"> <i class="fas fa-arrow-right"></i> contact</a>
-        </div>
-
-        <div class="box">
-            <h3>extra links</h3>
-            <a href="#"> <i class="fas fa-arrow-right"></i> my order </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> my favorite </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> my wishlist </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> my account </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> terms or use </a>
-        </div>
-
-        <div class="box">
-            <h3>follow us</h3>
-            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
-            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
-            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
-            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
-            <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
-        </div>
-
-        <div class="box">
-            <h3>newsletter</h3>
-            <p>subscribe for latest updates</p>
-            <form action="">
-                <input type="email" placeholder="enter your email">
-                <input type="submit" value="subscribe" class="btn">
-            </form>
-            <img src="image/payment.png" class="payment" alt="">
-        </div>
-
-    </div>
-
-</section>
-
-<section class="credit">created by mr. web designer | all rights reserved!</section>
-
+	<%@include file="all_component/footer.jsp"%>
 <!-- footer section ends -->
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!-- custom css file link  -->

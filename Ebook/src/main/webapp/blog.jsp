@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>blogs</title>
-<link rel="icon" href="../img/icon2.png" type="image/png" class="icon">
+    <!-- BIEU TUONG TRANG WEB -->
+<link rel="icon" href="img/icon2.png" type="image/png" class="icon">
+ 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -14,85 +16,13 @@
 
 </head>
 <body>
-    
-<!-- header section starts  -->
 
-<header class="header">
+    <%
+	User u = (User) session.getAttribute("userobj");
+	%>
 
-    <a href="index.jsp" class="logo"> <i class="fas fa-shopping-basket"></i> groco </a>
+	<%@include file="all_component/navbar.jsp"%>
 
-    <nav class="navbar">
-        <a href="index.jsp">home</a>
-        <a href="shop.jsp">shop</a>
-        <a href="about.jsp">about</a>
-        <a href="review.jsp">review</a>
-        <a href="blog.jsp">blog</a>
-        <a href="contact.jsp">contact</a>
-    </nav>
-
-    <div class="icons">
-        <div id="menu-btn" class="fas fa-bars"></div>
-        <div id="search-btn" class="fas fa-search"></div>
-        <div id="cart-btn" class="fas fa-shopping-cart"></div>
-        <div id="login-btn" class="fas fa-user"></div>
-    </div>
-
-    <form action="" class="search-form">
-        <input type="search" placeholder="search here..." id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
-    </form>
-
-    <div class="shopping-cart">
-        <div class="box">
-            <i class="fas fa-times"></i>
-            <img src="image/cart-1.jpg" alt="">
-            <div class="content">
-                <h3>organic food</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">$18.99</span>
-            </div>
-        </div>
-        <div class="box">
-            <i class="fas fa-times"></i>
-            <img src="image/cart-2.jpg" alt="">
-            <div class="content">
-                <h3>organic food</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">$18.99</span>
-            </div>
-        </div>
-        <div class="box">
-            <i class="fas fa-times"></i>
-            <img src="image/cart-3.jpg" alt="">
-            <div class="content">
-                <h3>organic food</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">$18.99</span>
-            </div>
-        </div>
-        <h3 class="total"> total : <span>56.97</span> </h3>
-        <a href="#" class="btn">checkout cart</a>
-    </div>
-
-    <form action="" class="login-form">
-        <h3>login form</h3>
-        <input type="email" placeholder="enter your email" class="box">
-        <input type="password" placeholder="enter your password" class="box">
-        <div class="remember">
-            <input type="checkbox" name="" id="remember-me">
-            <label for="remember-me">remember me</label>
-        </div>
-        <input type="submit" value="login now" class="btn">
-        <p>forget password? <a href="#">click here</a></p>
-        <p>don't have an account? <a href="#">create one</a></p>
-    </form>
-
-</header>
-
-<!-- header section ends -->
 
 <div class="heading">
     <h1>our blogs</h1>
@@ -105,181 +35,123 @@
 
     <div class="box-container">
 
-        <div class="box">
+         <div class="box">
             <div class="image">
-                <img src="image/blog-1.jpg" alt="">
+                <h3> <i class="fas fa-calendar"></i>06/05/2020</h3>
+                <img src="image1/blog-1.png" alt="">
             </div>
             <div class="content">
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2021 </a>
-                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                <div class="tags">
+                    <a href="#"> <i class="fas fa-tag"></i> Book / </a>
+                    <a href="#"> <i class="fas fa-tag"></i> News / </a>
+                    <a href="#"> <i class="fas fa-tag"></i> Event  </a>
                 </div>
-                <h3>blogs title goes here</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, dolor!</p>
-                <a href="#" class="btn">read more</a>
+                <h3>How to distinguish real and fake books accurately?</h3>
+                <p>So that readers, parents, students and teachers...<br> do not buy fake reference books, pirated books, etc......</p>
+                <a href="about.jsp" class="btn">Read more</a>
+            </div>
+        </div>
+
+
+        <div class="box">
+            <div class="image">
+                <h3> <i class="fas fa-calendar"></i> 26/05/2020 </h3>
+                <img src="image1/blog-2.png" alt="">
+            </div>
+            <div class="content">
+                <div class="tags">
+                    <a href="#"> <i class="fas fa-tag"></i>  Book / </a> 
+                    <a href="#"> <i class="fas fa-tag"></i> News / </a>
+                    <a href="#"> <i class="fas fa-tag"></i> Event  </a>
+                </div>
+                <h3>How to use Edu Book discount code</h3>
+                <p>Once you get the code, of course you have to know how to use it. Basically, EduBook allows you to use the same</p>
+                <a href="about.jsp" class="btn">Read more</a>
             </div>
         </div>
 
         <div class="box">
             <div class="image">
-                <img src="image/blog-2.jpg" alt="">
+                <h3> <i class="fas fa-calendar"></i> 22/05/2020 </h3>
+                <img src="image1/blog-3.png" alt="">
             </div>
             <div class="content">
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2021 </a>
-                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                <div class="tags">
+                    <a href="#"> <i class="fas fa-tag"></i> Book / </a>
+                    <a href="#"> <i class="fas fa-tag"></i> News / </a>
+                    <a href="#"> <i class="fas fa-tag"></i> Event  </a>
                 </div>
-                <h3>blogs title goes here</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, dolor!</p>
-                <a href="#" class="btn">read more</a>
+                <h3>Instructions for returning books, refunding Edu Book</h3>
+                <p>Purchased on Edu Book but the product you received is not the same as the picture, the product is defective. You think you've been tricked,...</p>
+                <a href="about.jsp" class="btn">Read more</a>
             </div>
         </div>
 
-        <div class="box">
+       <div class="box">
             <div class="image">
-                <img src="image/blog-3.jpg" alt="">
+                <h3> <i class="fas fa-calendar"></i> 28/05/2020 </h3>
+                <img src="image1/blog-4.png" alt="">
             </div>
             <div class="content">
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2021 </a>
-                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                <div class="tags">
+                    <a href="#"> <i class="fas fa-tag"></i> Book / </a>
+                    <a href="#"> <i class="fas fa-tag"></i> News / </a>
+                    <a href="#"> <i class="fas fa-tag"></i> Event  </a>
                 </div>
-                <h3>blogs title goes here</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, dolor!</p>
-                <a href="#" class="btn">read more</a>
+                <h3>Tips for hunting discount voucher codes at EBook</h3>
+                <p>If you are facing problems with hunting, retrieving, use EduBook voucher codes. Rest assured, this article is for you! In this article, I will share with you tips and experiences to help you hunt as many EduBook discount codes as possible.....</p>
+                <a href="about.jsp" class="btn">Read more</a>
             </div>
         </div>
 
-        <div class="box">
+
+   <div class="box">
             <div class="image">
-                <img src="image/blog-4.jpg" alt="">
+                <h3> <i class="fas fa-calendar"></i> 29/05/2020 </h3>
+                <img src="image1/blog-5.jpg" alt="">
             </div>
             <div class="content">
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2021 </a>
-                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                <div class="tags">
+                    <a href="#"> <i class="fas fa-tag"></i> Book / </a>
+                    <a href="#"> <i class="fas fa-tag"></i> News / </a>
+                    <a href="#"> <i class="fas fa-tag"></i> Event  </a>
                 </div>
-                <h3>blogs title goes here</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, dolor!</p>
-                <a href="#" class="btn">read more</a>
+                <h3>Program to exchange old books for trees</h3>
+                <p>The project "Exchange old books - Get green trees" received a great response from everyone. Everyone hurry up to participate in the program "Green Living Festival 2021" and visit booth D6 (Environmental Safety Incident Response Center) to exchange knowledge and get their own potted plants. green is so cute...</p>
+                <a href="about.jsp" class="btn">Read more</a>
+            </div>
+        </div>
+ <div class="box">
+            <div class="image">
+                <h3> <i class="fas fa-calendar"></i> 30/05/2020 </h3>
+                <img src="image1/blog-6.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="tags">
+                    <a href="#"> <i class="fas fa-tag"></i> Book / </a>
+                    <a href="#"> <i class="fas fa-tag"></i> News / </a>
+                    <a href="#"> <i class="fas fa-tag"></i> Event  </a>
+                </div>
+                <h3>Collect old books, give new joy to poor children</h3>
+                <p>Today, sitting and stacking books that I have just received from Dinh Thien Ly school, they have donated and supported children in remote areas, feeling very happy. Then suddenly I remembered a lot of things. When I was young, my family couldn't afford to read anything. But my place is in a remote area, so I lacked even more...</p>
+                <a href="about.jsp" class="btn">Read more</a>
             </div>
         </div>
 
-        <div class="box">
-            <div class="image">
-                <img src="image/blog-5.jpg" alt="">
-            </div>
-            <div class="content">
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2021 </a>
-                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
-                </div>
-                <h3>blogs title goes here</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, dolor!</p>
-                <a href="#" class="btn">read more</a>
-            </div>
-        </div>
 
-        <div class="box">
-            <div class="image">
-                <img src="image/blog-6.jpg" alt="">
-            </div>
-            <div class="content">
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2021 </a>
-                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
-                </div>
-                <h3>blogs title goes here</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, dolor!</p>
-                <a href="#" class="btn">read more</a>
-            </div>
-        </div>
+
+
 
     </div>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 <!-- footer section starts  -->
 
-<section class="footer">
-
-    <div class="box-container">
-
-        <div class="box">
-            <h3>quick links</h3>
-            <a href="index.jsp"> <i class="fas fa-arrow-right"></i> home</a>
-            <a href="shop.jsp"> <i class="fas fa-arrow-right"></i> shop</a>
-            <a href="about.jsp"> <i class="fas fa-arrow-right"></i> about</a>
-            <a href="review.jsp"> <i class="fas fa-arrow-right"></i> review</a>
-            <a href="blog.jsp"> <i class="fas fa-arrow-right"></i> blog</a>
-            <a href="contact.jsp"> <i class="fas fa-arrow-right"></i> contact</a>
-        </div>
-
-        <div class="box">
-            <h3>extra links</h3>
-            <a href="#"> <i class="fas fa-arrow-right"></i> my order </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> my favorite </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> my wishlist </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> my account </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> terms or use </a>
-        </div>
-
-        <div class="box">
-            <h3>follow us</h3>
-            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
-            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
-            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
-            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
-            <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
-        </div>
-
-        <div class="box">
-            <h3>newsletter</h3>
-            <p>subscribe for latest updates</p>
-            <form action="">
-                <input type="email" placeholder="enter your email">
-                <input type="submit" value="subscribe" class="btn">
-            </form>
-            <img src="image/payment.png" class="payment" alt="">
-        </div>
-
-    </div>
-
-</section>
-
-<section class="credit">created by mr. web designer | all rights reserved!</section>
-
+	<%@include file="all_component/footer.jsp"%>
 <!-- footer section ends -->
-
-
-
-
-
-
-
-
-
-
 
 
 

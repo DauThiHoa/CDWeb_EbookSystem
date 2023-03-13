@@ -59,7 +59,7 @@
 		</a>
 
 		<!--  THANH menu  -->
-		<nav class="navbar">
+		<nav style="margin-left: -9%" class="navbar">
 			<a href="index.jsp">home</a> 
 			<a href="shop.jsp">shop</a> 
 
