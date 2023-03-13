@@ -48,7 +48,7 @@
 
 <body style="background-color: #f0f1f2;">
 
-	<%-- <%@include file="all_component/navbar.jsp"%> --%>
+	 <%@include file="all_component/navbar.jsp"%> 
 
 
 
@@ -76,14 +76,14 @@
 
 
 
-	<div class="container ">
+	<div class="container " style="margin-top: 8%">
 		<div class="row">
 			<div class="col-md-6"> 
 				<div class="card bg-white" style="width: 125%; margin-left: -25%">
 					<div class="card-body">
 						<table class="table table-striped">
 						
-						<h3 class="text-center text-success">Your Selected Item</h3>
+						<h1 class="text-center text-success">Your Selected Item</h1>
 							<thead>
 								<tr>
 									<th scope="col">Image</th>
@@ -154,7 +154,7 @@
 			<div class="col-md-6">
 				<div class="card" style="width: 125%; margin-right: -25%">
 					<div class="card-body ">
-						<h3 class="text-center text-success">Your Details For Order</h3>
+						<h1 class="text-center text-success">Your Details For Order</h1>
 						<form action="order" method="post">
 							<input type="hidden" value="${userobj.id }" name="id">
 
@@ -237,10 +237,14 @@
 					</div>
 				</div>
 			</div>
+			
+			
+			
 
 		</div>
 	</div>
 
+<%@include file="all_component/footer.jsp"%>
 
 	<script type="text/javascript">
  
@@ -250,6 +254,8 @@ function edit_Quantity()() {
 
 
 </script>
+
+
 </body>
 
 </html>

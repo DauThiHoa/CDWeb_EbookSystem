@@ -24,7 +24,9 @@ section {
   padding: 3rem 9%;
 }
 .heading1 {
-  background: url(../image/heading-bg.jpg) no-repeat;
+  /* background: url(../image/heading-bg.jpg) no-repeat; */
+  
+  background: url(image/heading-bg.jpg) no-repeat;
 }
 .heading { 
   background-size: cover;

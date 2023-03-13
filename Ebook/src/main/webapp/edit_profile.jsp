@@ -22,6 +22,13 @@
  
 <title>Ebook: Setting - EditProfile</title>
 
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+ 
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> 
+
+
 <%@include file="all_component/allCss.jsp"%>
 <style type="text/css">
 a {
@@ -54,13 +61,69 @@ a:hover {
 	User u = (User) session.getAttribute("userobj");
 	%>
 
-	<div class="container">
+				
+<section class="contact" style="margin-top: 10%; width: 80%; margin-left: 10% ">
+
+    
+    <div class="row">
+
+        <form action="update_profile" method="post">
+            <h3>Edit Profile</h3>
+            
+                        <c:if test="${not empty failedMsg }">
+							<h5 class="text-center text-danger">${failedMsg }</h5>
+							<c:remove var="failedMsg" scope="session" />
+						</c:if>
+						 
+						<c:if test="${not empty succMsg }">
+							<h5 class="text-center text-success">${succMsg }</h5>
+							<c:remove var="succMsg" scope="session" />
+						</c:if>
+						
+						<input type="hidden" value="${userobj.id }" name="id">
+						 
+            <div class="inputBox">   
+			       <input placeholder="Enter Full Name" class="box" type="text"   id="exampleInputEmail1"
+									aria-describedby="emailHelp" required="required" name="fname"
+									value="${userobj.name }" required >
+                   <input placeholder="Email address" class="box" type="email"  id="exampleInputEmail2"
+									aria-describedby="emailHelp" required="required" name="email"
+									value="${userobj.email }" readonly  > 
+							 
+            </div> 
+									
+            <div class="inputBox"> 
+				   <input   placeholder="Phone No" class="box" type="number"  id="exampleInputEmail3"
+									aria-describedby="emailHelp" required="required" name="phno"
+									value="${userobj.phno }" required> 
+									
+                   <input   placeholder="Password" type="password" id="password"
+									placeholder="Password" name="password"  class="box" >
+                       
+									<!--  <span><i
+							id="hide" onclick="changeTypePassword()" class="fas fa-eye-slash"></i></span>
+						<span><i id="show" style="display: none;"
+							onclick="changeTypePassword()" class="fa-solid fa-eye"></i></span> -->
+							
+                          
+            </div>
+             
+            <button type="submit" value="Send message" class="btn">Update</button>
+            
+        </form>
+ 
+   
+    </div>
+
+</section>
+
+	<%-- <div class="container" style="margin-top: 10%">
 		<div class="row">
 			<div class="col-md-4 offset-md-4">
 				<div class="card">
 					<div class="card-body">
 
-						<h4 class="text-center text-primary">Edit Profile</h4>
+						<h2 class="text-center text-primary">Edit Profile</h2>
 						
 						<c:if test="${not empty failedMsg }">
 							<h5 class="text-center text-danger">${failedMsg }</h5>
@@ -77,25 +140,25 @@ a:hover {
 
 							<input type="hidden" value="${userobj.id }" name="id">
 							<div class="form-group">
-								<label for="exampleInputEmail1">Enter Full Name</label> <input
+								<h1 for="exampleInputEmail1">Enter Full Name</h1> <input
 									type="text" class="form-control" id="exampleInputEmail1"
 									aria-describedby="emailHelp" required="required" name="fname"
 									value="${userobj.name }">
 							</div>
 							<div class="form-group">
-								<label for="exampleInputEmail1">Email address</label> <input
+								<h1 for="exampleInputEmail1">Email address</h1> <input
 									type="email" class="form-control" id="exampleInputEmail1"
 									aria-describedby="emailHelp" required="required" name="email"
 									value="${userobj.email }">
 							</div>
 							<div class="form-group">
-								<label for="exampleInputEmail1">Phone No</label> <input
+								<h1 for="exampleInputEmail1">Phone No</h1> <input
 									type="number" class="form-control" id="exampleInputEmail1"
 									aria-describedby="emailHelp" required="required" name="phno"
 									value="${userobj.phno }">
 							</div>
 							<div class="form-group">
-								<label for="exampleInputPassword1">Password</label> <input
+								<h1 for="exampleInputPassword1">Password</h1> <input
 									type="password" class="form-control" id="exampleInputPassword1"
 									placeholder="Password" required="required" name="password">
 							</div>
@@ -107,8 +170,34 @@ a:hover {
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --%>
+	
+	
+	
+	<script type="text/javascript">
+		function changeTypePassword() {
+			const password = document.getElementById('password');
+			const show = document.getElementById('show');
+			const hide = document.getElementById('hide');
+
+			if (password.type == 'text') {
+				password.type = 'password';
+				hide.style.display = 'block';
+				show.style.display = 'none';
+			} else {
+				password.type = 'text';
+				show.style.display = 'block';
+				hide.style.display = 'none';
+			}
+
+		}
+	</script>
+	
 
 	<%@include file="all_component/footer.jsp"%>
+	
+	
+	 
+	
 </body>
 </html>

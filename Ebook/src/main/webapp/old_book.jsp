@@ -70,15 +70,15 @@ a:hover {
 	</c:if>
 
 
-	<div class="container p-5">
+	<div class="container p-5" style="margin-top: 8%">
 		<table class="table table-striped">
 			<thead class="bg-primary text-white">
 				<tr>
-					<th scope="col">Book Name</th>
-					<th scope="col">Author</th>
-					<th scope="col">Price</th>
-					<th scope="col">Category</th>
-					<th scope="col">Action</th>
+					<th scope="col"><h3>Book Name</h3> </th>
+					<th scope="col"><h3>Author</h3> </th>
+					<th scope="col"><h3>Price</h3>   </th>
+					<th scope="col"><h3>Category</h3> </th>
+					<th scope="col"><h3>Action</h3> </th>
 				</tr>
 			</thead>
 			<tbody>
@@ -91,10 +91,10 @@ a:hover {
 				for (BookDtls b : list) {
 				%>
 				<tr>
-					<th><%=b.getBookName()%></th>
-					<td><%=b.getAuthor()%></td>
-					<td><%=b.getPrice()%></td>
-					<td><%=b.getBookCategory()%></td>
+					<th><h4><%=b.getBookName()%></h4> </th>
+					<td><h4><%=b.getAuthor()%></h4> </td>
+					<td><h4><%=b.getPrice()%></h4> </td>
+					<td><h4><%=b.getBookCategory()%></h4> </td>
 					<td><a
 						href="delete_old_book?em=<%=email%>&&id=<%=b.getBookId()%>"
 						class="btn btn-sm btn-danger">Delete</a></td>

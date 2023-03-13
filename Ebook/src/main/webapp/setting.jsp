@@ -59,11 +59,36 @@ a:hover {
 	</c:if>
 
 	<%@include file="all_component/navbar.jsp"%>
+ 
+<!-- 
+     <section class="contact" style="margin-top: 10%">
+	 <div class="icons-container">
+
+        <div class="icons">
+            <img src="image1/icon-1.png" alt="">
+            <h3>7:00am to 10:30pm</h3>
+        </div>
+
+        <div class="icons">
+            <img src="image1/icon-2.png" alt="">
+            <h3>+123-456-7890</h3>
+        </div>
+
+        <div class="icons">
+            <img src="image1/icon-3.png" alt="">
+            <h3>Ho Chi Minh City</h3>
+        </div>
+
+    </div>
+    </section> -->
+     
 
 
-	<div class="container">
+	<div class="container" style="margin-top: 10%">
+
+    
 		<c:if test="${not empty userobj }">
-			<h3 class="text-center">Hello, ${userobj.name }</h3>
+			<h1 class="text-center">Hello, ${userobj.name }</h1>
 		</c:if>
 		<div class="row p-5">
 
@@ -73,9 +98,9 @@ a:hover {
 					<div class="card">
 						<div class="card-body text-center">
 							<div class="text-primary">
-								<i class="fas fa-book-open fa-3x"></i>
+								<i class="fas fa-book-open fa-5x"></i>
 							</div>
-							<h4>Sell Old Book</h4>
+							<h1>Sell Old Book</h1>
 						</div>
 					</div>
 				</a>
@@ -86,9 +111,9 @@ a:hover {
 					<div class="card">
 						<div class="card-body text-center">
 							<div class="text-primary">
-								<i class="fas fa-book-open fa-3x"></i>
+								<i class="fas fa-book-open fa-5x" style="color: green;"></i>
 							</div>
-							<h4>Old Book</h4>
+							<h1>Old Book</h1>
 						</div>
 					</div>
 				</a>
@@ -99,39 +124,24 @@ a:hover {
 					<div class="card">
 						<div class="card-body text-center">
 							<div class="text-primary">
-								<i class="fas fa-edit fa-3x"></i>
+								<i class="fas fa-edit fa-5x"></i>
 							</div>
-							<h4>Edit Profile</h4>
+							<h1>Edit Profile</h1>
 						</div>
 					</div>
 				</a>
 			</div>
 
-
-			<!-- BEGIN HANG CUOI -->
-			<!-- <div class="col-md-4 mt-3">
-				<a href="user_address.jsp">
-					<div class="card">
-						<div class="card-body text-center">
-							<div class="text-warning">
-								<i class="fas fa-map-marker-alt fa-3x"></i>
-							</div>
-							<h4>Your Address</h4>
-							<p>Edit Address</p>
-						</div>
-					</div>
-				</a>
-			</div> -->
-
+ 
 			<div class="col-md-6 mt-3">
 				<a href="order.jsp">
 					<div class="card">
 						<div class="card-body text-center">
 							<div class="text-danger">
-								<i class="fas fa-box-open fa-3x"></i>
+								<i class="fas fa-box-open fa-5x"></i>
 							</div>
-							<h4>My Order</h4>
-							<p>Track Your Order</p>
+							<h1>My Order</h1>
+							<h4>Track Your Order</h4>
 						</div>
 					</div>
 				</a>
@@ -142,10 +152,10 @@ a:hover {
 					<div class="card">
 						<div class="card-body text-center">
 							<div class="text-warning">
-								<i class="fas fa-user-circle fa-3x"></i>
+								<i class="fas fa-user-circle fa-5x"></i>
 							</div>
-							<h4>Help Center</h4>
-							<p>24*7 Service</p>
+							<h1>Help Center</h1>
+							<h4>24*7 Service</h4>
 						</div>
 					</div>
 				</a>

@@ -20,11 +20,7 @@
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link href="loginRegister/styleLoginRegister.css" rel="stylesheet">
-<!-- <link
-	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-	rel="stylesheet">  --> 
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
-
+ 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> 
 
@@ -83,6 +79,8 @@
 							id="hide" onclick="changeTypePassword()" class="fas fa-eye-slash"></i></span>
 						<span><i id="show" style="display: none;"
 							onclick="changeTypePassword()" class="fa-solid fa-eye"></i></span>
+							
+							
 					</div>
 					<div class="row mb-3">
 						<!-- Remember Box -->

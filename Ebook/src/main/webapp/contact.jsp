@@ -35,15 +35,48 @@
     <h1>Contact us</h1>
     <p> <a href="index.jsp">home >></a> contact </p>
 </div>
+ 
+				    <c:if test="${not empty failedMsg }"> 
+                
+				<!-- begin toast -->
+				<!-- ------------------- -->
+				<div id="toast">${failedMsg}</div>
+				<script type="text/javascript">
+showToast ();
+function showToast(content) {
+	$('#toast').addClass ("display");
+	$('#toast').html(content);
+	setTimeout (()=>{
+		$("#toast").removeClass ("display");
+	}, 2000)
+}
 
-	            <c:if test="${not empty failedMsg }">
-					<h5 class="text-center text-danger">${failedMsg }</h5>
-					<c:remove var="failedMsg" scope="session" />
-				</c:if>
+</script>
+				<!-- end toast -->
+
+				<c:remove var="failedMsg" scope="session" />
+
+			</c:if>
 
 				<c:if test="${not empty succMsg }">
-					<h5 class="text-center text-success">${succMsg }</h5>
-					<c:remove var="succMsg" scope="session" />
+					
+				<!-- begin toast -->
+				<!-- ------------------- -->
+				<div id="toast">${succMsg}</div>
+				<script type="text/javascript">
+showToast ();
+function showToast(content) {
+	$('#toast').addClass ("display");
+	$('#toast').html(content);
+	setTimeout (()=>{
+		$("#toast").removeClass ("display");
+	}, 2000)
+}
+
+</script>
+				<!-- end toast -->
+
+				<c:remove var="succMsg" scope="session" />
 				</c:if>
 				
 <section class="contact">
@@ -104,8 +137,12 @@
             </div>
             <textarea name="message"  placeholder="Your message" cols="30" rows="10" required></textarea>
             <button type="submit" value="Send message" class="btn">Send message</button>
+           
+				
         </form>
 
+             
+				
         <iframe class="map" 
         src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3919.6222423427866!2d106.65440106462233!3d10.763568992330226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4bqnbmcgNCwgdMOyYSBuaMOgIEZsZW1pbmd0b24sIHPhu5EgMTgyLCDEkcaw4budbmcgTMOqIMSQ4bqhaSBIw6BuaCwgcGjGsOG7nW5nIDE1LCBxdeG6rW4gMTEsIFRwLiBI4buTIENow60gTWluaA!5e0!3m2!1svi!2s!4v1639496942948!5m2!1svi!2s" allowfullscreen="" loading="lazy"></iframe>
 
@@ -113,7 +150,7 @@
 
 </section>
 
- 
+  
 
 <!-- footer section starts  -->
 

@@ -38,7 +38,11 @@ public class UpdateProfileServlet extends HttpServlet {
 			UserDAOImpl dao = new UserDAOImpl(DBConnect.getConn());
 
 //			KIEM TRA NGUOI DUNG CO NHAP MAT KHAU DUNG HAY KHONG
-			boolean f = dao.checkPassword(id, password);
+//			boolean f = dao.checkPassword(id, password);
+			 
+//			boolean checkPassEmail = dao.checkPasswordEmail(email, hash);
+			boolean f = dao.checkPasswordEmail(email, password); 
+			
 			if (f) { // NEU DUNG THI CAP NHAT CAC THONG TIN
 
 				boolean f2 = dao.updateProfile(us);

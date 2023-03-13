@@ -62,20 +62,93 @@ a:hover {
 		<c:redirect url="login.jsp" />
 	</c:if>
 
-	<div class="container">
+
+			
+<section class="contact" style="margin-top: 8%; width: 70%; margin-left: 15% ">
+
+    
+    <div class="row">
+
+        <form action="add_old_book" method="post" enctype="multipart/form-data">
+            <h3>Sell Old Book</h3>
+            
+                        <c:if test="${not empty failedMsg }">
+							<h4 class="text-center text-danger">${failedMsg }</h4>
+							<c:remove var="failedMsg" scope="session" />
+						</c:if>
+						 
+						<c:if test="${not empty succMsg }">
+							<h4 class="text-center text-success">${succMsg }</h4>
+							<c:remove var="succMsg" scope="session" />
+						</c:if>
+						 
+						<input type="hidden" value="${userobj.email }" name="user">
+						
+            <div class="inputBox" >   
+			       <!-- <input style="width: 100%" placeholder="        " class="box"  
+									aria-describedby="emailHelp"  required >  -->
+									
+									<input  style="width: 100%" placeholder="Book Name" class="box" 
+									aria-describedby="emailHelp" required
+									name="bname" type="text" class="form-control"
+									id="exampleInputEmail1" aria-describedby="emailHelp">
+							 
+            </div> 
+									
+             <div class="inputBox" >    
+									
+									<input  style="width: 100%" placeholder="Author Name" class="box" 
+									aria-describedby="emailHelp" required
+									name="author" type="text" class="form-control"
+									id="exampleInputEmail1" aria-describedby="emailHelp">
+							 
+            </div> 
+             <div class="inputBox" >    
+									
+									<input  style="width: 100%" placeholder="Price" class="box" 
+									aria-describedby="emailHelp" required type="number"
+									name="price" type="double" class="form-control"
+									id="exampleInputPassword1">
+							 
+            </div> 
+             
+              <div class="inputBox" >    
+									
+									<input  style="width: 100%" placeholder="Upload Photo" class="box" 
+									aria-describedby="emailHelp" required
+									name="bimg" type="file" class="form-control-file"
+									id="exampleFormControlFile1">
+							 
+            </div> 
+            
+            <button type="submit" value="Send message" class="btn">Sell</button>
+            
+        </form>
+ 
+   
+    </div>
+
+</section>
+
+
+
+
+<%-- 
+ 
+	<div class="container"  style="margin-top: 10%" >
 		<div class="row">
-			<div class="col-md-4 offset-md-4">
+			<div class="col-md-8 offset-md-2">
 				<div class="card">
 					<div class="card-body">
-					<h5 class="text-center text-primary p-1">Sell Old Book</h5>
+					<h1 class="text-center text-primary p-1">Sell Old Book</h1>
 					
 						<c:if test="${not empty succMsg }">
-							<h5 class="text-center text-success">${succMsg }</h5>
+							<h4 class="text-center text-success">${succMsg }</h4>
 							<c:remove var="succMsg" scope="session" />
 						</c:if>
 						
 						<c:if test="${not empty failedMsg }">
-							<h5 class="text-center text-danger">${failedMsg }</h5>
+							<h4 class="text-center text-danger">${failedMsg }</h4>
 							<c:remove var="failedMsg" scope="session" />
 						</c:if>
 						
@@ -85,28 +158,29 @@ a:hover {
 
 							<input type="hidden" value="${userobj.email }" name="user">
 
-							<div class="form-group">
-								<label for="exampleInputEmail1">Book Name*</label><input
+							<div class="form-group ">
+								<h4 for="exampleInputEmail1">Book Name*</h4><input
 									name="bname" type="text" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp">
 							</div>
 
 
 							<div class="form-group">
-								<label for="exampleInputEmail1">Author Name*</label><input
+								<h4 for="exampleInputEmail1">Author Name*</h4><input
 									name="author" type="text" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp">
 							</div>
 
 							<div class="form-group">
-								<label for="exampleInputPassword1">Price*</label><input
+								<h4 for="exampleInputPassword1">Price*</h4><input
 									name="price" type="double" class="form-control"
 									id="exampleInputPassword1">
 							</div>
 
 
 							<div class="form-group">
-								<label for="exampleFormControlFile1">Upload Photo</label><input
+								<h4 for="exampleFormControlFile1">Upload Photo</h4>
+								<input
 									name="bimg" type="file" class="form-control-file"
 									id="exampleFormControlFile1">
 							</div>
@@ -121,7 +195,7 @@ a:hover {
 			</div>
 		</div>
 	</div>
-
+ --%>
 	<%@include file="all_component/footer.jsp"%>
 </body>
 </html>

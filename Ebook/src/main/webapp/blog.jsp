@@ -38,7 +38,8 @@
          <div class="box">
             <div class="image">
                 <h3> <i class="fas fa-calendar"></i>06/05/2020</h3>
-                <img src="image1/blog-1.png" alt="">
+                <img src="image1/blog-1.png" alt="">   
+                 
             </div>
             <div class="content">
                 <div class="tags">
@@ -47,7 +48,7 @@
                     <a href="#"> <i class="fas fa-tag"></i> Event  </a>
                 </div>
                 <h3>How to distinguish real and fake books accurately?</h3>
-                <p>So that readers, parents, students and teachers...<br> do not buy fake reference books, pirated books, etc......</p>
+                <p>So that readers, parents, students and teachers... Do not buy fake reference books, pirated books, etc......</p>
                 <a href="about.jsp" class="btn">Read more</a>
             </div>
         </div>
@@ -82,7 +83,7 @@
                     <a href="#"> <i class="fas fa-tag"></i> Event  </a>
                 </div>
                 <h3>Instructions for returning books, refunding Edu Book</h3>
-                <p>Purchased on Edu Book but the product you received is not the same as the picture, the product is defective. You think you've been tricked,...</p>
+                <p>Purchased on Edu Book but the product you received is not the same as the picture, the product is defective. </p>
                 <a href="about.jsp" class="btn">Read more</a>
             </div>
         </div>

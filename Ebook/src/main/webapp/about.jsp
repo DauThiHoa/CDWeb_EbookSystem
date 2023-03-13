@@ -29,6 +29,34 @@
 </div>
 
 
+<section class="info-container">
+
+    <div class="info">
+        <img src="image/icon-1.png" alt="">
+        <div class="content">
+            <h3>fast delivery</h3>
+            <span>within 30 minutes</span>
+        </div>
+    </div>
+
+    <div class="info">
+        <img src="image/icon-2.png" alt="">
+        <div class="content">
+            <h3>24 / 7 available</h3>
+            <span>call us anytime</span>
+        </div>
+    </div>
+
+    <div class="info">
+        <img src="image/icon-3.png" alt="">
+        <div class="content">
+            <h3>easy payments</h3>
+            <span>cash or credits</span>
+        </div>
+    </div>
+
+</section>
+
 <section class="about">
 
     <div class="image">
@@ -46,6 +74,40 @@
 
 </section>
 
+
+
+<section class="review">
+
+    <div class="box">
+        <div class="user">
+            <img src="image/design2.jpg" alt="">
+            <div class="info">
+                <h3>Dau Hoa</h3>
+                <span>Design The Theme</span>
+            </div>
+        </div>
+        <p> Dynamic, enthusiastic, persistent, hard-working, able to withstand pressure and high work intensity. 
+        Have a sense of responsibility, honesty, will to progress, eager to research and learn to improve professional skills. 
+        Respect, listen and be humble.</p>
+    </div>
+
+    <div class="box">
+        <div class="user">
+            <img src="image/pic-2.png" alt="">
+            <div class="info">
+                <h3>My Dung</h3>
+                <span>Design The Theme</span>
+            </div>
+        </div>
+        <p>Have a positive attitude, learn quickly, don't be afraid of difficulties, don't be afraid to change to perfect yourself to the best of your ability as a designer.
+         Ability to arrange work, meet deadlines, be organized, be able to work under high pressure when implementing many projects at the same time.
+          Able to work well independently as well as in a team.</p>
+    </div>
+
+     
+</section>
+
+<!-- 
 <section class="gallery">
 
     <h1 class="title"> our <span>gallery</span> <a href="#">view all >></a> </h1>
@@ -88,7 +150,7 @@
             </div>
         </div>
 
-       <!--  <div class="box">
+        <div class="box">
             <img src="image/gallery-img-5.jpg" alt="">
             <div class="icons">
                 <a href="#" class="fas fa-eye"></a>
@@ -104,12 +166,12 @@
                 <a href="#" class="fas fa-heart"></a>
                 <a href="#" class="fas fa-share-alt"></a>
             </div>
-        </div> -->
+        </div>
 
     </div>
 
 </section>
-
+ -->
 
 
 
