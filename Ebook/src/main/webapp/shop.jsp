@@ -170,7 +170,7 @@ function checkAscPrice() {
 			<button type="submit" id="categoryLanguage" class="box"> 
 				<img src="image/cat-1.png" alt="">
 				<input  style="display: none" value="categoryLanguage" name="categoryLanguage"> 
-				<h3>Foreign language books</h3>  
+				<h3 >Foreign language books</h3>  
 			</button> 
 			
 		</form>
@@ -225,13 +225,13 @@ function checkAscPrice() {
 
 		<section class="category">
 
-			<form action="arrangeServlet"  method="post"><input  style="display: none" value="ascName" name="ascName"> <button type="submit" onclick="" id="ascName" class="btn btn-outline-primary">Ascending by name</button>
+			<form action="arrangeServlet"  method="post"><input  style="display: none" value="ascName" name="ascName"> <button type="submit" onclick="" id="ascName" class="btn btn-outline-primary" style="font-weight: bold;">Ascending by name</button>
 			</form> 
-			<form action="arrangeServlet"  method="post"><input  style="display: none" value="descName" name="descName">  <button type="submit" value="descName" onclick="" id="descName" class="btn btn-outline-warning">Descending by name</button>
+			<form action="arrangeServlet"  method="post"><input  style="display: none" value="descName" name="descName">  <button type="submit" value="descName" onclick="" id="descName" class="btn btn-outline-warning" style="font-weight: bold;">Descending by name</button>
 			</form> 
-			<form action="arrangeServlet"  method="post"><input  style="display: none" value="ascPrice" name="ascPrice">  <button type="submit" value="ascPrice" onclick="" id="ascPrice" class="btn btn-outline-success">Ascending by price</button>
+			<form action="arrangeServlet"  method="post"><input  style="display: none" value="ascPrice" name="ascPrice">  <button type="submit" value="ascPrice" onclick="" id="ascPrice" class="btn btn-outline-success" style="font-weight: bold;">Ascending by price</button>
 			</form> 
-			<form action="arrangeServlet"  method="post"><input  style="display: none" value="descPrice" name="descPrice">  <button type="submit" value="descPrice" onclick="" id="descPrice" class="btn btn-outline-info">Descending by price</button>
+			<form action="arrangeServlet"  method="post"><input  style="display: none" value="descPrice" name="descPrice">  <button type="submit" value="descPrice" onclick="" id="descPrice" class="btn btn-outline-info" style="font-weight: bold;">Descending by price</button>
 			</form>
 
 			<!-- <a href="#" class="box">
@@ -314,7 +314,7 @@ function checkAscPrice() {
                     <i class="fas fa-star-half-alt"></i>
                     <span> (50) </span>
                 </div>
-                <div class="price">$<%=b2.getPrice()%><span>  $50.00</span></div>
+                <div class="price" style="font-weight: bold;">$<%=b2.getPrice()%><span>  $50.00</span></div>
                 <!-- <a href="#" class="btn">add to cart</a>  -->
                
 						 
@@ -513,7 +513,7 @@ function checkAscPrice() {
                     <i class="fas fa-star-half-alt"></i>
                     <span> (50) </span>
                 </div>
-                <div class="price">$<%=b2.getPrice()%><span>  $50.00</span></div>
+                <div class="price" style="font-weight: bold;">$<%=b2.getPrice()%><span>  $50.00</span></div>
                 <!-- <a href="#" class="btn">add to cart</a>  -->
                
 						 
@@ -713,7 +713,7 @@ function checkAscPrice() {
                     <i class="fas fa-star-half-alt"></i>
                     <span> (50) </span>
                 </div>
-                <div class="price">$<%=b2.getPrice()%><span>  $50.00</span></div>
+                <div class="price" style="font-weight: bold;">$<%=b2.getPrice()%><span>  $50.00</span></div>
                 <!-- <a href="#" class="btn">add to cart</a>  -->
                
 						 
@@ -918,7 +918,7 @@ function checkAscPrice() {
                     <i class="fas fa-star-half-alt"></i>
                     <span> (50) </span>
                 </div>
-                <div class="price">$<%=b2.getPrice()%><span>  $50.00</span></div>
+                <div class="price" style="font-weight: bold;">$<%=b2.getPrice()%><span>  $50.00</span></div>
                 <!-- <a href="#" class="btn">add to cart</a>  -->
                
 						 
@@ -1129,7 +1129,7 @@ function checkAscPrice() {
                     <i class="fas fa-star-half-alt"></i>
                     <span> (50) </span>
                 </div>
-                <div class="price">$<%=b2.getPrice()%><span>  $50.00</span></div>
+                <div class="price" style="font-weight: bold;">$<%=b2.getPrice()%><span>  $50.00</span></div>
                 <!-- <a href="#" class="btn">add to cart</a>  -->
                
 						 
@@ -1329,7 +1329,7 @@ function checkAscPrice() {
                     <i class="fas fa-star-half-alt"></i>
                     <span> (50) </span>
                 </div>
-                <div class="price">$<%=b2.getPrice()%><span>  $50.00</span></div>
+                <div class="price" style="font-weight: bold;">$<%=b2.getPrice()%><span>  $50.00</span></div>
                 <!-- <a href="#" class="btn">add to cart</a>  -->
                
 						 
@@ -1528,7 +1528,7 @@ function checkAscPrice() {
                     <i class="fas fa-star-half-alt"></i>
                     <span> (50) </span>
                 </div>
-                <div class="price">$<%=b2.getPrice()%><span>  $50.00</span></div>
+                <div class="price" style="font-weight: bold;">$<%=b2.getPrice()%><span>  $50.00</span></div>
                 <!-- <a href="#" class="btn">add to cart</a>  -->
                
 						 
@@ -1729,7 +1729,7 @@ function checkAscPrice() {
                     <i class="fas fa-star-half-alt"></i>
                     <span> (50) </span>
                 </div>
-                <div class="price">$<%=b2.getPrice()%><span>  $50.00</span></div>
+                <div class="price" style="font-weight: bold;">$<%=b2.getPrice()%><span>  $50.00</span></div>
                 <!-- <a href="#" class="btn">add to cart</a>  -->
                
 						 
@@ -1927,7 +1927,7 @@ function checkAscPrice() {
                     <i class="fas fa-star-half-alt"></i>
                     <span> (50) </span>
                 </div>
-                <div class="price">$<%=b2.getPrice()%><span>  $50.00</span></div>
+                <div class="price" style="font-weight: bold;">$<%=b2.getPrice()%><span>  $50.00</span></div>
                 <!-- <a href="#" class="btn">add to cart</a>  -->
                
 						 

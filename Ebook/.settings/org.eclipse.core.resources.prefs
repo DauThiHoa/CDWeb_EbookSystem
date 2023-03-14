@@ -1,10 +1,11 @@
 eclipse.preferences.version=1
-encoding//src/main/webapp/EduBook-Cookie/cart.html=UTF-8
-encoding//src/main/webapp/EduBook-Cookie/category.html=UTF-8
-encoding//src/main/webapp/EduBook-Cookie/contact.html=UTF-8
-encoding//src/main/webapp/EduBook-Cookie/index.html=UTF-8
-encoding//src/main/webapp/EduBook-Cookie/post.html=UTF-8
-encoding//src/main/webapp/EduBook-Cookie/product.html=UTF-8
 encoding//src/main/webapp/changePassword.jsp=UTF-8
+encoding//src/main/webapp/fontend/cart.html=UTF-8
+encoding//src/main/webapp/fontend/category.html=UTF-8
+encoding//src/main/webapp/fontend/contact.html=UTF-8
+encoding//src/main/webapp/fontend/index.html=UTF-8
+encoding//src/main/webapp/fontend/post.html=UTF-8
+encoding//src/main/webapp/fontend/product.html=UTF-8
 encoding//src/main/webapp/shop.jsp=UTF-8
+encoding//src/main/webapp/view_books.jsp=UTF-8
 encoding/<project>=UTF-8
