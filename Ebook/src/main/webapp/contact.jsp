@@ -103,7 +103,7 @@ function showToast(content) {
     <div class="row">
 
         <form action="contact" method="post">
-            <h3>Get in touch</h3>
+            <h3 class="text-center text-success" style="color: green; text-align: center;">Get in touch</h3>
             <div class="inputBox">
                             <%
 							if (u == null) {
@@ -136,7 +136,7 @@ function showToast(content) {
                 <input type="text" name="subject" placeholder="Enter your subject" required class="box">
             </div>
             <textarea name="message"  placeholder="Your message" cols="30" rows="10" required></textarea>
-            <button type="submit" value="Send message" class="btn">Send message</button>
+            <button type="submit" value="Send message" class="btn"  style="margin-left: 68%" >Send message</button>
            
 				
         </form>

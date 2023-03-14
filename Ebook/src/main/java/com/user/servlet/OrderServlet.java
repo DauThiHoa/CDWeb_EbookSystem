@@ -39,6 +39,8 @@ public class OrderServlet extends HttpServlet {
 			String pincode = req.getParameter("pincode");
 			String paymentType = req.getParameter("payment");
 			
+			System.out.println("ORDER");
+			System.out.println(address + ", " + landmark + ", " + city + ", " + state + ", " + pincode + ", " + paymentType); 
 			String fullAdd = address + ", " + landmark + ", " + city + ", " + state + ", " + pincode;
 			
 //			System.out.println(name + " - " + email + " - " + phno + " - " + fullAdd  + " - " + paymentType);
@@ -47,8 +49,9 @@ public class OrderServlet extends HttpServlet {
 			List<Cart> blist = dao.getBookByUser(id);
 			
 			if (blist.isEmpty()) {
-				session.setAttribute("failedMsg", "Add Item");
+				session.setAttribute("failedOrder", "Add Item");
 				resp.sendRedirect("checkout.jsp");
+//				System.out.println("1");
 			}else {
 				
 				BookOrderImpl dao2 = new BookOrderImpl(DBConnect.getConn());
@@ -74,22 +77,23 @@ public class OrderServlet extends HttpServlet {
 				}
 				
 				if ("noselect".equals(paymentType)) {
-					session.setAttribute("failedMsg", "Please Choose Payment Method");
+					session.setAttribute("failedOrder", "Please Choose Payment Method");
 					resp.sendRedirect("checkout.jsp");
+//					System.out.println("2");
 				}else {
 					boolean f = dao2.saveOrder(orderList);
 					
 					if (f) {
-						session.setAttribute("succMsg", "Add Order Success ");
+						session.setAttribute("succOrder", "Add Order Success ");
 						resp.sendRedirect("order_success.jsp");
-						
-						System.out.println("order_success.jsp");
+						 
+//						System.out.println("3");
 						
 					}else {
-						session.setAttribute("failedMsg", "Your Order Failed");
+						session.setAttribute("failedOrder", "Your Order Failed");
 						resp.sendRedirect("checkout.jsp");
-						
-						System.out.println("Order Failed");
+						 
+//						System.out.println("4");
 					}
 				}
 				

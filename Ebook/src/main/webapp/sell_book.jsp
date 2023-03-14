@@ -63,6 +63,8 @@ a:hover {
 	</c:if>
 
 
+ 
+				
 			
 <section class="contact" style="margin-top: 8%; width: 70%; margin-left: 15% ">
 
@@ -70,7 +72,8 @@ a:hover {
     <div class="row">
 
         <form action="add_old_book" method="post" enctype="multipart/form-data">
-            <h3>Sell Old Book</h3>
+        
+            <h3  class="text-center text-success">Sell Old Book</h3>
             
                         <c:if test="${not empty failedMsg }">
 							<h4 class="text-center text-danger">${failedMsg }</h4>
@@ -121,7 +124,7 @@ a:hover {
 							 
             </div> 
             
-            <button type="submit" value="Send message" class="btn">Sell</button>
+            <button type="submit" value="Send message" class="btn" style="margin-left: 88%">Sell</button>
             
         </form>
  

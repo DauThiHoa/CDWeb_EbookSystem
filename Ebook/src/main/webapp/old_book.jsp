@@ -58,6 +58,7 @@ a:hover {
 		<c:redirect url="login.jsp" />
 	</c:if>
 
+
 	<c:if test="${ not empty succMsg }">
 		<div class="alert alert-success textcenter">${succMsg }</div>
 		<%-- <p class="text-center text-success">${succMsg }</p> --%>
@@ -70,7 +71,8 @@ a:hover {
 	</c:if>
 
 
-	<div class="container p-5" style="margin-top: 8%">
+
+	<%-- <div class="container p-5" style="margin-top: 8%">
 		<table class="table table-striped">
 			<thead class="bg-primary text-white">
 				<tr>
@@ -105,9 +107,81 @@ a:hover {
 
 			</tbody>
 		</table>
-	</div>
+	</div> --%>
 
 
+
+
+
+
+	<div class="container " style="margin-top: 8%">
+		<!-- <div class="row"> -->
+			<div class=""> 
+				<div class="card bg-white"  >
+					<div class="card-body">
+					
+					<h1 class="text-center text-success">Your Selected Item</h1>
+					 
+					<c:if test="${not empty succMsg }">
+						<div class="text-center alert alert-success" role="alert">${succMsg }</div>
+						<c:remove var="succMsg" scope="session" />
+					</c:if>
+
+					<c:if test="${not empty failedMsg }">
+						<div class="text-center alert alert-danger text-center" role="alert">${failedMsg }</div>
+						<c:remove var="failedMsg" scope="session" />
+					</c:if>
+
+<br><br>
+					<table class="table table-striped">
+					
+							<thead>
+								<tr>
+									<th scope="col"><h2>Image</h2></th>
+									<th scope="col"><h2>Book Name</h2> </th>
+									<th scope="col"><h2>Author</h2> </th> 
+									<th scope="col"><h2>Price</h2> </th>
+									<th scope="col"><h2>Category</h2> </th>
+									<th scope="col"><h2>Action</h2> </th>
+								</tr>
+							</thead>
+							<tbody>
+
+								<%
+								User u = (User) session.getAttribute("userobj");
+								String email = u.getEmail();
+								BookDAOImpl dao = new BookDAOImpl(DBConnect.getConn());
+								List<BookDtls> list = dao.getBookByOld(email, "Old");
+								for (BookDtls b : list) {
+								%>
+
+								<tr  >
+									<th  scope="row"><img alt="" src="book/<%=b.getPhotoName()%>"
+										style="width: 100px; height: 120px"></th>
+									<th scope="row"><h3 style="margin-top: 16%"><%=b.getBookName()%></h3></th>
+									<td><h3 style="margin-top: 25%"><%=b.getAuthor()%></h3></td> 
+
+									<td><h3 style="margin-top: 53%"><%=b.getPrice()%></h3></td>
+									<td><h3 style="margin-top: 29%"><%=b.getBookCategory()%></h3></td>
+									<td> 
+										<a style="margin-top: 25%; background: red"
+						 				href="delete_old_book?em=<%=email%>&&id=<%=b.getBookId()%>"
+										class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
+										
+										</td>
+								</tr>
+
+								<%
+								}
+								%> 
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			</div>
+			
 	<%@include file="all_component/footer.jsp"%>
 </body>
 </html>

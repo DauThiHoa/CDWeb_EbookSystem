@@ -68,7 +68,7 @@ a:hover {
     <div class="row">
 
         <form action="update_profile" method="post">
-            <h3>Edit Profile</h3>
+            <h3  class="text-center text-success" >Edit Profile</h3>
             
                         <c:if test="${not empty failedMsg }">
 							<h5 class="text-center text-danger">${failedMsg }</h5>
@@ -81,34 +81,49 @@ a:hover {
 						</c:if>
 						
 						<input type="hidden" value="${userobj.id }" name="id">
-						 
+			
+			<div class="inputBox">    
+          			 <h4 >Full Name</h4>  
+            </div> 
+            			 
             <div class="inputBox">   
-			       <input placeholder="Enter Full Name" class="box" type="text"   id="exampleInputEmail1"
+			       <input  style="width: 100%" placeholder="Enter Full Name" class="box" type="text"   id="exampleInputEmail1"
 									aria-describedby="emailHelp" required="required" name="fname"
-									value="${userobj.name }" required >
-                   <input placeholder="Email address" class="box" type="email"  id="exampleInputEmail2"
+									value="${userobj.name }" required > 
+							 
+            </div> 
+            
+			<div class="inputBox">    
+          			 <h4 >Email address</h4>  
+            </div>		
+			 <div class="inputBox">    
+                   <input  style="width: 100%" placeholder="Email address" class="box" type="email"  id="exampleInputEmail2"
 									aria-describedby="emailHelp" required="required" name="email"
 									value="${userobj.email }" readonly  > 
 							 
-            </div> 
-									
+            </div>
+            
+            <div class="inputBox">    
+          			 <h4 >Phone No</h4>  
+            </div>				
             <div class="inputBox"> 
-				   <input   placeholder="Phone No" class="box" type="number"  id="exampleInputEmail3"
+				   <input style="width: 100%"  placeholder="Phone No" class="box" type="number"  id="exampleInputEmail3"
 									aria-describedby="emailHelp" required="required" name="phno"
-									value="${userobj.phno }" required> 
-									
-                   <input   placeholder="Password" type="password" id="password"
-									placeholder="Password" name="password"  class="box" >
-                       
-									<!--  <span><i
-							id="hide" onclick="changeTypePassword()" class="fas fa-eye-slash"></i></span>
-						<span><i id="show" style="display: none;"
-							onclick="changeTypePassword()" class="fa-solid fa-eye"></i></span> -->
-							
+									value="${userobj.phno }" required>  
                           
             </div>
-             
-            <button type="submit" value="Send message" class="btn">Update</button>
+            
+            <div class="inputBox">    
+          			 <h4 >Password</h4>  
+            </div>
+              <div class="inputBox">  
+									
+                   <input  style="width: 100%" placeholder="Password" type="password" id="password"
+									placeholder="Password" name="password"  class="box" > 
+                          
+            </div>
+            
+            <button type="submit" value="Send message" class="btn"  style="margin-left: 87%" >Update</button>
             
         </form>
  
