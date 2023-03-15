@@ -1,3 +1,6 @@
+<%@page import="com.DAO.CommentDAOImpl"%>
+<%@page import="com.entity.CommentProduct"%>
+<%@page import="com.DAO.CommentDAO"%>
 <%@page import="com.entity.User"%>
 <%@page import="com.entity.BookDtls"%>
 <%@page import="com.DB.DBConnect"%>
@@ -214,7 +217,7 @@ function showToast(content) {
                          <div class="product__main-info-contact">
                                 <a href="#" class="product__main-info-contact-fb">
                                     <i class="fab fa-facebook-f"></i>
-                                    Chat Facebook
+                                    Chat FaceBook
                                 </a>
                                 <div class="product__main-info-contact-phone-wrap">
                                     <div class="product__main-info-contact-phone-icon">
@@ -433,6 +436,8 @@ function showToast(content) {
                     </div>
                     <div class="form-group">
                         <label>Content:</label>
+                        <input type="hidden" name="bid" value="<%=b.getBookId()%>">
+                        <input type="hidden" name="uid" value="<%=u.getId()%>">
                         <textarea name="content" required  rows="8" id ='formcontent' class="form-control"></textarea>     
                     </div>
                     
@@ -451,31 +456,44 @@ function showToast(content) {
                 </form> 
             </div>
            </div>
+
+
+			     <% 
+			     CommentDAO dao2 = new CommentDAOImpl(DBConnect.getConn()); 
+			      List<CommentProduct> list2 = dao2.listCommentProduct(b.getBookId());
+								 
+				 for (CommentProduct c : list2) { 
+				 %>
+
+			<div class="product-comment row pb-4 pb-4  py-4 pb-4 py-4 py-4">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<div class="comment-item">
+						<ul class=item-reviewer>
+							<div class="comment-item-user">
+								<img src="fontend/images/img/1.png" alt=""
+									class="comment-item-user-img">
+
+								<li><b><%=c.getName()%></b></li>
+							</div>
+
+							<br>
+							<li><%=c.getDate()%></li>
+							<li>
+								<h4><%=c.getContent()%></h4>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+
+			<%
+			}
+			%>   
             
-           <div class="product-comment row pb-4 pb-4  py-4 pb-4 py-4 py-4">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="comment-item">
-                    <ul class = item-reviewer>
-                        <div class="comment-item-user">
-                            <img src="fontend/images/img/1.png" alt="" class="comment-item-user-img">
-                            
-                            <li><b>Nguyen Nhung</b></li> 
-                         </div>
-                      
-                       <br>
-                        <li>2021-08-17 20:40:10</li>
-                        <li>
-                           <h4>The book is carefully wrapped in plastic, clean and new. Fast delivery. The content has not been read but at first glance looks interesting and a lot of useful knowledge. I'm abroad and ask the buyer to send it over, so the seller's packaging is very important, helping the book to be shipped far away without damage. Will continue to support. Love book shop .From Hust with Love</h4>
-                        </li>
-                    </ul>
-                </div>
-                
-            </div>
-           </div> 
            
          </div>
-             
-        </div>
+              </div>
     </section> 
     <!--product -->
 
