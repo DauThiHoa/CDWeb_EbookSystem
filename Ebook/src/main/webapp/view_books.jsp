@@ -23,17 +23,20 @@
  
 <title>Ebook: View Product</title>
 
-
+ 
  	 <script src="fontend/js/jquery-3.3.1.js"></script>
      <script src="fontend/js/bootstrap.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <link rel="stylesheet" href="fontend/css/bootstrap.min.css">
      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0.500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
      <link rel="stylesheet" href="fontend/fonts/fontawesome/css/all.min.css">
      <link rel="stylesheet" href="fontend/css/style.css">
      <link rel="stylesheet" href="fontend/css/product.css">
+     <link rel="stylesheet" href="fontend/css/cart.css">
      
      
 <%@include file="all_component/allCss.jsp"%>
+ 
 </head>
 <body style="background-color: #f0f1f2;">
 
@@ -42,12 +45,37 @@
 	<%
 	User u = (User) session.getAttribute("userobj");
 	%>
+	 
+	
+	<c:if test="${not empty failed }">
+
+		<!-- begin toast -->
+		<!-- ------------------- -->
+		<div id="toast">${failed}</div>
+		<script type="text/javascript">
+showToast ();
+function showToast(content) {
+	$('#toast').addClass ("display");
+	$('#toast').html(content);
+	setTimeout (()=>{
+		$("#toast").removeClass ("display");
+	}, 2000)
+}
+
+</script>
+		<!-- end toast -->
+
+		<c:remove var="failed"
+			scope="session"/>
+
+	</c:if>
 	
 	<%
 	int id = Integer.parseInt(request.getParameter("id"));
 	BookDAOImpl dao = new BookDAOImpl(DBConnect.getConn());
 	BookDtls b = dao.getBookById(id);
 	%>
+
 
  
 <button onclick="topFunction()" id="myBtn-scroll" title="Go to top"><i class="fas fa-chevron-up"></i></button>
@@ -121,21 +149,69 @@
                             </div> 
 
 
-                            <div class="product__main-info-cart"> 
+                            <%-- <div class="product__main-info-cart"> 
                                 
                                 <div class="product__main-info-cart-btn-wrap">
-                                <%-- <a href="cart?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>"> --%>
+                                <a href="cart?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>">
                                     <button class="product__main-info-cart-btn" style="background: green;">
-                                   <%--  <a href="cart?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>"> --%>
+                                    <a href="cart?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>">
                                        <i style="font-size: 100%; margin-right: 5%" class="fas fa-cart-plus"></i>
                                        Add to cart
                                     <!--  </a> -->
                                     </button>
                                 <!-- </a>   -->  
                                 </div>
-                            </div> 
+                            </div>  --%>
+
+                        <form action="addProductDetails" method="post" class="product__main-info-cart">
+							<!-- <article class="row cart__body">  -->
+  
+							<!-- </article>  -->
+                                <div class="product__main-info-cart-btn-wrap"> 
+                                 <article class="row cart__body"> 
+                                 <div class="col-3 cart__body-quantity">
+                                 
+									<!-- <input type="hidden" style="display: none"  value="1" name="bid" class="cart__body-quantity-minus">  
+									 -->	
+									 
+									 <input style="width: 500%; border: 1px solid black;"
+										type="number" step="1" min="1" max="999" value="1" name="quantity"
+										class="cart__body-quantity-total"> 
+										
+										<!-- <input
+										type="hidden" value="1" name="uid" class="cart__body-quantity-plus"> 
+									  --> 
+								</div>  
+								 </article>   
+										
+										 
+									 
+						   <%
+							if (u == null) {
+							%>
+							     <a href="login.jsp" class="btn btn-danger btn-sm"><i style="font-size: 100%; margin-right: 5%"  class="fas fa-cart-plus"></i>Add To Cart</a>
+							<%
+							} else {
+							%>
+							
+							         <input type="hidden" style="display: none" value="<%=b.getBookId()%>" name="bid" > 
+									 <input type="hidden" style="display: none" value="<%=u.getId()%>" name="uid"  >  
+									 
+									 <button type="submit" class="btn btn-danger btn-sm" style=" "> 
+                                       <i style="font-size: 100%; margin-right: 5%" class="fas fa-cart-plus"></i>
+                                       Add to cart 
+                                    </button>   
+							<%
+							}
+							%>   
+                                    
+                                </div>
+                                
+                                
+                            </form> 
+                             
                             
-                           <div class="product__main-info-contact">
+                         <div class="product__main-info-contact">
                                 <a href="#" class="product__main-info-contact-fb">
                                     <i class="fab fa-facebook-f"></i>
                                     Chat Facebook
@@ -156,7 +232,7 @@
 
                                 </div>
 
-                            </div>
+                            </div> 
                         </div>
                     </div>
 
@@ -323,17 +399,18 @@
           <div class="customer-reviews row pb-4 pb-4  py-4 pb-4 py-4 py-4">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <h3 class="text-success" style="font-weight: bold;" >Product Comments</h3>
-                <form id ="formgroupcomment" method="post">
+                
+                <form id ="formgroupcomment" action="commentProduct" method="post">
                     <div class="form-group">
                         <label>Name:</label>
                         	 <%
 							if (u == null) {
 							%> 
-							 <input name="comm_name"  required type="text" id ='form-name' class="form-control">
+							 <input name="name"  required type="text" id ='form-name' class="form-control">
 							 <%
 							} else {
 							%> 
-							<input name="comm_name"  required type="text" id ='form-name' class="form-control" value="<%=u.getName()%>">
+							<input name="name"  required type="text" id ='form-name' class="form-control" value="<%=u.getName()%>">
 							<%
 							}
 							%>
@@ -345,20 +422,32 @@
                            <%
 							if (u == null) {
 							%>  
-							  <input name="comm_mail" required  type="email"  class="form-control" id="pwd" >
+							  <input name="email" required  type="email"  class="form-control" id="pwd" >
 							 <%
 							} else {
 							%>  
-							 <input name="comm_mail" required  type="email"  class="form-control" id="pwd"   value="<%=u.getEmail()%>" >
+							 <input name="email" required  type="email"  class="form-control" id="pwd"   value="<%=u.getEmail()%>" >
 							<%
 							}
 							%>
                     </div>
                     <div class="form-group">
                         <label>Content:</label>
-                        <textarea name="comm_details" required  rows="8" id ='formcontent' class="form-control"></textarea>     
+                        <textarea name="content" required  rows="8" id ='formcontent' class="form-control"></textarea>     
                     </div>
-                    <button type="submit" name="sbm" id= "submitcomment" class="btn btn-primary" style="width: 10%;font-weight: bold;">Send</button>
+                    
+                     		<%
+							if (u == null) {
+							%> 
+							        <a href="login.jsp"  type="submit" name="sbm" id= "submitcomment" class="btn btn-primary" style="width: 10%;font-weight: bold;">Send</a>
+							<%
+							} else {
+							%>  
+                                    <button type="submit" name="sbm" id= "submitcomment" class="btn btn-primary" style="width: 10%;font-weight: bold;">Send</button>
+							<%
+							}
+							%>   
+							
                 </form> 
             </div>
            </div>
@@ -602,11 +691,15 @@
  
  
  
+ 
 
 <!-- footer section starts  -->
 
 	<%@include file="all_component/footer.jsp"%>
 <!-- footer section ends -->
-
+ 
+ 
+ <!-- end footer -->
+    <script src="fontend/js/jq.js"></script>
 </body>
 </html>

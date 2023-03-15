@@ -146,8 +146,32 @@ function checkAscPrice() {
 		<p>
 			<a href="index.jsp">home >></a> shop
 		</p>
-	</div>
+		
+		<c:if test="${not empty addCart }">
+
+		<!-- begin toast -->
+		<!-- ------------------- -->
+		<div id="toast">${addCart}</div>
+		<script type="text/javascript">
+showToast ();
+function showToast(content) {
+	$('#toast').addClass ("display");
+	$('#toast').html(content);
+	setTimeout (()=>{
+		$("#toast").removeClass ("display");
+	}, 2000)
+}
+
+</script>
+		<!-- end toast -->
+
+		<c:remove var="addCart"
+			scope="session"/>
+
+	</c:if>
 	
+	</div>
+	 
 	
 	<!-- <div class="list-group">
 			<a href="#" class="list-group-item list-group-item-action active">

@@ -20,9 +20,11 @@ public interface CartDAO {
 //	XOA SAN PHAM TRONG GIO HANG
 	public boolean deleteBook (int bid , int uid , int cid);
 //	UPDATE QUANTITY TRONG GIO HANG
-	public boolean updateQuantityCart (int quantity, int bid , int uid , int cid);
+	public boolean updateQuantityCart (int quantity, int bid , int uid);
 	
 //	LAY GIA CUA 1 SAN PHAM TRONG GIO HANG
-	public double getPriceBookCart (int bid , int uid , int cid);
+	public double getPriceBookCart (int bid , int uid);
 	
+//	ADD QUANTITY TRONG PRODUCT DETAILS
+	public boolean updateQuantityProductDetails (int quantity, int bid , int uid);
 }

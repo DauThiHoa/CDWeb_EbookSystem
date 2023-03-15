@@ -174,30 +174,29 @@ public class CartDAOImpl implements CartDAO {
 		return f;
 	}
 
+	
 //	UPDATE QUANTITY TRONG GIO HANG
 	@Override
-	public boolean updateQuantityCart(int quantity, int bid, int uid, int cid) {
+	public boolean updateQuantityCart(int quantity, int bid, int uid) {
 		// TODO Auto-generated method stub
 		boolean f = false;
-		double total_price = getPriceBookCart(bid, uid, cid) * quantity;
+		double total_price = getPriceBookCart(bid, uid) * quantity;
 		try {
 
-			String sql = "update cart set quantity = ? where bid = ? and uid = ? and cid = ?";
+			String sql = "update cart set quantity = ? where bid = ? and uid = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, quantity);
 			ps.setInt(2, bid);
-			ps.setInt(3, uid);
-			ps.setInt(4, cid);
+			ps.setInt(3, uid); 
 
 			int i = ps.executeUpdate();
 			if (i == 1) {
 
-				String sql1 = "update cart set total_price = ? where bid = ? and uid = ? and cid = ?";
+				String sql1 = "update cart set total_price = ? where bid = ? and uid = ?";
 				PreparedStatement ps1 = conn.prepareStatement(sql1);
 				ps1.setDouble(1, total_price);
 				ps1.setInt(2, bid);
-				ps1.setInt(3, uid);
-				ps1.setInt(4, cid);
+				ps1.setInt(3, uid); 
 
 				int i1 = ps1.executeUpdate();
 				if (i1 == 1) {
@@ -213,17 +212,16 @@ public class CartDAOImpl implements CartDAO {
 	}
 
 	@Override
-	public double getPriceBookCart(int bid, int uid, int cid) {
+	public double getPriceBookCart(int bid, int uid) {
 		// TODO Auto-generated method stub
 		double price = 0;
 
 		try {
 
-			String sql = "select * from cart where bid = ? and uid = ? and cid = ?";
+			String sql = "select * from cart where bid = ? and uid = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, bid);
-			ps.setInt(2, uid);
-			ps.setInt(3, cid);
+			ps.setInt(2, uid); 
 
 //			System.out.println(idBook + " - " + idUser);
 
@@ -237,6 +235,41 @@ public class CartDAOImpl implements CartDAO {
 			e.printStackTrace();
 		}
 		return price;
+	}
+
+	@Override
+	public boolean updateQuantityProductDetails(int quantity, int bid, int uid) {
+		// TODO Auto-generated method stub
+				boolean f = false;
+
+				try {
+
+					String sql = "update cart set quantity = quantity + ?  where bid = ? and uid = ?";
+					PreparedStatement ps = conn.prepareStatement(sql);
+					ps.setInt(1, quantity);
+					ps.setInt(2, bid);
+					ps.setInt(3, uid);
+
+					int i = ps.executeUpdate();
+					if (i == 1) {
+
+						String sql1 = "update cart set total_price = quantity * price  where bid = ? and uid = ?";
+						PreparedStatement ps1 = conn.prepareStatement(sql1);
+						ps1.setInt(1, bid);
+						ps1.setInt(2, uid);
+
+						int i1 = ps1.executeUpdate();
+						if (i1 == 1) {
+
+							f = true;
+						}
+					}
+
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
+				return f;
 	}
 
 }

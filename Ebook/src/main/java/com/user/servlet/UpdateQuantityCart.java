@@ -27,7 +27,7 @@ public class UpdateQuantityCart extends HttpServlet{
 		
 //		CAP NHAT SO LUONG CUA SAN PHAM TRONG GIO HANG
 		CartDAOImpl dao = new CartDAOImpl(DBConnect.getConn());
-		boolean f = dao.updateQuantityCart(quantity, bid , uid, cid);
+		boolean f = dao.updateQuantityCart(quantity, bid , uid);
 
 		HttpSession session = req.getSession();
 		
