@@ -1,5 +1,6 @@
 <!-- footer section starts  -->
 
+<%@page import="com.entity.User"%>
 <section class="footer">
 
     <div class="box-container">
@@ -31,16 +32,19 @@
             <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
             <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
         </div>
+         
 
         <div class="box">
             <h3>newsletter</h3>
             <p>subscribe for latest updates</p>
-            <form action="">
-                <input type="email" placeholder="Enter your email">
-                <input type="submit" value="subscribe" class="btn">
-            </form>
+            <form action="subscribe" method="post" > 
+							      <input type="email" name="email" placeholder="Enter your email" required > 
+							      <input type="submit" value="subscribe" class="btn"> 
+                 
+            </form  >
             <img src="image/payment.png" class="payment" alt="">
         </div>
+
 
     </div>
 

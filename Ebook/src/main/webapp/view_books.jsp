@@ -192,7 +192,9 @@ function showToast(content) {
 						   <%
 							if (u == null) {
 							%>
-							     <a href="login.jsp" class="btn btn-danger btn-sm"><i style="font-size: 100%; margin-right: 5%"  class="fas fa-cart-plus"></i>Add To Cart</a>
+							     <a href="login.jsp" class="btn btn-danger btn-sm">
+							     <i style="font-size: 100%; margin-right: 5%"  class="fas fa-cart-plus"></i>
+							     Add To Cart</a>
 							<%
 							} else {
 							%>
@@ -436,8 +438,16 @@ function showToast(content) {
                     </div>
                     <div class="form-group">
                         <label>Content:</label>
+                        
+                       		 <%
+							if (u != null) {
+							%> 
                         <input type="hidden" name="bid" value="<%=b.getBookId()%>">
                         <input type="hidden" name="uid" value="<%=u.getId()%>">
+                       		 <%
+							}
+							%>
+							
                         <textarea name="content" required  rows="8" id ='formcontent' class="form-control"></textarea>     
                     </div>
                     
