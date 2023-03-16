@@ -139,7 +139,7 @@ function checkAscPrice() {
 
 				
 
-	<div class="heading" style="margin-top: 5%">
+	<div class="heading" style="margin-top: 3%">
 		
 		
 		<h1>our shop</h1>
@@ -263,17 +263,15 @@ function showToast(content) {
         <h3>coffee</h3>
     </a> -->
 
-			<!-- <button type="button" class="btn btn-outline-warning">Warning</button>
-	<button type="button" class="btn btn-outline-info">Info</button>
-	<button type="button" class="btn btn-outline-light">Light</button>
-	<button type="button" class="btn btn-outline-dark">Dark</button> -->
+			<!--    <button type="button" class="btn btn-outline-warning">Warning</button>
+					<button type="button" class="btn btn-outline-info">Info</button>
+					<button type="button" class="btn btn-outline-light">Light</button>
+					<button type="button" class="btn btn-outline-dark">Dark</button> -->
 
 
 		</section>
 
-		<!-- category section ends -->
-
-
+		<!-- category section ends -->  
 	</section>
 	
 	   
@@ -390,7 +388,8 @@ function showToast(content) {
 <%}%> 
 
 <br>
-<div  class="pagination">    
+</div> 
+<div  class="pagination" style="margin-left: 38%">    
     <%                //Button Previous
         int back = 0;
         if (pages == 0 || pages == 1) {
@@ -465,7 +464,7 @@ function showToast(content) {
 </div>
  
   
-		</div> 
+		<!-- </div>  -->
     </section> 
 
 
@@ -589,7 +588,8 @@ function showToast(content) {
 <%}%> 
 
 <br>
-<div  class="pagination" >    
+</div> 
+<div  class="pagination" style="margin-left: 38%">    
     <%                //Button Previous
         int back3 = 0;
         if (pages3 == 0 || pages3 == 1) {
@@ -664,7 +664,7 @@ function showToast(content) {
 </div>
  
   
-		</div> 
+		<!-- </div>  -->
     </section>  
 
 
@@ -789,7 +789,8 @@ function showToast(content) {
 <%}%> 
 
 <br>
-<div  class="pagination">    
+</div> 
+<div  class="pagination" style="margin-left: 38%">     
     <%                //Button Previous
         int back2 = 0;
         if (pages2 == 0 || pages2 == 1) {
@@ -864,7 +865,7 @@ function showToast(content) {
 </div>
  
   
-		</div> 
+		<!-- </div>  -->
     </section>  
 
 <!-- popular section ends -->'
@@ -994,7 +995,8 @@ function showToast(content) {
 <%}%> 
 
 <br>
-<div  class="pagination">    
+</div> 
+<div  class="pagination" style="margin-left: 38%">     
     <%                //Button Previous
         int back1 = 0;
         if (pages1 == 0 || pages1 == 1) {
@@ -1069,7 +1071,7 @@ function showToast(content) {
 </div>
  
   
-		</div> 
+		<!-- </div>  -->
     </section>  
 <!-- popular section ends -->'
 <!-- getAllBooksAscPrice PRODUCT LIST ENDS -->
@@ -1205,7 +1207,8 @@ function showToast(content) {
 <%}%> 
 
 <br>
-<div  class="pagination">    
+</div> 
+<div  class="pagination" style="margin-left: 38%">    
     <%                //Button Previous
         int back4 = 0;
         if (pages4 == 0 || pages4 == 1) {
@@ -1280,7 +1283,7 @@ function showToast(content) {
 </div>
  
   
-		</div> 
+		<!-- </div>  -->
     </section>  
 <!-- popular section ends -->'
 <!-- categoryLanguage PRODUCT LIST ENDS -->
@@ -1405,7 +1408,8 @@ function showToast(content) {
 <%}%> 
 
 <br>
-<div  class="pagination">    
+</div> 
+<div  class="pagination" style="margin-left: 38%">    
     <%                //Button Previous
         int back5 = 0;
         if (pages5 == 0 || pages5 == 1) {
@@ -1480,7 +1484,7 @@ function showToast(content) {
 </div>
  
   
-		</div> 
+		<!-- </div>  -->
     </section>  
 <!-- popular section ends -->'
 <!-- categoryLiterature PRODUCT LIST ENDS -->
@@ -1604,7 +1608,8 @@ function showToast(content) {
 <%}%> 
 
 <br>
-<div  class="pagination">    
+</div> 
+<div  class="pagination" style="margin-left: 38%">  
     <%                //Button Previous
         int back6 = 0;
         if (pages6 == 0 || pages6 == 1) {
@@ -1679,7 +1684,7 @@ function showToast(content) {
 </div>
  
   
-		</div> 
+		<!-- </div>  -->
     </section>  
 <!-- popular section ends -->'
 <!-- categorySkills PRODUCT LIST ENDS -->
@@ -1805,7 +1810,8 @@ function showToast(content) {
 <%}%> 
 
 <br>
-<div  class="pagination">    
+</div> 
+<div  class="pagination" style="margin-left: 38%">     
     <%                //Button Previous
         int back7 = 0;
         if (pages7 == 0 || pages7 == 1) {
@@ -1880,7 +1886,7 @@ function showToast(content) {
 </div>
  
   
-		</div> 
+	<!-- 	</div>  -->
     </section>  
 <!-- popular section ends -->'
 <!-- categoryArt PRODUCT LIST ENDS -->
@@ -2003,7 +2009,8 @@ function showToast(content) {
 <%}%> 
 
 <br>
-<div  class="pagination">    
+</div> 
+<div  class="pagination" style="margin-left: 38%">  
     <%                //Button Previous
         int back8 = 0;
         if (pages8 == 0 || pages8 == 1) {
@@ -2078,7 +2085,7 @@ function showToast(content) {
 </div>
  
   
-		</div> 
+		<!-- </div>  -->
     </section>  
 <!-- popular section ends -->'
 <!-- categorySport PRODUCT LIST ENDS -->

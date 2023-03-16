@@ -111,8 +111,7 @@ a:hover {
 
 
 
-
-
+ 
 
 	<div class="container " style="margin-top: 8%">
 		<!-- <div class="row"> -->
@@ -120,7 +119,7 @@ a:hover {
 				<div class="card bg-white"  >
 					<div class="card-body">
 					
-					<h1 class="text-center text-success">Your Selected Item</h1>
+					<h1 class="text-center text-success" style="font-weight: bold;">Your Selected Item</h1>
 					 
 					<c:if test="${not empty succMsg }">
 						<div class="text-center alert alert-success" role="alert">${succMsg }</div>
@@ -181,6 +180,7 @@ a:hover {
 				</div>
 			</div>
 			</div>
+			 
 			
 	<%@include file="all_component/footer.jsp"%>
 </body>

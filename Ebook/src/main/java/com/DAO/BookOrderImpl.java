@@ -40,34 +40,28 @@ public class BookOrderImpl implements BookOrderDAO {
 
 //	LUU DON HANG 
 	@Override
-	public boolean saveOrder(List<Book_Order> bList) {
+	public boolean saveOrder(Book_Order order) {
 		// TODO Auto-generated method stub
 		boolean f = false;
 		try {
 			
-			String sql = "insert into book_order (order_id,user_name,email,address,phone,book_name,author,price,payment) values (?,?,?,?,?,?,?,?,?) ";
-		
-			conn.setAutoCommit(false);
+			String sql = "insert into book_order (order_id, user_name, email, address, phone, total, payment) values (?,?,?,?,?,?,?) ";
+		 
 			PreparedStatement ps = conn.prepareStatement(sql);
-			
-			for (Book_Order b : bList) {
-				ps.setString(1, b.getOrderId());
-				ps.setString(2, b.getUserName());
-				ps.setString(3, b.getEmail());
-				ps.setString(4, b.getFulladd());
-				ps.setString(5, b.getPhno());
-				ps.setString(6, b.getBookName());
-				ps.setString(7, b.getAuthor());
-				ps.setDouble(8, b.getPrice());
-				ps.setString(9, b.getPaymentType());
-				ps.addBatch();
-			}
-		
-			int[] count = ps.executeBatch();
-			conn.commit();
-			f = true;
-			conn.setAutoCommit(true);
-			
+			 
+				ps.setString(1, order.getOrderId());
+				ps.setString(2, order.getUserName());
+				ps.setString(3, order.getEmail());
+				ps.setString(4, order.getFulladd());
+				ps.setString(5, order.getPhno()); 
+				ps.setDouble(6, order.getPrice());
+				ps.setString(7, order.getPaymentType());
+				 
+			int i = ps.executeUpdate();
+
+				if (i == 1) {
+					f = true;
+				}
 			
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -97,11 +91,9 @@ public class BookOrderImpl implements BookOrderDAO {
 				o.setUserName(rs.getString(3));
 				o.setEmail(rs.getString(4));
 				o.setFulladd(rs.getString(5));
-				o.setPhno(rs.getString(6));
-				o.setBookName(rs.getString(7));
-				o.setAuthor(rs.getString(8));
-				o.setPrice(rs.getDouble(9));
-				o.setPaymentType(rs.getString(10));
+				o.setPhno(rs.getString(6)); 
+				o.setPrice(rs.getDouble(7));
+				o.setPaymentType(rs.getString(8));
 				list.add(o);
 			}
 			
@@ -132,11 +124,9 @@ public class BookOrderImpl implements BookOrderDAO {
 				o.setUserName(rs.getString(3));
 				o.setEmail(rs.getString(4));
 				o.setFulladd(rs.getString(5));
-				o.setPhno(rs.getString(6));
-				o.setBookName(rs.getString(7));
-				o.setAuthor(rs.getString(8));
-				o.setPrice(rs.getDouble(9));
-				o.setPaymentType(rs.getString(10));
+				o.setPhno(rs.getString(6)); 
+				o.setPrice(rs.getDouble(7));
+				o.setPaymentType(rs.getString(8));
 				list.add(o);
 			}
 			

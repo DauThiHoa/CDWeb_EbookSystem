@@ -272,4 +272,26 @@ public class CartDAOImpl implements CartDAO {
 				return f;
 	}
 
+	
+//	XOA GIO HANG 
+	@Override
+	public boolean deleteCart() {
+		// TODO Auto-generated method stub
+		boolean f = false;
+		try {
+			String sql = "delete from cart";
+			PreparedStatement ps = conn.prepareStatement(sql); 
+
+			int i = ps.executeUpdate();
+
+			if (i == 1) {
+				f = true;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return f;
+	}
+
 }

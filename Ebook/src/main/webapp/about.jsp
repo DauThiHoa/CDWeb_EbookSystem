@@ -23,13 +23,13 @@
 
 
 
-<div class="heading heading1">
+<div class="heading heading1" style="margin-top: -3%">
     <h1>about us</h1>
     <p> <a href="index.jsp">home >></a> about </p>
 </div>
 
 
-<section class="info-container">
+<section class="info-container" style="margin-top: -3%; margin-left: 8%">
 
     <div class="info">
         <img src="image/icon-1.png" alt="">
@@ -107,7 +107,7 @@
      
 </section>
 
-<!-- 
+
 <section class="gallery">
 
     <h1 class="title"> our <span>gallery</span> <a href="#">view all >></a> </h1>
@@ -150,7 +150,7 @@
             </div>
         </div>
 
-        <div class="box">
+       <!--  <div class="box">
             <img src="image/gallery-img-5.jpg" alt="">
             <div class="icons">
                 <a href="#" class="fas fa-eye"></a>
@@ -166,12 +166,11 @@
                 <a href="#" class="fas fa-heart"></a>
                 <a href="#" class="fas fa-share-alt"></a>
             </div>
-        </div>
+        </div> -->
 
     </div>
 
 </section>
- -->
 
 
 

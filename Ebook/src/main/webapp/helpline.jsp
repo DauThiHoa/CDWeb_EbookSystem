@@ -59,12 +59,12 @@ a:hover {
 		<div class="row p-5">
 			<div class="col-md-4 offset-md-4 text-center">
 				<div class="text-success">
-					<i class="fas fa-phone-square-alt fa-5x"></i>
+					<i class="fas fa-phone-square-alt fa-7x"></i>
 				</div>
-				<h1>24*7 Service</h1>
+				<h1 style="font-weight: bold;">24*7 Service</h1>
 				<h2>Help Line Number</h2>
 				<h3>+0671 869899023</h3>
-				<a href="index.jsp" class="btn btn-primary">Home</a>
+				<a href="index.jsp" class="btn btn-primary" style="font-weight: bold;">Home</a>
 			</div>
 		</div>
 

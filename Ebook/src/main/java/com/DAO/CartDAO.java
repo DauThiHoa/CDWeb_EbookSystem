@@ -10,6 +10,9 @@ public interface CartDAO {
 //	THEM SAN PHAM VAO GIO HANG
 	public boolean addCart ( Cart c );
 	
+//	XOA GIO HANG 
+	public boolean deleteCart ();
+	
 //	KIEM TRA XEM ID SACH DO NGUOI DUNG THEM VAO DA CO TRONG CSDL HAY CHUA 
 	public boolean checkBookCart (int idBook , int idUser);
 //	UPDATE SO LUONG VOI CUNG SAN PHAM VA CUNG NGUOI DUNG 

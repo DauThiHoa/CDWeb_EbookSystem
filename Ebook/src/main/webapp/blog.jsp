@@ -24,12 +24,12 @@
 	<%@include file="all_component/navbar.jsp"%>
 
 
-<div class="heading">
+<div class="heading" style="margin-top: -3%">
     <h1>our blogs</h1>
     <p> <a href="index.jsp">home >></a> blogs </p>
 </div>
 
-<section class="blogs">
+<section class="blogs" style="margin-top: -3%">
 
     <h1 class="title"> our <span>blogs</span> <a href="#">view all >></a> </h1>
 
@@ -83,7 +83,7 @@
                     <a href="#"> <i class="fas fa-tag"></i> Event  </a>
                 </div>
                 <h3>Instructions for returning books, refunding Edu Book</h3>
-                <p>Purchased on Edu Book but the product you received is not the same as the picture, the product is defective. </p>
+                <p>Purchased on Edu Book but the product you received is not the same as the picture. </p>
                 <a href="about.jsp" class="btn">Read more</a>
             </div>
         </div>
@@ -100,7 +100,7 @@
                     <a href="#"> <i class="fas fa-tag"></i> Event  </a>
                 </div>
                 <h3>Tips for hunting discount voucher codes at EBook</h3>
-                <p>If you are facing problems with hunting, retrieving, use EduBook voucher codes. Rest assured, this article is for you! In this article, I will share with you tips and experiences to help you hunt as many EduBook discount codes as possible.....</p>
+                <p>If you are facing problems with hunting, retrieving, use EduBook voucher codes.  </p>
                 <a href="about.jsp" class="btn">Read more</a>
             </div>
         </div>
@@ -118,7 +118,9 @@
                     <a href="#"> <i class="fas fa-tag"></i> Event  </a>
                 </div>
                 <h3>Program to exchange old books for trees</h3>
-                <p>The project "Exchange old books - Get green trees" received a great response from everyone. Everyone hurry up to participate in the program "Green Living Festival 2021" and visit booth D6 (Environmental Safety Incident Response Center) to exchange knowledge and get their own potted plants. green is so cute...</p>
+                <p>The project "Exchange old books - Get green trees" received a great response from everyone.
+                 Everyone hurry up to participate in the program "Green Living Festival 2021" 
+                 and visit booth D6  </p>
                 <a href="about.jsp" class="btn">Read more</a>
             </div>
         </div>
@@ -134,7 +136,8 @@
                     <a href="#"> <i class="fas fa-tag"></i> Event  </a>
                 </div>
                 <h3>Collect old books, give new joy to poor children</h3>
-                <p>Today, sitting and stacking books that I have just received from Dinh Thien Ly school, they have donated and supported children in remote areas, feeling very happy. Then suddenly I remembered a lot of things. When I was young, my family couldn't afford to read anything. But my place is in a remote area, so I lacked even more...</p>
+                <p>Today, sitting and stacking books that I have just received from Dinh Thien Ly school,
+                 they have donated and supported children in remote areas, feeling very happy.  </p>
                 <a href="about.jsp" class="btn">Read more</a>
             </div>
         </div>

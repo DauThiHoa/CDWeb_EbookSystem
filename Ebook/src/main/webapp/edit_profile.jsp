@@ -62,13 +62,13 @@ a:hover {
 	%>
 
 				
-<section class="contact" style="margin-top: 10%; width: 80%; margin-left: 10% ">
+<section class="contact" style="margin-top: 6%; width: 50%; margin-left: 25% ">
 
     
     <div class="row">
 
         <form action="update_profile" method="post">
-            <h3  class="text-center text-success" >Edit Profile</h3>
+            <h3  class="text-center text-success" style="font-weight: bold;" >Edit Profile</h3>
             
                         <c:if test="${not empty failedMsg }">
 							<h5 class="text-center text-danger">${failedMsg }</h5>
@@ -92,7 +92,7 @@ a:hover {
 									value="${userobj.name }" required > 
 							 
             </div> 
-            
+            <br>
 			<div class="inputBox">    
           			 <h4 >Email address</h4>  
             </div>		
@@ -102,7 +102,7 @@ a:hover {
 									value="${userobj.email }" readonly  > 
 							 
             </div>
-            
+            <br>
             <div class="inputBox">    
           			 <h4 >Phone No</h4>  
             </div>				
@@ -112,7 +112,7 @@ a:hover {
 									value="${userobj.phno }" required>  
                           
             </div>
-            
+            <br>
             <div class="inputBox">    
           			 <h4 >Password</h4>  
             </div>
@@ -123,7 +123,7 @@ a:hover {
                           
             </div>
             
-            <button type="submit" value="Send message" class="btn"  style="margin-left: 87%" >Update</button>
+            <button type="submit" value="Send message" class="btn"  style="margin-left: 74%; font-weight: bold;" >Update</button>
             
         </form>
  

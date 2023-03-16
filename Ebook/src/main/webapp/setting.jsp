@@ -88,17 +88,18 @@ a:hover {
 
     
 		<c:if test="${not empty userobj }">
-			<h1 class="text-center">Hello, ${userobj.name }</h1>
+			<h1 class="text-center" style="font-weight: bold;">Hello, ${userobj.name }</h1>
 		</c:if>
-		<div class="row p-5">
+		
+		<div class="row p-5" style="margin-top: 2%">
 
 
 			<div class="col-md-4">
 				<a href="sell_book.jsp">
 					<div class="card">
 						<div class="card-body text-center">
-							<div class="text-primary">
-								<i class="fas fa-book-open fa-5x"></i>
+							<div class="text-primary" >
+								<i class="fas fa-book-open fa-5x" style="color: #5acce6" ></i>
 							</div>
 							<h1>Sell Old Book</h1>
 						</div>
@@ -123,7 +124,7 @@ a:hover {
 				<a href="edit_profile.jsp">
 					<div class="card">
 						<div class="card-body text-center">
-							<div class="text-primary">
+							<div class="text-primary" style="color: #028fcc">
 								<i class="fas fa-edit fa-5x"></i>
 							</div>
 							<h1>Edit Profile</h1>

@@ -31,7 +31,7 @@
 	<%@include file="all_component/navbar.jsp"%>
 
 
-<div class="heading">
+<div class="heading" style="margin-top: -3%">
     <h1>Contact us</h1>
     <p> <a href="index.jsp">home >></a> contact </p>
 </div>
@@ -79,7 +79,7 @@ function showToast(content) {
 				<c:remove var="succMsg" scope="session" />
 				</c:if>
 				
-<section class="contact">
+<section class="contact" style="margin-top: -2%">
 
     <div class="icons-container">
 

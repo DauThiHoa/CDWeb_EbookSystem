@@ -426,7 +426,11 @@
             </div> 
             
             <div class="text-center text-white">
+            
+            					<input type="hidden" class="box" value="<%=u.getId()%>" name="uid" required>
+            					<input type="hidden" class="box" value="<%=totalPrice%>" name="total" required>
 								<button type="submit" class="btn btn-warning" style="background: orange;">Order Now</button>
+								
 								<a href="index.jsp" class="btn btn-success"> Continue
 									Shopping</a>
 			</div>

@@ -64,7 +64,11 @@ a:hover {
 		<c:redirect url="login.jsp" />
 	</c:if>
 
-	<div class="container p-1" style="margin-top: 10%">
+
+
+
+
+	<%-- <div class="container p-1" style="margin-top: 10%">
 		<h1 class="text-center text-primary">Your Order</h1>
 
 		<table class="table table-striped mt-3">
@@ -101,7 +105,82 @@ a:hover {
 
 			</tbody>
 		</table>
-	</div>
+	</div> --%>
+
+ 
+ 
+ 	<div class="container " style="margin-top: 8%">
+		<!-- <div class="row"> -->
+			<div class=""> 
+				<div class="card bg-white" style="width: 130%; margin-left: -15%" >
+					<div class="card-body">
+					
+					<h1 class="text-center text-success" style="font-weight: bold;">Your Order</h1>
+					 
+					<c:if test="${not empty succMsg }">
+						<div class="text-center alert alert-success" role="alert">${succMsg }</div>
+						<c:remove var="succMsg" scope="session" />
+					</c:if>
+
+					<c:if test="${not empty failedMsg }">
+						<div class="text-center alert alert-danger text-center" role="alert">${failedMsg }</div>
+						<c:remove var="failedMsg" scope="session" />
+					</c:if>
+
+<br><br>
+					<table class="table table-striped"  >
+					
+							<thead>
+								<tr style="background: #5acce6;color: white;">
+									<th scope="col"><h2>Order Id</h2></th>
+									<th scope="col"><h2>User name</h2> </th>
+									<th scope="col"><h2>Address</h2> </th>
+									<th scope="col"><h2>Phone</h2> </th> 
+									<th scope="col"><h2>Price</h2> </th>
+									<th scope="col"><h2>Payment</h2> </th> 
+									<th scope="col"><h2>Action</h2> </th>
+								</tr>
+							</thead>
+							<tbody>
+
+							<%
+							User u = (User) session.getAttribute("userobj");
+							BookOrderImpl dao = new BookOrderImpl(DBConnect.getConn());
+							List<Book_Order> blist = dao.getBook(u.getEmail());
+							for (Book_Order b : blist) {
+							%>
+
+							<tr  >
+									<%-- <th  scope="row"><img alt="" src="book/<%=b.getPhotoName()%>"
+										style="width: 100px; height: 120px"></th> --%>
+									<th scope="row"><h3 style=""><%=b.getOrderId()%></h3></th>
+									<td><h3 style=""><%=b.getUserName()%></h3></td> 
+
+									<td><h3 style=""><%=b.getFulladd()%></h3></td>
+									<td><h3 style=""><%=b.getPhno()%></h3></td>
+									<td><h3 style=""><%=b.getPrice()%></h3></td>
+									<td><h3 style=""><%=b.getPaymentType()%></h3></td>
+									<%-- href="delete_old_book?em=<%=email%>&&id=<%=b.getBookId()%>"  background: #078660 --%>
+									<td> 
+										<a style=" "
+						 				href="orderDetails.jsp?order_id=<%=b.getOrderId()%>"
+										class="btn btn-sm btn-danger"><i class="fas fa-search"></i></a>
+										
+										</td>
+								</tr>
+
+								<%
+								}
+								%> 
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			</div>
+			
+ 
 
 	<%@include file="all_component/footer.jsp"%>
 </body>

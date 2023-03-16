@@ -66,14 +66,14 @@ a:hover {
  
 				
 			
-<section class="contact" style="margin-top: 8%; width: 70%; margin-left: 15% ">
+<section class="contact" style="margin-top: 6%; width: 50%; margin-left: 25% ">
 
     
     <div class="row">
 
         <form action="add_old_book" method="post" enctype="multipart/form-data">
         
-            <h3  class="text-center text-success">Sell Old Book</h3>
+            <h3  class="text-center text-success" style="font-weight: bold;">Sell Old Book</h3>
             
                         <c:if test="${not empty failedMsg }">
 							<h4 class="text-center text-danger">${failedMsg }</h4>
@@ -87,44 +87,62 @@ a:hover {
 						 
 						<input type="hidden" value="${userobj.email }" name="user">
 						
+						
+			<div class="inputBox">    
+          			 <h4 >Book Name</h4>  
+            </div> 
+            		
             <div class="inputBox" >   
 			       <!-- <input style="width: 100%" placeholder="        " class="box"  
 									aria-describedby="emailHelp"  required >  -->
 									
-									<input  style="width: 100%" placeholder="Book Name" class="box" 
+									<input  style="width: 100%" class="box" 
 									aria-describedby="emailHelp" required
 									name="bname" type="text" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp">
 							 
             </div> 
-									
+            
+			<br>
+			<div class="inputBox">    
+          			 <h4 >Author Name</h4>  
+            </div>							
              <div class="inputBox" >    
 									
-									<input  style="width: 100%" placeholder="Author Name" class="box" 
+									<input  style="width: 100%" placeholder="" class="box" 
 									aria-describedby="emailHelp" required
 									name="author" type="text" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp">
 							 
             </div> 
+            
+            <br>
+			<div class="inputBox">    
+          			 <h4 >Price</h4>  
+            </div>	
              <div class="inputBox" >    
 									
-									<input  style="width: 100%" placeholder="Price" class="box" 
+									<input  style="width: 100%" placeholder="" class="box" 
 									aria-describedby="emailHelp" required type="number"
 									name="price" type="double" class="form-control"
 									id="exampleInputPassword1">
 							 
             </div> 
              
+             <br>
+			<div class="inputBox">    
+          			 <h4 >Upload Photo</h4>  
+            </div>
               <div class="inputBox" >    
 									
-									<input  style="width: 100%" placeholder="Upload Photo" class="box" 
+									<input  style="width: 100%" placeholder="" class="box" 
 									aria-describedby="emailHelp" required
 									name="bimg" type="file" class="form-control-file"
 									id="exampleFormControlFile1">
 							 
             </div> 
             
-            <button type="submit" value="Send message" class="btn" style="margin-left: 88%">Sell</button>
+            <button type="submit" value="Send message" class="btn" style="margin-left: 80%; font-weight: bold;">Sell</button>
             
         </form>
  

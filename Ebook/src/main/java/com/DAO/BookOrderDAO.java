@@ -9,7 +9,7 @@ public interface BookOrderDAO {
 //	LAY SO DON HANG
 	public int getOrderNo ();
 //	LUU DON HANG 
-	public boolean saveOrder (List<Book_Order> bList);
+	public boolean saveOrder ( Book_Order order);
 	
 //	LAY DANH SACH CAC SAN PHAM TRONG DON HANG THEO EMAIL NGUOI DUNG
 	public List<Book_Order> getBook (String email);
