@@ -11,7 +11,7 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
-
+<%@include file="all_component/allCss.jsp"%>
 </head>
 <body>
     <%

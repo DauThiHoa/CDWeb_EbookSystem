@@ -9,8 +9,24 @@
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+	
+	<script type="text/javascript" src="scripts/jquery-3.6.3.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-ajax.js"></script>
+	
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+	
+	
+<%@include file="all_component/allCss.jsp"%>
+
+<!-- custom css file link  -->
+<link rel="stylesheet" href="css/style1.css">
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
@@ -189,6 +205,8 @@
 
 <!-- custom css file link  -->
 <script src="js/script.js"></script>
+<!-- custom js file link  -->
+<script src="js/script1.js"></script>
 
 </body>
 </html>

@@ -48,9 +48,9 @@
 		<div class="row p-5">
 
 			<%
-			BookDAOImpl dao2 = new BookDAOImpl(DBConnect.getConn());
-			List<BookDtls> list2 = dao2.getAllRecentBook();
-			for (BookDtls b2 : list2) {
+			BookDAOImpl dao  = new BookDAOImpl(DBConnect.getConn()); 
+			List<BookDtls> list  = dao.getAllRecentBook();
+			for (BookDtls b2 : list ) {
 			%>
 			<div class="col-md-3">
 				<div class="card crd-ho mt-2">

@@ -14,7 +14,7 @@
 <!-- BIEU TUONG TRANG WEB -->
 <link rel="icon" href="img/icon1.png" type="image/png" class="icon">
 
-
+<%@include file="all_component/allCss.jsp"%>
 <script type="text/javascript" src="scripts/jquery-3.6.3.min.js"></script>
 <script type="text/javascript" src="scripts/jquery-ajax.js"></script>
 

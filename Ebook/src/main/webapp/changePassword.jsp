@@ -117,8 +117,7 @@ function check() {
 						<span><i class="fa fa-lock"></i></span> <input type="password"
 							id="currentPassword"   name="currentPassword"
 							placeholder="Current Password" required onchange="check()">
-							
-							
+							 
 							 <span><i
 							id="hide" onclick="changeTypePassword1()"
 							class="fas fa-eye-slash"></i></span> <span><i id="show"

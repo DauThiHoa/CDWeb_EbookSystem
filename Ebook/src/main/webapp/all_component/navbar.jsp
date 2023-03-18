@@ -1,3 +1,5 @@
+<%@page import="com.entity.BookDtls"%>
+<%@page import="com.DAO.BookDAOImpl"%>
 <%@page import="com.entity.Cart"%>
 <%@page import="java.util.List"%>
 <%@page import="com.DB.DBConnect"%>
@@ -24,8 +26,12 @@
 	href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css"> -->
 
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+<script type="text/javascript" src="scripts/jquery-3.6.3.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-ajax.js"></script>
+
 
 <!-- font awesome cdn link  -->
 <link rel="stylesheet"
@@ -127,25 +133,120 @@
 				</a>
 			</div>
 		</c:if>
-
-
+   
 		<!--  SEARCH -->
-		<form action="search.jsp" method="post" class="search-form">
-			<input type="search" placeholder="Search here..." id="search-box"
-				name="ch" aria-label="Search">
-			<!-- <label for="search-box" class="fas fa-search" id="search" type="submit"></label> -->
-			<button class="btn btn-success my-2 my-sm-0" id="search"
-				type="submit" style="margin-left: -5%">Search</button>
+		<form class="search-form" action="">
+		<!-- name="ch" -->
+			 <input type="search" placeholder="Search here..." id="search-box" 
+			 name="ch" aria-label="Search">   
+  
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"  onclick="searchBook()"
+  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Search
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background: width; 
+  						margin-left: -258%; width: 358%; height: 500%;">
+    <!-- <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a> -->
+    
+    <table class="table table-striped dropdown-item" style="background:; overflow-y: auto; width: 100%; height: 100%">
+					
+							<thead style="background: ;">
+								<tr style=" width: 100%">
+									<th  style="background: ; width: 30%"><p>Image</p></th>
+									<th style="background: ; width: 30%"><p>Book Name</p> </th>
+									<th style="background: ; width: 30%"><p>Author</p> </th> 
+									<th style="width: 10"><p>Price</p> </th> 
+								</tr>
+							</thead>
+							<tbody style="background: ;" >
+
+								<%  
+								String search_box = request.getParameter("ch");
+					            
+								BookDAOImpl daoSearch1 = new BookDAOImpl(DBConnect.getConn());
+								List<BookDtls> listSearch1 = daoSearch1.getBookBySearch(search_box);
+								    Double totalPrice = 0.0;
+									for (BookDtls c  : listSearch1) { 
+									     totalPrice += c.getPrice();
+								%>
+
+								<tr  >
+									<th><img alt="" src="book/<%=c.getPhotoName()%>" style="width: 100%; height: 100%" ></th>
+									<th><p style=" "><%=c.getBookName()%></p></th>
+									<td><p style=" "><%=c.getAuthor()%></p></td> 
+									<td><p style=" ">$<%=c.getPrice()%></p></td>
+									 
+								</tr>
+
+								<%
+								}
+								%> 
+
+							</tbody>
+						</table> 
+  </div>
+</div>
+
+
+  			<!-- <label for="search-box" class="fas fa-search"></label> -->
+  			
+  			<%-- <button class="btn btn-success my-2 my-sm-0 dropdown-toggle" id="search dropdownMenuButton"   
+				             data-toggle="dropdown" aria-haspopup="true"
+					         aria-expanded="false" style="">Search</button>   
+		 	<div class="dropdown" id="dropdown" style=""> 
+					     
+					 
+					 <table class="table table-striped" >
+					
+							<thead>
+								<tr>
+									<th style="background: red;"><p>Image</p></th>
+									<th style="background: blue;"><p>Book Name</p> </th>
+									<th style="background: gray;"><p>Author</p> </th> 
+									<th ><p>Price</p> </th> 
+								</tr>
+							</thead>
+							<tbody >
+
+								<%  
+								String search_box = request.getParameter("ch");
+					            
+								BookDAOImpl daoSearch1 = new BookDAOImpl(DBConnect.getConn());
+								List<BookDtls> listSearch1 = daoSearch1.getBookBySearch(search_box);
+								    Double totalPrice = 0.0;
+									for (BookDtls c  : listSearch1) { 
+									     totalPrice += c.getPrice();
+								%>
+
+								<tr  >
+									<th><img alt="" src="book/<%=c.getPhotoName()%>" style="width: 50%; height: 50%" ></th>
+									<th><p style=" "><%=c.getBookName()%></p></th>
+									<td><p style=" "><%=c.getAuthor()%></p></td> 
+									<td><p style=" "><%=c.getPrice()%></p></td>
+									 
+								</tr>
+
+								<%
+								}
+								%> 
+
+							</tbody>
+						</table> 
+				</div> --%>
+				
+			<!-- </div>  -->
+			
 		</form>
-
-
-
+		
+		
+				        		 
+			 
+			
 	</header>
-
-
-
-
-
+ 
 
 	<!-- Modal -->
 	<div class="modal fade" id="exampleModalCenter" tabindex="-1"
@@ -176,14 +277,37 @@
 		</div>
 	</div>
 	<!-- End Logout Modal -->
-	
-	
+	 
+	 
 	<!-- header section ends -->
 
 	<!-- custom css file link  -->
 	<script src="js/script.js"></script>
 	<script src="js/script1.js"></script>
 
+	<script type="text/javascript">
+	
+	function searchBook() {
+		var search_box = $('#search-box').val(); 
+		var dropdown = document.getElêmntById ('dropdown'); 
+		
+		dropdown.css.display = 'block';
+		console.log ("search_box: "+ search_box ); 
+		
+		$.ajax({
+			type : 'GET',
+			data : {
+				search_box : search_box , 
+				
+			},
+			url : 'searchBook',
+			success : function(result) {
+				$('#result').html(result)
+			}
+		})
+			
+	} 
 
+	</script>
 </body>
 </html>

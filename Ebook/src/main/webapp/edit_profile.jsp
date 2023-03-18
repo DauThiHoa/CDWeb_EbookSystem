@@ -21,6 +21,7 @@
  <link rel="icon" href="img/icon2.png" type="image/png" class="icon">
  
 <title>Ebook: Setting - EditProfile</title>
+<%@include file="all_component/allCss.jsp"%>
 
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">

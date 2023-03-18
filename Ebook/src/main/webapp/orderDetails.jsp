@@ -24,7 +24,7 @@
 <link rel="icon" href="img/icon2.png" type="image/png" class="icon">
 
 <title>EBook: Cart Page</title>
-
+<%@include file="all_component/allCss.jsp"%>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>

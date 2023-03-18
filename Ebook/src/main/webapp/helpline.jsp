@@ -21,6 +21,7 @@
  <link rel="icon" href="img/icon2.png" type="image/png" class="icon">
  
 <title>Ebook: Setting - HelpLine</title>
+<%@include file="all_component/allCss.jsp"%>
 
 <%@include file="all_component/allCss.jsp"%>
 <style type="text/css">

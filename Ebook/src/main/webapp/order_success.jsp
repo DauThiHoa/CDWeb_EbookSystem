@@ -23,6 +23,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<%@include file="all_component/allCss.jsp"%>
 
 <!-- BIEU TUONG TRANG WEB -->
  <link rel="icon" href="img/icon2.png" type="image/png" class="icon">

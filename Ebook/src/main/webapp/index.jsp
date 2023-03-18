@@ -23,12 +23,18 @@
 <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+	
 <title>Ebook: Index</title>
-   
-  <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style1.css">
-    <link rel="stylesheet" href="css/style.css">
-    
+
+<!-- custom css file link  -->
+<link rel="stylesheet" href="css/style1.css">
+<link rel="stylesheet" href="css/style.css">
+
+<script type="text/javascript" src="scripts/jquery-3.6.3.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-ajax.js"></script>
+
 <%@include file="all_component/allCss.jsp"%>
 
 <style type="text/css">
@@ -120,6 +126,7 @@
 
 	</section>
 
+   
  
  
 <section class="banner-container">
@@ -172,7 +179,7 @@
 
     <div class="box-container">
 
-<%
+     <% 
 			BookDAOImpl dao2 = new BookDAOImpl(DBConnect.getConn());
 			List<BookDtls> list2 = dao2.getRecentBooks();
 			for (BookDtls b2 : list2) {

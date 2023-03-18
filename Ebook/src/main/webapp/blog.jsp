@@ -11,6 +11,7 @@
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+<%@include file="all_component/allCss.jsp"%>
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
 
