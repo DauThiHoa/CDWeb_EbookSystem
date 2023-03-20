@@ -179,7 +179,7 @@
 
     <div class="box-container">
 
-     <% 
+     		<% 
 			BookDAOImpl dao2 = new BookDAOImpl(DBConnect.getConn());
 			List<BookDtls> list2 = dao2.getRecentBooks();
 			for (BookDtls b2 : list2) {
@@ -187,8 +187,22 @@
 			
 			
         <div class="box">
-        
-            <a href="#" class="fas fa-heart"></a>
+         
+            
+            				<%
+							if (u == null) {
+							%>
+							     <a href="#" class="fas fa-heart"></a>
+							<%
+							} else {
+							%>
+							
+							<a href="favourite?bid=<%=b2.getBookId()%>&&uid=<%=u.getId()%>" class="fas fa-heart"></a>
+							
+							<%
+							}
+							%>
+							
             <div class="image">
                 <img src="book/<%=b2.getPhotoName()%>" alt="">
             </div>
@@ -350,7 +364,20 @@
 						<%
 							}
 							%>
-					<a href="#" class="fas fa-heart"></a> 
+							
+						<%
+							if (u == null) {
+							%>
+							     <a href="#" class="fas fa-heart"></a>
+							<%
+							} else {
+							%>
+							
+							<a href="favourite?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>" class="fas fa-heart"></a>
+							
+							<%
+							}
+							%>
 					<a href="view_books.jsp?id=<%=b.getBookId()%>" class="fas fa-eye"></a>
 				</div>
 				

@@ -90,7 +90,7 @@
 
 
 		<c:if test="${not empty userobj }">
-
+ 
 			<!-- CAC ICON SEARCH - LOGIN  -->
 			<div class="icons">
 				<div id="menu-btn" class="fas fa-bars"></div>
@@ -98,9 +98,14 @@
 
 				<a href="checkout.jsp">
 					<div id="cart-btn" class="fas fa-shopping-cart"></div>
+					
+				<a href="favourite.jsp">
+					<div id="login-btn" class="fas fa-heart"></div> 
+				</a>
+				
 				</a> <a href="login.jsp">
 					<div id="login-btn" class="fas fa-user"></div>
-
+ 
 
 				</a> <a href="" data-toggle="modal" data-target="#exampleModalCenter">
 					<div id="login-btn" class="fas fa-sign-in-alt"></div>
@@ -168,9 +173,9 @@
 					            
 								BookDAOImpl daoSearch1 = new BookDAOImpl(DBConnect.getConn());
 								List<BookDtls> listSearch1 = daoSearch1.getBookBySearch(search_box);
-								    Double totalPrice = 0.0;
+								    Double totalPrice1 = 0.0;
 									for (BookDtls c  : listSearch1) { 
-									     totalPrice += c.getPrice();
+									     totalPrice1 += c.getPrice();
 								%>
 
 								<tr  >

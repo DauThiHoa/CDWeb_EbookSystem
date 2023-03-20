@@ -33,7 +33,7 @@
 	<%@include file="all_component/navbar.jsp"%>
 
 
-<div class="heading" style="margin-top: -3%">
+<div class="heading" style="margin-top: 2%">
     <h1>Contact us</h1>
     <p> <a href="index.jsp">home >></a> contact </p>
 </div>

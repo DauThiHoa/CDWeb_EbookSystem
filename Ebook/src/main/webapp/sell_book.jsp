@@ -63,15 +63,16 @@ a:hover {
 		<c:redirect url="login.jsp" />
 	</c:if>
 
-
  
-				
 			
 <section class="contact" style="margin-top: 6%; width: 50%; margin-left: 25% ">
 
-    
-    <div class="row">
-
+<a href="setting.jsp">
+<i class="fas fa-caret-square-left" style="font-size: 347%; background: #f7f7f7; color: green;"></i>
+</a>
+  
+    <div class="row"> 
+			
         <form action="add_old_book" method="post" enctype="multipart/form-data">
         
             <h3  class="text-center text-success" style="font-weight: bold;">Sell Old Book</h3>

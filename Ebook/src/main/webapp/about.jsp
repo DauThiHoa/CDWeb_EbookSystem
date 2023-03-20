@@ -39,7 +39,7 @@
 
 
 
-<div class="heading heading1" style="margin-top: -3%">
+<div class="heading heading1" style="margin-top: 3%">
     <h1>about us</h1>
     <p> <a href="index.jsp">home >></a> about </p>
 </div>

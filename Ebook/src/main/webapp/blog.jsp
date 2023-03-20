@@ -25,7 +25,7 @@
 	<%@include file="all_component/navbar.jsp"%>
 
 
-<div class="heading" style="margin-top: -3%">
+<div class="heading" style="margin-top: 3%">
     <h1>our blogs</h1>
     <p> <a href="index.jsp">home >></a> blogs </p>
 </div>

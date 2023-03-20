@@ -571,7 +571,19 @@ function showToast(content) {
 
  <div class="box" style=" background: while">
         
-            <a href="#" class="fas fa-heart"></a>
+            	<%
+							if (u == null) {
+							%>
+							     <a href="#" class="fas fa-heart"></a>
+							<%
+							} else {
+							%>
+							
+							<a href="favourite?bid=<%=b2.getBookId()%>&&uid=<%=u.getId()%>" class="fas fa-heart"></a>
+							
+							<%
+							}
+							%>
             <div class="image">
                 <img src="book/<%=b2.getPhotoName()%>" alt="">
             </div>

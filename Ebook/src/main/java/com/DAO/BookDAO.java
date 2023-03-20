@@ -46,8 +46,7 @@ public interface BookDAO {
 	public boolean oldBookDelete(String email, String cate, int id);
 
 //  TIM KIEM SAN PHAM THEO TEN 
-	public List<BookDtls> getBookBySearch (String ch);
-	
+	public List<BookDtls> getBookBySearch (String ch); 
 	
 //	PRODUCT LIST getAllBooksDescPrice - getAllBooksAscPrice - getAllBooksDescName - getAllBooksAscName
 //	SAP XEP DANH SACH THEO GIA GIAM DAN 

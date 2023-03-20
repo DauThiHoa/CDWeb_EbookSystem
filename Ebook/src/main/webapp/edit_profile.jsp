@@ -65,7 +65,10 @@ a:hover {
 				
 <section class="contact" style="margin-top: 6%; width: 50%; margin-left: 25% ">
 
-    
+    <a href="setting.jsp">
+<i class="fas fa-caret-square-left" style="font-size: 347%; background: #f7f7f7; color: green;"></i>
+</a>
+
     <div class="row">
 
         <form action="update_profile" method="post">

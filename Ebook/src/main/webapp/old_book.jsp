@@ -111,11 +111,15 @@ a:hover {
 	</div> --%>
 
 
-
  
 
 	<div class="container " style="margin-top: 8%">
 		<!-- <div class="row"> -->
+		
+	<!-- 	<a href="setting.jsp">
+<i class="fas fa-caret-square-left" style="font-size: 347%; background: #f7f7f7; color: green;"></i>
+</a> -->
+
 			<div class=""> 
 				<div class="card bg-white"  >
 					<div class="card-body">
@@ -182,6 +186,13 @@ a:hover {
 			</div>
 			</div>
 			 
+			 
+			 <div class="text-center text-white">
+             
+								<a href="setting.jsp" class="btn btn-warning" style="background: orange;">Setting Now</a>
+								
+								<a href="index.jsp" class="btn btn-success"> Continue Shopping</a>
+			</div>
 			
 	<%@include file="all_component/footer.jsp"%>
 </body>
