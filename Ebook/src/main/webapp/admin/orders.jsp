@@ -71,8 +71,8 @@
 					<td><%=b.getEmail()%></td>
 					<td><%=b.getFulladd()%></td>
 					<td><%=b.getPhno()%></td>
-					<td><%=b.getBookName()%></td>
-					<td><%=b.getAuthor()%></td>
+					<%-- <td><%=b.getBookName()%></td>
+					<td><%=b.getAuthor()%></td> --%>
 					<td><%=b.getPrice()%></td>
 					<td><%=b.getPaymentType()%></td>
 
