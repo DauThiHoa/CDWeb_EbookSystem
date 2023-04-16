@@ -1,8 +1,11 @@
 package com.DAO;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -16,7 +19,42 @@ public class UserDAOImpl implements UserDAO {
 		super();
 		this.conn = conn;
 	}
-
+	
+//  KIEM TRA XEM EMAIL DANG KI TAI KHOAN DA CO TRONG CSDL HAY CHUA
+//	@Override
+	public boolean display ( ) {
+		// TODO Auto-generated method stub
+		String jdbcURL = "jdbc:h2:~/test";
+		String username = "sa";
+		String password = "1234";
+		
+		try {   
+			Class.forName("org.h2.Driver");
+			Connection conn = DriverManager.getConnection(jdbcURL, username, password); 
+			System.out.println("CONNECTED TO H2 IN-MEMORY DATABASE");
+			
+			Statement statement = conn.createStatement(); 
+			String sql = "SELECT * FROM USER1"; 
+			ResultSet resultSet = statement.executeQuery(sql);  
+			
+			while (resultSet.next()) { 
+				 
+				int id = resultSet.getInt("ID");
+				String name = resultSet.getString("name"); 
+				
+				System.out.println(id + " - " + name);
+			}
+			System.out.println("DATABASE USERS CREATED SUCCESSFULLY...");
+			 
+		} catch (SQLException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("kkk");
+		return false;
+	}
+	
+	
 //  PHUONG THUC DANG KI TAI KHOAN
 	@Override
 	public boolean userRegister (User us) {

@@ -27,6 +27,10 @@ public class LoginServlet extends HttpServlet {
 			UserDAOImpl dao = new UserDAOImpl(DBConnect.getConn());
 			HttpSession session = req.getSession();
 			
+			System.out.println("==================================");
+			System.out.println(dao.display());
+			System.out.println("==================================");
+			
 //			LAY GIU LIEU EMAIL VA PASSWORD
 			String email = req.getParameter("email");
 			String password = req.getParameter("password");

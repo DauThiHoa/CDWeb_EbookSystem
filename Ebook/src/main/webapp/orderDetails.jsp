@@ -1,6 +1,6 @@
 <%@page import="com.entity.OrderDetails"%>
 <%@page import="com.DAO.OrderDetailsDAOImpl"%>
-<%@page import="org.apache.coyote.Request"%>
+<%-- <%@page import="org.apache.coyote.Request"%> ===================================================================== --%>
 <%@page import="com.entity.Cart"%>
 <%@page import="java.util.List"%>
 <%@page import="com.DB.DBConnect"%>

@@ -11,6 +11,40 @@
   </welcome-file-list>
     
     
-
- 
+    <!-- BEGIN KET NOI DATABASE H2  -->
+ <display-name>My Static Web Project</display-name>
+  
+  <!-- Thêm thông tin cấu hình cho H2 database -->
+  <context-param>
+    <param-name>driver</param-name>
+    <param-value>org.h2.Driver</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>url</param-name>
+    <param-value>jdbc:h2:~/test</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>user</param-name>
+    <param-value>sa</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>password</param-name>
+    <param-value>1234</param-value>
+  </context-param>
+  
+  <!-- Khai báo servlet và mapping cho ứng dụng -->
+  <servlet>
+    <servlet-name>MyServlet</servlet-name>
+    <servlet-class>com.example.MyServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>MyServlet</servlet-name>
+    <url-pattern>/myservlet</url-pattern>
+  </servlet-mapping>
+  <!-- END KET NOI DATABASE H2  -->
+  
 </web-app>
