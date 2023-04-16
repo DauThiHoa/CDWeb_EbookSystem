@@ -18,6 +18,10 @@ public class UpdateQuantityCart extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		req.setCharacterEncoding("UTF-8");
+		resp.setCharacterEncoding("UTF-8");
+		
 		int quantity = Integer.parseInt(req.getParameter("quantity"));
 		int bid = Integer.parseInt(req.getParameter("bid"));
 		int uid = Integer.parseInt(req.getParameter("uid"));

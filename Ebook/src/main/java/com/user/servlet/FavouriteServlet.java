@@ -24,6 +24,9 @@ public class FavouriteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
+				req.setCharacterEncoding("UTF-8");
+				resp.setCharacterEncoding("UTF-8");
+				
 //          LAY DU LIEU TU FORM
 			int uid = Integer.parseInt(req.getParameter("uid"));
 			int bid = Integer.parseInt(req.getParameter("bid"));

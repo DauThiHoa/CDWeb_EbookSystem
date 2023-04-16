@@ -65,6 +65,9 @@ public class MailController extends HttpServlet {
 //		response.setContentType("text/plain");
 //		PrintWriter out = response.getWriter();
 
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		
 		HttpSession session = request.getSession();
 
 		String email = request.getParameter("email");

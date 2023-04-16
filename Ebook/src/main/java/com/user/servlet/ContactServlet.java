@@ -49,6 +49,9 @@ public class ContactServlet extends HttpServlet {
 //		doGet(request, response);
 		try {
 		
+			request.setCharacterEncoding("UTF-8");
+			response.setCharacterEncoding("UTF-8");
+			
 //		LAY GIU LIEU NAME VA EMAIL, NUMBER, SUBJECT, MESSAGE
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");

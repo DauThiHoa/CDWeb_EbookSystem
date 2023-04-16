@@ -49,6 +49,8 @@ public class CommentServlet extends HttpServlet {
 		/* doGet(request, response); */
 		
 		try {
+			request.setCharacterEncoding("UTF-8");
+			response.setCharacterEncoding("UTF-8");
 			
 			int bid = Integer.parseInt( request.getParameter("bid") );
 			int uid = Integer.parseInt( request.getParameter("uid") );

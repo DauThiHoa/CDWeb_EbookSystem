@@ -22,7 +22,9 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
-
+			req.setCharacterEncoding("UTF-8");
+			resp.setCharacterEncoding("UTF-8");
+			
 //			KET NOI DU LIEU
 			UserDAOImpl dao = new UserDAOImpl(DBConnect.getConn());
 			HttpSession session = req.getSession();

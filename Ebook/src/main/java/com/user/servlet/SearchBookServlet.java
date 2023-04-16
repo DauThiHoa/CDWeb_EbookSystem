@@ -39,7 +39,9 @@ public class SearchBookServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
-
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		
 		response.setContentType("text/plain");
 		PrintWriter out = response.getWriter();
 

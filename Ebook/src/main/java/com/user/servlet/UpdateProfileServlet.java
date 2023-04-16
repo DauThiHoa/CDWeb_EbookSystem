@@ -20,6 +20,9 @@ public class UpdateProfileServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
+			req.setCharacterEncoding("UTF-8");
+			resp.setCharacterEncoding("UTF-8");
+			
 //			LAY THONG TIN FORM
 			int id = Integer.parseInt(req.getParameter("id"));
 			String name = req.getParameter("fname");

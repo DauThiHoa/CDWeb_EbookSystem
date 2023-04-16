@@ -39,6 +39,9 @@ public class ArrangeServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		
 		response.setContentType("text/plain");
 		PrintWriter out = response.getWriter();
 
@@ -72,6 +75,9 @@ public class ArrangeServlet extends HttpServlet {
 //		response.setContentType("text/plain");
 //		PrintWriter out = response.getWriter();
 
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		
 		String descPrice = request.getParameter("descPrice");
 		String ascPrice = request.getParameter("ascPrice");
 		String descName = request.getParameter("descName");

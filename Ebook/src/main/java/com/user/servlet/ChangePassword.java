@@ -40,6 +40,9 @@ public class ChangePassword extends HttpServlet {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		
 		response.setContentType("text/plain");
 		PrintWriter out = response.getWriter();
 
@@ -85,6 +88,9 @@ public class ChangePassword extends HttpServlet {
 
 //		doGet(request, response);
 
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		
 		String email = request.getParameter("email");
 		String currentPassword = request.getParameter("currentPassword");
 		String newPassword = request.getParameter("newPassword");

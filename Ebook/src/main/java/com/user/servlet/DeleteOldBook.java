@@ -19,6 +19,9 @@ public class DeleteOldBook extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		 try {
+			    req.setCharacterEncoding("UTF-8");
+				resp.setCharacterEncoding("UTF-8");
+				
 				String em = req.getParameter("em");
 				int id = Integer.parseInt(req.getParameter("id"));
 				

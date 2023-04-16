@@ -20,6 +20,7 @@ public class H2EmbeddedExample {
 		String password = "1234";
 		
 		try { 
+			
 			conn = DriverManager.getConnection(jdbcURL, username, password); 
 			System.out.println("CONNECTED TO H2 IN-MEMORY DATABASE");
 		
@@ -31,6 +32,7 @@ public class H2EmbeddedExample {
 //			drop = "drop table cart"; 
 //			drop = "drop table book_order"; 
 //			drop = "drop table book_dtls";  
+//			
 //			
 //			Statement statement1 = conn.createStatement();
 //			statement1.execute(drop);
@@ -64,9 +66,9 @@ public class H2EmbeddedExample {
                   String sql2 = "INSERT INTO USER1 VALUES('1','Admin','admin@gmail.com','0123456789','admin','8 Nguyễn Trãi','TP','TP.HCM','Việt Nam', '12345')";
 //                String sql3 = "INSERT INTO USER VALUES('Admin','admin@gmail.com','0123456789','admin','8 Nguyễn Trãi','TP','TP.HCM','Việt Nam', '12345')";
                  
-			stmt.execute(sql1);
-            int rowsInserted = statement.executeUpdate(sql2); 
-//            rowsInserted = statement.executeUpdate(sql3);  
+                  stmt.execute(sql1);
+                  int rowsInserted = statement.executeUpdate(sql2); 
+//           	 rowsInserted = statement.executeUpdate(sql3);  
 			} 
 
 			System.out.println("DATABASE USERS CREATED SUCCESSFULLY...");
@@ -239,8 +241,9 @@ public class H2EmbeddedExample {
             
  
                   String sql1 = "CREATE TABLE CART ( CID INT AUTO_INCREMENT PRIMARY KEY , BID INT, UID INT, BOOKNAME VARCHAR(45) , IMAGE VARCHAR(100), AUTHOR VARCHAR(45), QUANTITY INT , PRICE DOUBLE, TOTAL_PRICE  DOUBLE)";
-             
+                  
                   stmt.execute(sql1); 
+                   
 			} 
 			
 			System.out.println("DATABASE CART CREATED SUCCESSFULLY...");
@@ -310,20 +313,62 @@ public class H2EmbeddedExample {
             
  
                   String sql1 = "CREATE TABLE BOOK_DTLS ( BOOKID INT AUTO_INCREMENT PRIMARY KEY , BOOKNAME VARCHAR(45), AUTHOR VARCHAR(45), PRICE DOUBLE, BOOKCATEGORY VARCHAR(45), STATUS VARCHAR(45) , PHOTO VARCHAR(45), EMAIL VARCHAR(45) )";
-             
+                  String sql2 = "INSERT INTO BOOK_DTLS VALUES('1', 'hhh ', 'kkkk ', '4', 'New', 'Active', 'th.jpg', 'admin')";
+                  String sql3 = "INSERT INTO BOOK_DTLS VALUES('2', 'Linux', 'Author linux', '100', 'New', 'Active', 'th (1).jpg', 'admin')";
+                  String sql4 = "INSERT INTO BOOK_DTLS VALUES('3', 'Linux', 'Author linux', '4.02', 'New', 'Inactive', 'th (2).jpg', 'admin')";
+                  String sql5 = "INSERT INTO BOOK_DTLS VALUES('4', 'xxxx', 'kkkk', '4.02', 'Old', 'Active', 'th (3).jpg', 'admin')";
+                  String sql6 = "INSERT INTO BOOK_DTLS VALUES('5', 'hhh2', 'Author linux', '4', 'Old', 'Active', 'th (4).jpg', 'admin')";
+                  String sql7 = "INSERT INTO BOOK_DTLS VALUES('6', 'hhh1', 'Author', '4', 'New', 'Active', 'th (4).jpg', 'admin')";
+                  String sql8 = "INSERT INTO BOOK_DTLS VALUES('7', 'Ssc Constable Gd 2', 'kkkk', '4.02', 'Old', 'Active', 'th (5).jpg', '19130075@st.hcmuaf.edu.vn')";
+                  String sql9 = "INSERT INTO BOOK_DTLS VALUES('8', 'Ssc Constable Gd 3', 'Rakesh Tiwary 3', '345', 'New', 'Active', 'cute.jpg', 'admin')";
+                  String sql10 = "INSERT INTO BOOK_DTLS VALUES('9', 'Ssc Constable Gd 2', 'Author linux', '4.02', 'New', 'Active', 'sachsuckhoe.jpg', 'admin')";
+                  String sql11 = "INSERT INTO BOOK_DTLS VALUES('10', 'COMBO TO THE Dawn + SHORT LAMPS', 'SHORT LAMPS', '345', 'Literature', 'Active', 'cat-2.png', 'admin')";
+                  String sql12 = "INSERT INTO BOOK_DTLS VALUES('11', 'Firefly Forest', 'Forest', '12', 'Foreign language books', 'Active', 'cat-1.png', 'admin')";
+                  String sql13 = "INSERT INTO BOOK_DTLS VALUES('12', 'SUPERMARKET CASE', 'CASE', '43', 'Life skills book', 'Active', 'banner-2.png', 'admin')";
+                  String sql14 = "INSERT INTO BOOK_DTLS VALUES('13', 'STORY OF MY VILLAGE', 'VILLAGE', '87', 'Book of art - architecture', 'Active', 'banner-1.png', 'admin')";
+                  String sql15 = "INSERT INTO BOOK_DTLS VALUES('14', 'NGUYEN THU PHOTOS', 'PHOTOS', '43', 'Medicine & sport books', 'Active', 'banner-3.png', 'admin')";
+                  String sql16 = "INSERT INTO BOOK_DTLS VALUES('15', 'SUPERMARKET CASE', 'CASE', '23', 'Life skills book', 'Active', 'cat-1.png', 'admin')";
+                  String sql17 = "INSERT INTO BOOK_DTLS VALUES('16', 'Ssc Constable Gf', 'Author linux', '43', 'Old', 'Active', 'about-img.jpg', 'daudiep2003@gmail.com')";
+                  String sql18 = "INSERT INTO BOOK_DTLS VALUES('17', 'Ssc Constable Gd 2', 'Author linux', '4.02', 'Foreign language books', 'Active', 'cat-2.png', 'admin')";
+                  String sql19 = "INSERT INTO BOOK_DTLS VALUES('18', 'Ssc Constable Gd 2', 'kkkk', '4.02', 'Foreign language books', 'Active', 'cat-3.png', 'admin')";
+                  String sql20 = "INSERT INTO BOOK_DTLS VALUES('19', 'hhh2', 'CASE', '4.02', 'Foreign language books', 'Active', 'cat-4.png', 'admin')";
+                  String sql21 = "INSERT INTO BOOK_DTLS VALUES('20', 'xxxx', 'Author linux', '43', 'Foreign language books', 'Active', 'cat-5.png', 'admin')";
+                 
                   stmt.execute(sql1); 
+                  int rowsInserted = statement.executeUpdate(sql2);
+                  rowsInserted = statement.executeUpdate(sql3);
+                  rowsInserted = statement.executeUpdate(sql4);
+                  rowsInserted = statement.executeUpdate(sql5);
+                  rowsInserted = statement.executeUpdate(sql6);
+                  rowsInserted = statement.executeUpdate(sql7);
+                  rowsInserted = statement.executeUpdate(sql8);
+                  rowsInserted = statement.executeUpdate(sql9);
+                  rowsInserted = statement.executeUpdate(sql10);
+                  rowsInserted = statement.executeUpdate(sql11);
+                  rowsInserted = statement.executeUpdate(sql12);
+                  rowsInserted = statement.executeUpdate(sql13);
+                  rowsInserted = statement.executeUpdate(sql14);
+                  rowsInserted = statement.executeUpdate(sql15);
+                  rowsInserted = statement.executeUpdate(sql16);
+                  rowsInserted = statement.executeUpdate(sql17);
+                  rowsInserted = statement.executeUpdate(sql18);
+                  rowsInserted = statement.executeUpdate(sql19);
+                  rowsInserted = statement.executeUpdate(sql20);
+                  rowsInserted = statement.executeUpdate(sql21); 
 			} 
 			
 			System.out.println("DATABASE BOOK_DTLS CREATED SUCCESSFULLY...");
 			 
+			  
 			
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 		return conn;
-	}
-	 
+	}  
+	  
+	  
 	
 	public static void main(String[] args) {
 //		UserDAOImpl u = new UserDAOImpl(conn);

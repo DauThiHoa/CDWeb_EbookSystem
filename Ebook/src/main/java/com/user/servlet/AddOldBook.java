@@ -24,7 +24,9 @@ public class AddOldBook extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
-
+			req.setCharacterEncoding("UTF-8");
+			resp.setCharacterEncoding("UTF-8"); 
+			
 			String bookName = req.getParameter("bname");
 			String author = req.getParameter("author");
 			Double price = Double.parseDouble(req.getParameter("price"));

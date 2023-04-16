@@ -19,22 +19,26 @@ public class UserDAOImpl implements UserDAO {
 		super();
 		this.conn = conn;
 	}
-	
-//  KIEM TRA XEM EMAIL DANG KI TAI KHOAN DA CO TRONG CSDL HAY CHUA
+
+//	KIEM TRA XEM MAT KHAU NHAP VAO CO DUNG HAY KHONG
 //	@Override
-	public boolean display ( ) {
+	public boolean display( ) {
 		// TODO Auto-generated method stub
+		boolean f = false ;
+		
 		String jdbcURL = "jdbc:h2:~/test";
 		String username = "sa";
 		String password = "1234";
 		
-		try {   
+		try {
+			 
 			Class.forName("org.h2.Driver");
-			Connection conn = DriverManager.getConnection(jdbcURL, username, password); 
-			System.out.println("CONNECTED TO H2 IN-MEMORY DATABASE");
+			Connection connection = DriverManager.getConnection(jdbcURL, username, password); 
+		  
+			Statement statement = connection.createStatement(); 
 			
-			Statement statement = conn.createStatement(); 
 			String sql = "SELECT * FROM USER1"; 
+			
 			ResultSet resultSet = statement.executeQuery(sql);  
 			
 			while (resultSet.next()) { 
@@ -43,17 +47,16 @@ public class UserDAOImpl implements UserDAO {
 				String name = resultSet.getString("name"); 
 				
 				System.out.println(id + " - " + name);
+				f = true;
 			}
-			System.out.println("DATABASE USERS CREATED SUCCESSFULLY...");
-			 
+			
+			connection.close();
 		} catch (SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("kkk");
-		return false;
+		return f;
 	}
-	
 	
 //  PHUONG THUC DANG KI TAI KHOAN
 	@Override
@@ -61,8 +64,9 @@ public class UserDAOImpl implements UserDAO {
 		// TODO Auto-generated method stub
 		boolean f = false ;
 		try {
+			
 //			THEM DU LIEU VAO CO SO DU LIEU
-			String sql = "insert into user ( name, email, phno, password) values (?,?,?,?)";
+			String sql = "insert into user1 ( name, email, phno, password) values (?,?,?,?)";
 		    PreparedStatement ps = conn.prepareStatement(sql);
 		    ps.setString(1, us.getName());
 		    ps.setString(2, us.getEmail());
@@ -91,7 +95,7 @@ public class UserDAOImpl implements UserDAO {
 			boolean valuate = false;
 			String hash = null;
 			
-			String sql1 = "select * from user where email = ?";
+			String sql1 = "select * from user1 where email = ?";
 			PreparedStatement ps1 = conn.prepareStatement(sql1);
 			ps1.setString(1, email);
 			ResultSet rs1 = ps1.executeQuery();
@@ -103,7 +107,7 @@ public class UserDAOImpl implements UserDAO {
 			
 			if (valuate) {
 			
-			String sql = "select * from user where email = ? and password = ?";
+			String sql = "select * from user1 where email = ? and password = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, email);
 			ps.setString(2, hash);
@@ -140,7 +144,7 @@ public class UserDAOImpl implements UserDAO {
 		boolean f = false ;
 		try {
 			
-			String sql = "select * from user where id =? and password =?";
+			String sql = "select * from user1 where id =? and password =?";
 			PreparedStatement pst = conn.prepareStatement(sql);
 			pst.setInt(1, id);
 			pst.setString(2, ps);
@@ -164,7 +168,7 @@ public class UserDAOImpl implements UserDAO {
 		boolean f = false ;
 		try {
 //			THEM DU LIEU VAO CO SO DU LIEU
-			String sql = "update user set name=?, email=?, phno=? where id =?";
+			String sql = "update user1 set name=?, email=?, phno=? where id =?";
 		    PreparedStatement ps = conn.prepareStatement(sql);
 		    ps.setString(1, us.getName());
 		    ps.setString(2, us.getEmail());
@@ -191,7 +195,7 @@ public class UserDAOImpl implements UserDAO {
 		boolean f = true ;
 		try {
 //			CAU TRUY VAN
-			String sql = "select * from user where email = ?";
+			String sql = "select * from user1 where email = ?";
 		    PreparedStatement ps = conn.prepareStatement(sql);
 		    ps.setString(1, em); 
 
@@ -217,7 +221,7 @@ public class UserDAOImpl implements UserDAO {
 		try {
 			
 //			THEM DU LIEU VAO CO SO DU LIEU
-			String sql = "update user set password = ? where email =?";
+			String sql = "update user1 set password = ? where email =?";
 		    PreparedStatement ps = conn.prepareStatement(sql);
 		    ps.setString(1, password);
 		    ps.setString(2, email); 
@@ -244,7 +248,7 @@ public class UserDAOImpl implements UserDAO {
 			 
 				String hash = null;
 				
-				String sql1 = "select * from user where email = ?";
+				String sql1 = "select * from user1 where email = ?";
 				PreparedStatement ps1 = conn.prepareStatement(sql1);
 				ps1.setString(1, email);
 				ResultSet rs1 = ps1.executeQuery();
