@@ -32,7 +32,7 @@
 		<c:redirect url="../login.jsp" />
 	</c:if>
 	
-	<h3 class="text-center">Hello Admin</h3>
+	<h3 class="text-center p-3">Hello Admin</h3>
 
 	<c:if test="${not empty succMsg }">
 		<h5 class="text-center text-success">${succMsg }</h5>
@@ -67,15 +67,15 @@
 			<tr>
 				<th><%=b.getBookId()%></th>
 				<td><img src="../book/<%=b.getPhotoName()%>"
-					style="width: 50px; height: 50px"></td>
+					style="width: 80px; height: 80px"></td>
 				<td><%=b.getBookName()%></td>
 				<td><%=b.getAuthor()%></td>
 				<td><%=b.getPrice()%></td>
 				<td><%=b.getBookCategory()%></td>
 				<td><%=b.getStatus()%></td>
 				<td><a href="edit_books.jsp?id=<%=b.getBookId()%>"
-					class="btn btn-sm btn-primary"><i class="fas fa-edit"></i>Edit</a> <a href="../delete?id=<%=b.getBookId()%>"
-					class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i>Delete</a></td>
+					class="btn btn-sm btn-primary"><i style="padding: 5%;" class="fas fa-edit"></i>Edit</a> <a href="../delete?id=<%=b.getBookId()%>"
+					class="btn btn-sm btn-danger"><i  style="padding: 5%;" class="fas fa-trash-alt"></i>Delete</a></td>
 			</tr>
 			<%
 			}
@@ -84,8 +84,7 @@
 		</tbody>
 	</table>
 
-	<!--  End Old Book-->
-	<div style="margin-top: 150px">
+	<!--  End Old Book--> 
 		<%@include file="footer.jsp"%></div>
 
 </body>

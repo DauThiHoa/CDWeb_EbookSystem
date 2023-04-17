@@ -1,3 +1,5 @@
+<%@page import="com.entity.OrderDetails"%>
+<%@page import="com.DAO.OrderDetailsDAOImpl"%>
 <%@page import="com.entity.Book_Order"%>
 <%@page import="com.DAO.BookOrderImpl"%>
 <%@page import="com.entity.User"%>
@@ -38,7 +40,7 @@
 		<c:redirect url="login.jsp" />
 	</c:if>
 	
-	<h3 class="text-center">Hello Admin</h3>
+	<h3 class="text-center p-3">Hello Admin</h3>
 
 
 	<table class="table table-striped">
@@ -63,6 +65,8 @@
 				BookOrderImpl dao = new BookOrderImpl(DBConnect.getConn());
 				List<Book_Order> blist = dao.getAllOrder();
 				for (Book_Order b : blist) {
+					 OrderDetailsDAOImpl dao1 = new OrderDetailsDAOImpl (DBConnect.getConn());
+					 OrderDetails bookOrder = dao1.getOrderDetailsById(b.getOrderId());
 				%>
 				<tr>
 				
@@ -71,8 +75,8 @@
 					<td><%=b.getEmail()%></td>
 					<td><%=b.getFulladd()%></td>
 					<td><%=b.getPhno()%></td>
-					<%-- <td><%=b.getBookName()%></td>
-					<td><%=b.getAuthor()%></td> --%>
+					<td><%=bookOrder.getBookName()%></td>
+					<td><%=bookOrder.getAuthor()%></td>  
 					<td><%=b.getPrice()%></td>
 					<td><%=b.getPaymentType()%></td>
 

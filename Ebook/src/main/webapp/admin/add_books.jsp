@@ -16,9 +16,16 @@
 <!-- BIEU TUONG TRANG WEB -->
  <link rel="icon" href="img/favicon.png" type="image/png" class="icon">
  
- 
+ <style type="text/css">
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+ </style>
 <%@include file="allCss.jsp"%>
 </head>
+
 <body style="background-color: #f0f2f2;">
 	<%@include file="navbar.jsp"%>
 	
@@ -28,13 +35,13 @@
 	</c:if>
 	
 	
-	<div class="container">
-		<div class="row">
+	<div class="container ">
+		<div class="row p-5" style="width: 160%; margin-left: -29%;">
 			<div class="col-md-4 offset-md-4">
 				<div class="card">
 					<div class="card-body">
 
-						<h4 class="text-center">Add Books</h4>
+						<h4 class="text-center bold">ADD BOOKS</h4>
 						
 						
 						<c:if test="${not empty succMsg }">
@@ -51,29 +58,29 @@
 						<form action="../add_books" method="post"
 							enctype="multipart/form-data">
 							<div class="form-group">
-								<label for="exampleInputEmail1">Book Name*</label><input
+								<label for="exampleInputEmail1" class="bold">Book Name <span style="color: red;">*</span> </label><input required
 									name="bname" type="text" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp">
 							</div>
 
 
 							<div class="form-group">
-								<label for="exampleInputEmail1">Author Name*</label><input
+								<label for="exampleInputEmail1" class="bold">Author Name <span style="color: red;">*</span> </label><input required
 									name="author" type="text" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp">
 							</div>
 
 							<div class="form-group">
-								<label for="exampleInputPassword1">Price*</label><input
+								<label for="exampleInputPassword1" class="bold">Price <span style="color: red;">*</span> </label><input required
 									name="price" type="double" class="form-control"
 									id="exampleInputPassword1">
 							</div>
 
 
 							<div class="form-group">
-								<label for="inputState">Book Categories</label> <select
+								<label for="inputState" class="bold">Book Categories</label> <select required
 									id="inputState" name="categories" class="form-control">
-									<option selected>-- select --</option>
+									<option selected>-- Select --</option>
 									<option value="New">New Book</option>
 									
 									<option value="Foreign language books">Foreign language books</option>
@@ -86,21 +93,21 @@
 
 
 							<div class="form-group">
-								<label for="inputState">Book Status</label> <select
+								<label for="inputState" class="bold">Book Status</label> <select required
 									id="inputState" name="status" class="form-control">
-									<option selected>-- select --</option>
+									<option selected>-- Select --</option>
 									<option value="Active">Active</option>
 									<option value="Inactive">Inactive</option>
 								</select>
 							</div>
 
 							<div class="form-group">
-								<label for="exampleFormControlFile1">Upload Photo</label><input
+								<label for="exampleFormControlFile1" class="bold">Upload Photo</label><input required
 									name="bimg" type="file" class="form-control-file"
 									id="exampleFormControlFile1">
 							</div>
 
-							<button type="submit" class="btn btn-primary">Add</button>
+							<button type="submit" style="margin-left: 88%;" class="btn btn-primary bold" >ADD</button>
 
 						</form>
 
@@ -111,7 +118,7 @@
 	</div>
 
 <!--  End Old Book-->
-	<div style="margin-top: 150px"> 
+	<!-- <div style="margin-top: 150px">  -->
 	<%@include file="footer.jsp"%></div>
 	
 </body>

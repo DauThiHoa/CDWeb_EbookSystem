@@ -19,18 +19,25 @@
 <!-- BIEU TUONG TRANG WEB -->
  <link rel="icon" href="img/favicon.png" type="image/png" class="icon">
  
+ <style type="text/css">
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+ </style>
  
 <%@include file="allCss.jsp"%>
 </head>
 <body style="background-color: #f0f2f2;">
 	<%@include file="navbar.jsp"%>
 	<div class="container">
-		<div class="row">
+		<div class="row p-5" style="width: 160%; margin-left: -29%;">
 			<div class="col-md-4 offset-md-4">
 				<div class="card">
 					<div class="card-body">
 
-						<h4 class="text-center">Edit Books</h4>
+						<h4 class="text-center bold">EDIT BOOKS</h4>
 
 
 						<c:if test="${not empty succMsg }">
@@ -56,7 +63,7 @@
 						
 						
 							<div class="form-group">
-								<label for="exampleInputEmail1">Book Name*</label><input
+								<label for="exampleInputEmail1 " class="bold">Book Name <span style="color: red;">*</span></label><input
 									name="bname" type="text" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp"
 									value="<%=b.getBookName()%>">
@@ -64,21 +71,21 @@
 
 
 							<div class="form-group">
-								<label for="exampleInputEmail1">Author Name*</label><input
+								<label for="exampleInputEmail1" class="bold">Author Name <span style="color: red;">*</span></label><input
 									name="author" type="text" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp"
 									value="<%=b.getAuthor()%>">
 							</div>
 
 							<div class="form-group">
-								<label for="exampleInputPassword1">Price*</label><input
+								<label for="exampleInputPassword1" class="bold">Price <span style="color: red;">*</span></label><input
 									name="price" type="double" class="form-control"
 									id="exampleInputPassword1" value="<%=b.getPrice()%>">
 							</div>
 
 
 							<div class="form-group">
-								<label for="inputState">Book Status</label> <select
+								<label for="inputState" class="bold">Book Status <span style="color: red;">*</span></label> <select
 									id="inputState" name="status" class="form-control">
 									<%
 									if ("Active".equals(b.getStatus())){
@@ -103,7 +110,7 @@
 									id="exampleFormControlFile1">
 							</div> -->
 
-							<button type="submit" class="btn btn-primary">Update</button>
+							<button type="submit" style="margin-left: 84%;" class="btn btn-primary bold">Update</button>
 
 							<!-- <div class="form-group">
 								<label for="inputState">Book Categories</label> <select
@@ -121,8 +128,7 @@
 		</div>
 	</div>
 
-	<!--  End Old Book-->
-	<div style="margin-top: 150px">
+	<!--  End Old Book--> 
 		<%@include file="footer.jsp"%></div>
 
 </body>

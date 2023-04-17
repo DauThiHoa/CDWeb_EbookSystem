@@ -106,6 +106,5 @@ public class OrderDetails {
 				+ ", bookName=" + bookName + ", image=" + image + ", author=" + author + ", quantity=" + quantity
 				+ ", price=" + price + ", total_price=" + total_price + "]";
 	}
-	
-	
+	 
 }

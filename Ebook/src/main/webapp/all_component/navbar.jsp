@@ -20,12 +20,7 @@
 <meta charset="UTF-8">
 <title>FOOD WEBSITE</title>
 <!-- BIEU TUONG TRANG WEB -->
-<link rel="icon" href="../img/icon2.png" type="image/png" class="icon">
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css"> -->
-
+<link rel="icon" href="../img/icon2.png" type="image/png" class="icon"> 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
@@ -82,7 +77,7 @@
 			</div> -->
 
 			<a href="about.jsp">about</a> 
-			<a href="review.jsp">review</a>
+		
 			<a href="blog.jsp">blog</a> 
 			<a href="contact.jsp">contact</a> 
 		</nav>

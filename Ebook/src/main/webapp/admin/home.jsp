@@ -13,14 +13,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Admin : Home</title>
-
+<title>Admin : Home</title> 
 
 <!-- BIEU TUONG TRANG WEB -->
  <link rel="icon" href="img/favicon.png" type="image/png" class="icon">
  
  
-<%@include file="allCss.jsp"%>
+ 
+ 
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+<script type="text/javascript" src="scripts/jquery-3.6.3.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-ajax.js"></script>
+
+
+<!-- font awesome cdn link  -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- custom css file link  --> 
+<link rel="stylesheet" href="style.css">
+ 
+ <%@include file="allCss.jsp"%>  
 <style type="text/css">
 a {
 	text-decoration: none;
@@ -34,14 +49,17 @@ a:hover {
 </style>
 </head>
 <body style="background-color: #f0f1f2">
-	<%@include file="navbar.jsp"%>
+	 <%@include file="navbar.jsp"%> 
+ 
 
 <!--  PHUONG THUC BAT BUOC PHAI DANG NHAP ADMIN MOI VAO DC-->
 	<c:if test="${empty userobj }">
 		<c:redirect url="../login.jsp" />
 	</c:if>
 
-	<div class="container">
+<!-- #e1ffd3 -->
+
+	<div class="container" style="margin-top: 5%">
 		<div class="row p-5">
 
 
@@ -49,7 +67,7 @@ a:hover {
 				<a href="add_books.jsp">
 					<div class="card">
 						<div class="card-body text-center">
-							<i class="fas fa-plus-square fa-3x text-primary"></i><br>
+							<i class="fas fa-plus-square fa-3x"  style="color: green;"></i><br>
 							<h4>Add Books</h4>
 							<p>--------------</p>
 						</div>
@@ -139,5 +157,13 @@ a:hover {
 	<div style="margin-top: 150px">
 		<%@include file="footer.jsp"%></div>
 
+
+
+ 	<script src="js/script.js"></script>
+	<script src="js/script1.js"></script>
+	
+	
 </body>
+
+
 </html>
