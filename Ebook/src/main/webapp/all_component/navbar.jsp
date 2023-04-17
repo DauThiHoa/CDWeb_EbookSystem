@@ -109,13 +109,12 @@
 
 				</a> <a href="" data-toggle="modal" data-target="#exampleModalCenter">
 					<div id="login-btn" class="fas fa-sign-in-alt"></div>
+					
 				</a> <a href="setting.jsp">
 					<div id="login-btn" class="fas fa-cog"></div>
 				</a>
 			</div>
-			
-			
-			
+			 
 	<!-- Begin Logout Modal -->
 
  
@@ -140,18 +139,26 @@
 		</c:if>
    
 		<!--  SEARCH -->
-		<form class="search-form" action="">
+		<form class="search-form" action="searchBook" method="post">
 		<!-- name="ch" -->
+		 
 			 <input type="search" placeholder="Search here..." id="search-box" 
-			 name="ch" aria-label="Search">   
-  
+			 name="text" aria-label="Search" > 
+			  
+			  
+			  <button type="submit"  style="background: white;"> 
+					<span><i  type="submit" style="font-size: 300%; margin-top: 40%; margin-left: -40%;  background: white;" class="fas fa-search"></i></span>
+              </button> 
+			  
 <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"  onclick="searchBook()"
-  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   Search
-  </button>
+ 
+    <button type="submit" class="btn btn-secondary " id="dropdownMenuButton"  
+    	data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > 
+    				     
+  	</button>   
+  
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background: width; 
-  						margin-left: -258%; width: 358%; height: 500%;">
+  						margin-left: -713%; width: 814%; height: 1153%;top: 10px;"> 
     <!-- <a class="dropdown-item" href="#">Action</a>
     <a class="dropdown-item" href="#">Another action</a>
     <a class="dropdown-item" href="#">Something else here</a> -->
@@ -161,94 +168,56 @@
 							<thead style="background: ;">
 								<tr style=" width: 100%">
 									<th  style="background: ; width: 30%"><p>Image</p></th>
-									<th style="background: ; width: 30%"><p>Book Name</p> </th>
-									<th style="background: ; width: 30%"><p>Author</p> </th> 
-									<th style="width: 10"><p>Price</p> </th> 
+									<th  style="background: ; width: 360%"><p>Book Name</p></th>
+									<th  style="background: ; width: 30%"><p>Author</p></th> 
+									<th  style="width: 10"><p>Price</p></th> 
 								</tr>
 							</thead>
+							
 							<tbody style="background: ;" >
 
-								<%  
-								String search_box = request.getParameter("ch");
-					            
+ 								<%
+ 									List<BookDtls> listBook = (List<BookDtls>) session.getAttribute("listBook");
+ 								    
+								/* String search_box = request.getParameter("ch"); 
 								BookDAOImpl daoSearch1 = new BookDAOImpl(DBConnect.getConn());
-								List<BookDtls> listSearch1 = daoSearch1.getBookBySearch(search_box);
+								List<BookDtls> listSearch1 = daoSearch1.getBookBySearch(search_box); */
+								
+								if ( listBook != null ){
 								    Double totalPrice1 = 0.0;
-									for (BookDtls c  : listSearch1) { 
+									for (BookDtls c  : listBook) { 
 									     totalPrice1 += c.getPrice();
 								%>
-
+ 
 								<tr  >
 									<th><img alt="" src="book/<%=c.getPhotoName()%>" style="width: 100%; height: 100%" ></th>
-									<th><p style=" "><%=c.getBookName()%></p></th>
-									<td><p style=" "><%=c.getAuthor()%></p></td> 
-									<td><p style=" ">$<%=c.getPrice()%></p></td>
+									<th><p style=""><%=c.getBookName()%></p></th>
+									<td><p style=""><%=c.getAuthor()%></p></td> 
+									<td><p style="">$<%=c.getPrice()%></p></td>
 									 
-								</tr>
-
+								  </tr>
+ 
 								<%
-								}
-								%> 
-
+								  } 
+								}else {
+									 
+								%>
+								<tr  >
+									<th><img alt="" src=" " style="width: 100%; height: 100%" ></th>
+									<th><p style=""> </p></th>
+									<td><p style=""> </p></td> 
+									<td><p style=""> </p></td>
+									 
+								  </tr>
+								<%} %>
+								 
 							</tbody>
 						</table> 
   </div>
-</div>
-
-
-  			<!-- <label for="search-box" class="fas fa-search"></label> -->
-  			
-  			<%-- <button class="btn btn-success my-2 my-sm-0 dropdown-toggle" id="search dropdownMenuButton"   
-				             data-toggle="dropdown" aria-haspopup="true"
-					         aria-expanded="false" style="">Search</button>   
-		 	<div class="dropdown" id="dropdown" style=""> 
-					     
-					 
-					 <table class="table table-striped" >
-					
-							<thead>
-								<tr>
-									<th style="background: red;"><p>Image</p></th>
-									<th style="background: blue;"><p>Book Name</p> </th>
-									<th style="background: gray;"><p>Author</p> </th> 
-									<th ><p>Price</p> </th> 
-								</tr>
-							</thead>
-							<tbody >
-
-								<%  
-								String search_box = request.getParameter("ch");
-					            
-								BookDAOImpl daoSearch1 = new BookDAOImpl(DBConnect.getConn());
-								List<BookDtls> listSearch1 = daoSearch1.getBookBySearch(search_box);
-								    Double totalPrice = 0.0;
-									for (BookDtls c  : listSearch1) { 
-									     totalPrice += c.getPrice();
-								%>
-
-								<tr  >
-									<th><img alt="" src="book/<%=c.getPhotoName()%>" style="width: 50%; height: 50%" ></th>
-									<th><p style=" "><%=c.getBookName()%></p></th>
-									<td><p style=" "><%=c.getAuthor()%></p></td> 
-									<td><p style=" "><%=c.getPrice()%></p></td>
-									 
-								</tr>
-
-								<%
-								}
-								%> 
-
-							</tbody>
-						</table> 
-				</div> --%>
-				
-			<!-- </div>  -->
+</div> 
 			
 		</form>
-		
-		
-				        		 
-			 
+		 
 			
 	</header>
  
@@ -294,9 +263,9 @@
 	
 	function searchBook() {
 		var search_box = $('#search-box').val(); 
-		var dropdown = document.getElêmntById ('dropdown'); 
+		var dropdown = document.getElementById ('dropdown'); 
 		
-		dropdown.css.display = 'block';
+		/* dropdown.css.display = 'block'; */
 		console.log ("search_box: "+ search_box ); 
 		
 		$.ajax({

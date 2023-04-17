@@ -64,9 +64,7 @@
 		text-success 
 		<h2 class="text-center text-orange">EBook Management System</h2>
 	</div> -->
-
-
-
+ 
 	<section id="carouselExampleIndicators" class="home carousel slide"
 		data-ride="carousel">
 
@@ -78,6 +76,7 @@
 		</ol>
 
 		<div class="slides-container carousel-inner">
+
 
 			<div class="slide active carousel-item">
 				<div class="content d-block">
@@ -112,6 +111,7 @@
 				</div>
 			</div>
 
+
 		</div>
 
 		<a class="carousel-control-prev" href="#carouselExampleIndicators"
@@ -126,9 +126,7 @@
 
 	</section>
 
-   
- 
- 
+    
 <section class="banner-container">
 
     <div class="banner">

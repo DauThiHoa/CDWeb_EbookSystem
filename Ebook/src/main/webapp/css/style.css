@@ -86,14 +86,14 @@ section {
 }
 
 .btn {
-  margin-top: 1rem;
+  margin-top: 0rem;
   display: inline-block;
-  padding: .8rem 3rem;
+  padding: 0.8rem 2rem;
   background:#27ae60;
   color: #fff;
   font-size: 1.7rem;
   cursor: pointer;
-}
+}  
 
 .btn:hover {
   background: #222;

@@ -67,12 +67,9 @@ public class DBConnect {
 //			SELECT * FROM ORDERDETAILS ;
 //			SELECT * FROM USER1 ;
 			
-			
-			
+			 
 			boolean resultUser = false ;
-			
-			System.out.println("CREATING USER1 DATABASE...");
-			    
+			  
 			String sql = "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'USER1')";
 			Statement statement = conn.createStatement();  
 			ResultSet resultSet = statement.executeQuery(sql);
@@ -85,29 +82,24 @@ public class DBConnect {
 			    }
 			} 
 			  
-			System.out.println("EXIST : "+ resultUser);
+//			System.out.println("USER1 : "+ resultUser);
 			
-			if ( resultUser == false ) {
-				System.out.println("HHHH");
+			if ( resultUser == false ) { 
                 Statement stmt = conn.createStatement();
-            
- 
+             
                   String sql1 = "CREATE TABLE USER1 ( ID INT AUTO_INCREMENT PRIMARY KEY , NAME VARCHAR(45), EMAIL VARCHAR(45), PHNO VARCHAR(45), PASSWORD VARCHAR(500), ADDRESS VARCHAR(500) , LANDMARK VARCHAR(500), CITY VARCHAR(500), STATE VARCHAR(45), PINCODE VARCHAR(45) )";
 //                String sql2 = "INSERT INTO USER1 ( NAME , EMAIL, PHNO , PASSWORD , ADDRESS , LANDMARK, CITY , STATE , PINCODE ) VALUES('Admin','admin@gmail.com','0123456789','admin','8 Nguyễn Trãi','TP','TP.HCM','Việt Nam', '12345')";
        
                   stmt.execute(sql1);
 //				  int rowsInserted = statement.executeUpdate(sql2);  
 				  
-			} 
-
-			System.out.println("DATABASE USERS CREATED SUCCESSFULLY...");
+			}  
 			 
 			
 //			DATABASE ORDERDETAILS
 			 
 	        boolean resultOrderDetails = false ;
-			
-			 System.out.println("CREATING ORDERDETAILS DATABASE...");
+			 
 			    
 			 sql = "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'ORDERDETAILS')";
 			 statement = conn.createStatement();  
@@ -122,27 +114,22 @@ public class DBConnect {
 			    }
 			} 
 			  
-			System.out.println("EXIST : "+ resultOrderDetails);
+//			System.out.println("ORDERDETAILS : "+ resultOrderDetails);
 			
-			if ( resultOrderDetails == false ) {
-				System.out.println("HHHH");
+			if ( resultOrderDetails == false ) { 
                 Statement stmt = conn.createStatement();
             
  
                   String sql1 = "CREATE TABLE ORDERDETAILS ( ID INT AUTO_INCREMENT PRIMARY KEY , ORDER_ID VARCHAR(45) , CID INT ,BID INT,UID INT, BOOKNAME VARCHAR(45), IMAGE VARCHAR(100),AUTHOR VARCHAR(45), QUANTITY INT, PRICE DOUBLE, TOTAL_PRICE DOUBLE  )";
              
                   stmt.execute(sql1); 
-			} 
-			
-			System.out.println("DATABASE ORDERDETAILS CREATED SUCCESSFULLY...");
+			}  
 			 
 
 //			DATABASE FAVOURITE 
 			 
 	        boolean resultFavourite = false ;
-			
-			 System.out.println("CREATING FAVOURITE DATABASE...");
-			    
+			 
 			 sql = "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'FAVOURITE')";
 			 statement = conn.createStatement();  
 			 resultSet = statement.executeQuery(sql);
@@ -156,27 +143,22 @@ public class DBConnect {
 			    }
 			} 
 			  
-			System.out.println("EXIST : "+ resultFavourite);
+//			System.out.println("FAVOURITE : "+ resultFavourite);
 			
-			if ( resultFavourite == false ) {
-				System.out.println("HHHH");
+			if ( resultFavourite == false ) { 
                 Statement stmt = conn.createStatement();
-            
- 
+             
                   String sql1 = "CREATE TABLE FAVOURITE ( ID INT AUTO_INCREMENT PRIMARY KEY , UID INT , BID INT, BOOKNAME VARCHAR(45),  AUTHOR VARCHAR(45), PRICE DOUBLE, BOOKCATEGORY VARCHAR(45), STATUS VARCHAR(45),PHOTO VARCHAR(45)  )";
              
                   stmt.execute(sql1); 
 			} 
-			
-			System.out.println("DATABASE FAVOURITE CREATED SUCCESSFULLY...");
 			 
-			
+			  
 
 //			DATABASE CONTACT 
 			 
 	        boolean resultContact = false ;
-			
-			 System.out.println("CREATING CONTACT DATABASE...");
+			 
 			    
 			 sql = "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'CONTACT')";
 			 statement = conn.createStatement();  
@@ -191,7 +173,7 @@ public class DBConnect {
 			    }
 			} 
 			  
-			System.out.println("EXIST : "+ resultContact);
+//			System.out.println("CONTACT : "+ resultContact);
 			
 			if ( resultContact == false ) {
 				System.out.println("HHHH");
@@ -202,17 +184,11 @@ public class DBConnect {
              
                   stmt.execute(sql1); 
 			} 
-			
-			System.out.println("DATABASE CONTACT CREATED SUCCESSFULLY...");
-			 
-			
-
+			  
 //			DATABASE COMMENTPRODUCT 
 			 
 	        boolean resultCommentProduct = false ;
-			
-			 System.out.println("CREATING COMMENTPRODUCT DATABASE...");
-			    
+			  
 			 sql = "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'COMMENTPRODUCT')";
 			 statement = conn.createStatement();  
 			 resultSet = statement.executeQuery(sql);
@@ -226,28 +202,20 @@ public class DBConnect {
 			    }
 			} 
 			  
-			System.out.println("EXIST : "+ resultCommentProduct);
+//			System.out.println("COMMENTPRODUCT : "+ resultCommentProduct);
 			
-			if ( resultCommentProduct == false ) {
-				System.out.println("HHHH");
+			if ( resultCommentProduct == false ) { 
                 Statement stmt = conn.createStatement();
             
  
                   String sql1 = "CREATE TABLE COMMENTPRODUCT ( ID INT AUTO_INCREMENT PRIMARY KEY, BID INT, UID INT, NAME VARCHAR(100), EMAIL VARCHAR(100), DATE  VARCHAR(200) , CONTENT VARCHAR(500)  )";
              
                   stmt.execute(sql1); 
-			} 
-			
-			System.out.println("DATABASE COMMENTPRODUCT CREATED SUCCESSFULLY...");
-			 
-			
-
+			}  
 
 //			DATABASE CART
 			 
-	        boolean resultCart = false ;
-			
-			 System.out.println("CREATING CART DATABASE...");
+	        boolean resultCart = false ; 
 			    
 			 sql = "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'CART')";
 			 statement = conn.createStatement();  
@@ -262,10 +230,9 @@ public class DBConnect {
 			    }
 			} 
 			  
-			System.out.println("EXIST : "+ resultCart);
+//			System.out.println("CART : "+ resultCart);
 			
-			if ( resultCart == false ) {
-				System.out.println("HHHH");
+			if ( resultCart == false ) { 
                 Statement stmt = conn.createStatement();
             
  
@@ -274,19 +241,14 @@ public class DBConnect {
                   stmt.execute(sql1); 
                    
 			} 
-			
-			System.out.println("DATABASE CART CREATED SUCCESSFULLY...");
 			 
-			
 
-
-//			DATABASE BOOKORDER 
+//			DATABASE BOOK_ORDER 
 			 
 	        boolean resultBookOrder = false ;
-			
-			 System.out.println("CREATING BOOKORDER DATABASE...");
+			 
 			    
-			 sql = "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'BOOKORDER')";
+			 sql = "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'BOOK_ORDER')";
 			 statement = conn.createStatement();  
 			 resultSet = statement.executeQuery(sql);
 			 
@@ -299,28 +261,22 @@ public class DBConnect {
 			    }
 			} 
 			  
-			System.out.println("EXIST : "+ resultBookOrder);
+//			System.out.println("BOOK_ORDER : "+ resultBookOrder);
 			
-			if ( resultBookOrder == false ) {
-				System.out.println("HHHH");
+			if ( resultBookOrder == false ) { 
                 Statement stmt = conn.createStatement();
             
  
-                  String sql1 = "CREATE TABLE BOOKORDER ( ID INT AUTO_INCREMENT PRIMARY KEY , ORDER_ID VARCHAR(45) , USER_NAME VARCHAR(45) , EMAIL VARCHAR(45), ADDRESS VARCHAR(500), PHONE  VARCHAR(45), TOTAL DOUBLE, PAYMENT VARCHAR(45))";
+                  String sql1 = "CREATE TABLE BOOK_ORDER ( ID INT AUTO_INCREMENT PRIMARY KEY , ORDER_ID VARCHAR(45) , USER_NAME VARCHAR(45) , EMAIL VARCHAR(45), ADDRESS VARCHAR(500), PHONE  VARCHAR(45), TOTAL DOUBLE, PAYMENT VARCHAR(45))";
              
                   stmt.execute(sql1); 
 			} 
-			
-			System.out.println("DATABASE BOOKORDER CREATED SUCCESSFULLY...");
-			 
 			 
 
 //			DATABASE BOOK_DTLS 
 			 
 	        boolean resultBookDtls = false ;
-			
-			 System.out.println("CREATING BOOK_DTLS DATABASE...");
-			    
+			  
 			 sql = "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'BOOK_DTLS')";
 			 statement = conn.createStatement();  
 			 resultSet = statement.executeQuery(sql);
@@ -334,13 +290,11 @@ public class DBConnect {
 			    }
 			} 
 			  
-			System.out.println("EXIST : "+ resultBookDtls);
+//			System.out.println("BOOK_DTLS : "+ resultBookDtls);
 			
-			if ( resultBookDtls == false ) {
-				System.out.println("HHHH");
+			if ( resultBookDtls == false ) { 
                 Statement stmt = conn.createStatement();
-            
- 
+             
                   String sql1 = "CREATE TABLE BOOK_DTLS ( BOOKID INT AUTO_INCREMENT PRIMARY KEY , BOOKNAME VARCHAR(45), AUTHOR VARCHAR(45), PRICE DOUBLE, BOOKCATEGORY VARCHAR(45), STATUS VARCHAR(45) , PHOTO VARCHAR(45), EMAIL VARCHAR(45) )";
                   String sql2 = "INSERT INTO BOOK_DTLS VALUES('1', 'hhh ', 'kkkk ', '4', 'New', 'Active', 'th.jpg', 'admin')";
                   String sql3 = "INSERT INTO BOOK_DTLS VALUES('2', 'Linux', 'Author linux', '100', 'New', 'Active', 'th (1).jpg', 'admin')";
@@ -385,8 +339,6 @@ public class DBConnect {
                   rowsInserted = statement.executeUpdate(sql20);
                   rowsInserted = statement.executeUpdate(sql21); 
 			} 
-			
-			System.out.println("DATABASE BOOK_DTLS CREATED SUCCESSFULLY...");
 			 
 			
 		}catch (Exception e) {

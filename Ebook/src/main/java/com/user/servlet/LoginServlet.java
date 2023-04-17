@@ -49,14 +49,17 @@ public class LoginServlet extends HttpServlet {
 			
 			
 //			NEU LA LOGIN BANG TAI KHOAN ADMIN
-				if ("admin@gmail.com".equals(email) && "admin".equals(password)) { 
+			if ("admin@gmail.com".equals(email) && "admin".equals(password)) { 
+				
 				User us = new User();
 				us.setName("Admin");
 				session.setAttribute("userobj", us);
 				resp.sendRedirect("admin/home.jsp");
 			}else {
+				
 //				LOGIN PHAN NGUOI DUNG
 				User us = dao.login(email, password);
+				
 				if ( us != null ) {
 					session.setAttribute("userobj", us);
 					resp.sendRedirect("index.jsp");
