@@ -47,7 +47,6 @@ public class LoginServlet extends HttpServlet {
 //			boolean valuate = BCrypt.checkpw(password, hash); 
 //			System.out.println(valuate);
 			
-			
 //			NEU LA LOGIN BANG TAI KHOAN ADMIN
 			if ("admin@gmail.com".equals(email) && "admin".equals(password)) { 
 				

@@ -67,7 +67,7 @@ public class CartProductDetailsServlet extends HttpServlet {
 //				KIEM TRA
 					if (success) {
 						session.setAttribute("addCart", "Book Update To Cart");
-						resp.sendRedirect("shop.jsp");
+						resp.sendRedirect("checkout.jsp");
 //					System.out.println("Add Cart Sucess");
 					} else {
 						session.setAttribute("failed", "Something Wrong On Server");
@@ -81,7 +81,7 @@ public class CartProductDetailsServlet extends HttpServlet {
 //			KIEM TRA
 				if (f) {
 					session.setAttribute("addCart", "Book Added To Cart");
-					resp.sendRedirect("shop.jsp");
+					resp.sendRedirect("checkout.jsp");
 //				System.out.println("Add Cart Sucess");
 				} else {
 					session.setAttribute("failed", "Something Wrong On Server");
