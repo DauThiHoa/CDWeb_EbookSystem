@@ -60,7 +60,7 @@ public class FavouriteServlet extends HttpServlet {
 				 
 			} else {
 				boolean f = dao2.addFavourite(favou);
-
+   
 //			KIEM TRA
 				if (f) {
 					session.setAttribute("succMsg", "Product added to favorites");

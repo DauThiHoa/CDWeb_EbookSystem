@@ -56,11 +56,13 @@
 
 		<!--  logo -->
 		<a href="index.jsp" class="logo"> <span><img alt=""
-				style="width: 20%; height: 20%" src="img/icon1.png"></span> EBOOK
+				style="width: 15%; height: 15%" src="img/icon1.png"></span>
+			 
+				 <span><img alt="" style="width: 15%; height: 15%" src="img/ebook3.png"></span>
 		</a>
 
 		<!--  THANH menu  -->
-		<nav style="margin-left: -9%" class="navbar">
+		<nav style="margin-left: -31%" class="navbar">
 			<a href="index.jsp">home</a> 
 			<a href="shop.jsp">shop</a> 
 
