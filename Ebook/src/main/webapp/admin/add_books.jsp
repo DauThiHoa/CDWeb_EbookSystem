@@ -35,50 +35,81 @@
 	</c:if>
 	
 	
-	<div class="container ">
-		<div class="row p-5" style="width: 160%; margin-left: -29%;">
-			<div class="col-md-4 offset-md-4">
-				<div class="card">
-					<div class="card-body">
+	
+			
+<section class="contact" style="margin-top: 1%; width: 50%; margin-left: 25% ; background: white;">
 
-						<h4 class="text-center bold">ADD BOOKS</h4>
-						
-						
-						<c:if test="${not empty succMsg }">
-							<h5 class="text-center text-success">${succMsg }</h5>
-							<c:remove var="succMsg" scope="session" />
-						</c:if>
-						
-						<c:if test="${not empty failedMsg }">
-							<h5 class="text-center text-danger">${failedMsg }</h5>
+<a href="home.jsp">
+<i class="fas fa-caret-square-left" style="font-size: 347%; background: #f7f7f7; color: green;"></i>
+</a>
+  
+    <div class="row"> 
+			
+        <form action="../add_books" method="post" enctype="multipart/form-data">
+        
+            <h3  class="text-center text-success" style="font-weight: bold;">ADD BOOKS</h3>
+            
+                        <c:if test="${not empty failedMsg }">
+							<h4 class="text-center text-danger">${failedMsg }</h4>
 							<c:remove var="failedMsg" scope="session" />
 						</c:if>
+						 
+						<c:if test="${not empty succMsg }">
+							<h4 class="text-center text-success">${succMsg }</h4>
+							<c:remove var="succMsg" scope="session" />
+						</c:if>
+						 
+						<input type="hidden" value="${userobj.email }" name="user">
 						
 						
-						<form action="../add_books" method="post"
-							enctype="multipart/form-data">
-							<div class="form-group">
-								<label for="exampleInputEmail1" class="bold">Book Name <span style="color: red;">*</span> </label><input required
+			<div class="inputBox">    
+          			 <h4 class="bold">Book Name <span style="color: red;">*</span> </h4>  
+            </div> 
+            		
+            <div class="inputBox" >   
+			       <!-- <input style="width: 100%" placeholder="        " class="box"  
+									aria-describedby="emailHelp"  required >  -->
+									
+									<input  style="width: 100%" class="box" 
+									aria-describedby="emailHelp" required
 									name="bname" type="text" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp">
-							</div>
-
-
-							<div class="form-group">
-								<label for="exampleInputEmail1" class="bold">Author Name <span style="color: red;">*</span> </label><input required
+							 
+            </div> 
+            
+			<br>
+			<div class="inputBox">    
+          			 <h4 class="bold" >Author Name <span style="color: red;">*</span> </h4>  
+            </div>							
+             <div class="inputBox" >    
+									
+									<input  style="width: 100%" placeholder="" class="box" 
+									aria-describedby="emailHelp" required
 									name="author" type="text" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp">
-							</div>
-
-							<div class="form-group">
-								<label for="exampleInputPassword1" class="bold">Price <span style="color: red;">*</span> </label><input required
-									name="price" type="double" class="form-control"
+							 
+            </div> 
+            
+            <br>
+			<div class="inputBox">    
+          			 <h4 class="bold">Price <span style="color: red;">*</span></h4>  
+            </div>	
+             <div class="inputBox" >    
+									
+									<input  style="width: 100%" placeholder="" class="box" 
+									aria-describedby="emailHelp" required type="number"
+									name="price" class="form-control"
 									id="exampleInputPassword1">
-							</div>
-
-
-							<div class="form-group">
-								<label for="inputState" class="bold">Book Categories</label> <select required
+							 
+            </div> 
+             
+             <br>
+			<div class="inputBox">    
+          			 <h4 class="bold">Book Categories</h4>  
+            </div>
+              <div class="inputBox" >     
+									
+									<select required style="width: 100%" class="box" 
 									id="inputState" name="categories" class="form-control">
 									<option selected>-- Select --</option>
 									<option value="New">New Book</option>
@@ -89,36 +120,52 @@
 									<option value="Book of art - architecture">Book of art - architecture</option>
 									<option value="Medicine & sport books">Medicine & sport books</option>
 								</select>
-							</div>
-
-
-							<div class="form-group">
-								<label for="inputState" class="bold">Book Status</label> <select required
+							 
+            </div> 
+            
+             <br>
+			<div class="inputBox">    
+          			 <h4 class="bold">Book Status</h4>  
+            </div>
+              <div class="inputBox" >      
+								
+								<select required style="width: 100%" class="box" 
 									id="inputState" name="status" class="form-control">
 									<option selected>-- Select --</option>
 									<option value="Active">Active</option>
 									<option value="Inactive">Inactive</option>
 								</select>
-							</div>
-
-							<div class="form-group">
-								<label for="exampleFormControlFile1" class="bold">Upload Photo</label><input required
+							 
+            </div> 
+            
+             <br>
+			<div class="inputBox">    
+          			 <h4 class="bold">Upload Photo</h4>  
+            </div>
+              <div class="inputBox" >    
+									
+									<input  style="width: 100%" placeholder="" class="box" 
+									aria-describedby="emailHelp" required
 									name="bimg" type="file" class="form-control-file"
 									id="exampleFormControlFile1">
-							</div>
+									 
+							 
+            </div> 
+            
+            <button type="submit" value="Send message" class="btn" style="margin-left: 84%; font-weight: bold;">ADD</button>
+            
+        </form>
+ 
+   
+    </div>
 
-							<button type="submit" style="margin-left: 88%;" class="btn btn-primary bold" >ADD</button>
+</section>
+ 
+ 
 
-						</form>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
 <!--  End Old Book-->
-	<!-- <div style="margin-top: 150px">  -->
+	<div style="margin-top: 1%">  
 	<%@include file="footer.jsp"%></div>
 	
 </body>

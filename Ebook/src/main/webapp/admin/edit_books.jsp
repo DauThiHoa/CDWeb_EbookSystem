@@ -31,61 +31,87 @@
 </head>
 <body style="background-color: #f0f2f2;">
 	<%@include file="navbar.jsp"%>
-	<div class="container">
-		<div class="row p-5" style="width: 160%; margin-left: -29%;">
-			<div class="col-md-4 offset-md-4">
-				<div class="card">
-					<div class="card-body">
+	
+	 
+	 
+			
+<section class="contact" style="margin-top: 1%; width: 50%; margin-left: 25% ; background: white;">
 
-						<h4 class="text-center bold">EDIT BOOKS</h4>
-
-
-						<c:if test="${not empty succMsg }">
-							<h5 class="text-center text-success">${succMsg }</h5>
-							<c:remove var="succMsg" scope="session" />
-						</c:if>
-
-						<c:if test="${not empty failedMsg }">
-							<h5 class="text-center text-danger">${failedMsg }</h5>
+<a href="all_books.jsp">
+<i class="fas fa-caret-square-left" style="font-size: 347%; background: #f7f7f7; color: green;"></i>
+</a>
+  
+    <div class="row"> 
+			
+        <form action="../editbooks" method="post" enctype="multipart/form-data">
+        
+            <h3  class="text-center text-success" style="font-weight: bold;">EDIT BOOKS</h3>
+            
+                        <c:if test="${not empty failedMsg }">
+							<h2 class="text-center text-danger">${failedMsg }</h2>
 							<c:remove var="failedMsg" scope="session" />
 						</c:if>
-
-
+						 
+						<c:if test="${not empty succMsg }">
+							<h2 class="text-center text-success">${succMsg }</h2>
+							<c:remove var="succMsg" scope="session" />
+						</c:if>
+						  
 						<%
 						int id = Integer.parseInt(request.getParameter("id"));
 						BookDAOImpl dao = new BookDAOImpl(DBConnect.getConn());
 						BookDtls b = dao.getBookById(id);
 						%>
-
-						<form action="../editbooks" method="post">
 						
-						<input type="hidden" name="id" value="<%=b.getBookId()%>">
+			<input type="hidden" name="id" value="<%=b.getBookId()%>">
 						
-						
-							<div class="form-group">
-								<label for="exampleInputEmail1 " class="bold">Book Name <span style="color: red;">*</span></label><input
+			<div class="inputBox">    
+          			 <h4 class="bold">Book Name <span style="color: red;">*</span> </h4>  
+            </div> 
+            		
+            <div class="inputBox" >  
+									<input  style="width: 100%" class="box" 
+									aria-describedby="emailHelp" required
 									name="bname" type="text" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp"
 									value="<%=b.getBookName()%>">
-							</div>
-
-
-							<div class="form-group">
-								<label for="exampleInputEmail1" class="bold">Author Name <span style="color: red;">*</span></label><input
+							 
+            </div> 
+            
+			<br>
+			<div class="inputBox">    
+          			 <h4 class="bold" >Author Name <span style="color: red;">*</span> </h4>  
+            </div>							
+             <div class="inputBox" >    
+									
+									<input  style="width: 100%" placeholder="" class="box" 
+									aria-describedby="emailHelp" required
 									name="author" type="text" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp"
 									value="<%=b.getAuthor()%>">
-							</div>
-
-							<div class="form-group">
-								<label for="exampleInputPassword1" class="bold">Price <span style="color: red;">*</span></label><input
-									name="price" type="double" class="form-control"
+							 
+            </div> 
+            
+            <br>
+			<div class="inputBox">    
+          			 <h4 class="bold">Price <span style="color: red;">*</span></h4>  
+            </div>	
+             <div class="inputBox" >    
+									
+									<input  style="width: 100%" placeholder="" class="box" 
+									aria-describedby="emailHelp" required type=""
+									name="price" class="form-control"
 									id="exampleInputPassword1" value="<%=b.getPrice()%>">
-							</div>
-
-
-							<div class="form-group">
-								<label for="inputState" class="bold">Book Status <span style="color: red;">*</span></label> <select
+							 
+            </div> 
+              
+             <br>
+			<div class="inputBox">    
+          			 <h4 class="bold">Book Status</h4>  
+            </div>
+              <div class="inputBox" >      
+								
+								<select required style="width: 100%" class="box" 
 									id="inputState" name="status" class="form-control">
 									<%
 									if ("Active".equals(b.getStatus())){
@@ -100,35 +126,22 @@
 									<%
 									}
 									%>
-									 
 								</select>
-							</div>
+							 
+            </div> 
+             
+            
+            <button type="submit" class="btn" style="margin-left: 80%; font-weight: bold;">Update</button>
+            
+        </form>
+ 
+   
+    </div>
 
-							<!-- <div class="form-group">
-								<label for="exampleFormControlFile1">Upload Photo</label><input
-									name="bimg" type="file" class="form-control-file"
-									id="exampleFormControlFile1">
-							</div> -->
-
-							<button type="submit" style="margin-left: 84%;" class="btn btn-primary bold">Update</button>
-
-							<!-- <div class="form-group">
-								<label for="inputState">Book Categories</label> <select
-									id="inputState" name="categories" class="form-control">
-									<option selected>-- select --</option>
-									<option value="New">New Book</option>
-								</select>
-							</div> -->
-
-						</form>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+</section>
 
 	<!--  End Old Book--> 
+	<div style="margin-bottom: 1%"></div>
 		<%@include file="footer.jsp"%></div>
 
 </body>

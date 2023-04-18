@@ -63,9 +63,9 @@ a:hover {
 		<c:redirect url="login.jsp" />
 	</c:if>
 
- 
+  
 			
-<section class="contact" style="margin-top: 6%; width: 50%; margin-left: 25% ; background: white;">
+<section class="contact" style="margin-top: 8%; width: 50%; margin-left: 25% ; background: white;">
 
 <a href="setting.jsp">
 <i class="fas fa-caret-square-left" style="font-size: 347%; background: #f7f7f7; color: green;"></i>
@@ -154,71 +154,7 @@ a:hover {
 </section>
 
 
-
-
-<%-- 
- 
-	<div class="container"  style="margin-top: 10%" >
-		<div class="row">
-			<div class="col-md-8 offset-md-2">
-				<div class="card">
-					<div class="card-body">
-					<h1 class="text-center text-primary p-1">Sell Old Book</h1>
-					
-						<c:if test="${not empty succMsg }">
-							<h4 class="text-center text-success">${succMsg }</h4>
-							<c:remove var="succMsg" scope="session" />
-						</c:if>
-						
-						<c:if test="${not empty failedMsg }">
-							<h4 class="text-center text-danger">${failedMsg }</h4>
-							<c:remove var="failedMsg" scope="session" />
-						</c:if>
-						
-						
-						<form action="add_old_book" method="post"
-							enctype="multipart/form-data">
-
-							<input type="hidden" value="${userobj.email }" name="user">
-
-							<div class="form-group ">
-								<h4 for="exampleInputEmail1">Book Name*</h4><input
-									name="bname" type="text" class="form-control"
-									id="exampleInputEmail1" aria-describedby="emailHelp">
-							</div>
-
-
-							<div class="form-group">
-								<h4 for="exampleInputEmail1">Author Name*</h4><input
-									name="author" type="text" class="form-control"
-									id="exampleInputEmail1" aria-describedby="emailHelp">
-							</div>
-
-							<div class="form-group">
-								<h4 for="exampleInputPassword1">Price*</h4><input
-									name="price" type="double" class="form-control"
-									id="exampleInputPassword1">
-							</div>
-
-
-							<div class="form-group">
-								<h4 for="exampleFormControlFile1">Upload Photo</h4>
-								<input
-									name="bimg" type="file" class="form-control-file"
-									id="exampleFormControlFile1">
-							</div>
-
-							<button type="submit" class="btn btn-primary">Sell</button>
-
-						</form>
-
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
- --%>
+ <div style="margin-top: 1%">  
 	<%@include file="all_component/footer.jsp"%>
 </body>
 </html>

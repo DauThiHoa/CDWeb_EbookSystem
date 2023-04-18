@@ -60,28 +60,7 @@ a:hover {
 	</c:if>
 
 	<%@include file="all_component/navbar.jsp"%>
- 
-<!-- 
-     <section class="contact" style="margin-top: 10%">
-	 <div class="icons-container">
-
-        <div class="icons">
-            <img src="image1/icon-1.png" alt="">
-            <h3>7:00am to 10:30pm</h3>
-        </div>
-
-        <div class="icons">
-            <img src="image1/icon-2.png" alt="">
-            <h3>+123-456-7890</h3>
-        </div>
-
-        <div class="icons">
-            <img src="image1/icon-3.png" alt="">
-            <h3>Ho Chi Minh City</h3>
-        </div>
-
-    </div>
-    </section> -->
+  
      
 
 

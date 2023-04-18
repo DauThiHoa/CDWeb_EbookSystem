@@ -23,6 +23,16 @@
  
  
 <%@include file="allCss.jsp"%>
+
+<style type="text/css">
+ 	.bold {
+ 		font-weight: bold;
+ 		text-align: center;
+ 	}
+ 	.text { 
+ 		text-align: center;
+ 	}
+</style>
 </head>
 <body style="background-color: #f0f2f2;">
 	<%@include file="navbar.jsp"%>
@@ -31,59 +41,91 @@
 	<c:if test="${empty userobj }">
 		<c:redirect url="../login.jsp" />
 	</c:if>
-	
-	<h3 class="text-center p-3">Hello Admin</h3>
+	 
+	 
+	 
+	 
+ 	<div class="container " style="margin-top: 1%">
+ 	
+ 	<!-- <a href="setting.jsp">
+		<i class="fas fa-caret-square-left" style="font-size: 347%; background: #f7f7f7; color: green;"></i>
+	</a> -->
 
-	<c:if test="${not empty succMsg }">
-		<h5 class="text-center text-success">${succMsg }</h5>
-		<c:remove var="succMsg" scope="session" />
-	</c:if>
+		<!-- <div class="row"> -->
+			<div class=""> 
+				<div class="card bg-white" style="width: 130%; margin-left: -15%" >
+					<div class="card-body">
+					
+					<h1 class="text-center text-success" style="font-weight: bold;">ALL BOOKS</h1>
+					 
+					<c:if test="${not empty succMsg }">
+						<div class="text-center alert alert-success" role="alert">${succMsg }</div>
+						<c:remove var="succMsg" scope="session" />
+					</c:if>
 
-	<c:if test="${not empty failedMsg }">
-		<h5 class="text-center text-danger">${failedMsg }</h5>
-		<c:remove var="failedMsg" scope="session" />
-	</c:if>
+					<c:if test="${not empty failedMsg }">
+						<div class="text-center alert alert-danger text-center" role="alert">${failedMsg }</div>
+						<c:remove var="failedMsg" scope="session" />
+					</c:if>
 
+<br><br>
+					<table class="table table-striped"  >
+					
+							<thead>
+								<tr style="background: #5acce6;color: white;">
+									<th scope="col"><h2 class="bold" >ID</h2></th>
+									<th scope="col"><h2 class="bold" >Image</h2></th>
+									<th scope="col"><h2 class="bold" >Book Name</h2></th>
+									<th scope="col"><h2 class="bold" >Author</h2></th>
+									<th scope="col"><h2 class="bold" >Price</h2></th>
+									<th scope="col"><h2 class="bold" >Categories</h2></th>
+									<th scope="col"><h2 class="bold" >Status</h2></th>
+									<th scope="col"><h2 class="bold" >Action</h2></th>
+								</tr>
+							</thead>
+							<tbody>
 
-	<table class="table table-striped">
-		<thead class="bg-primary text-white">
-			<tr>
-				<th scope="col">ID</th>
-				<th scope="col">Image</th>
-				<th scope="col">Book Name</th>
-				<th scope="col">Author</th>
-				<th scope="col">Price</th>
-				<th scope="col">Categories</th>
-				<th scope="col">Status</th>
-				<th scope="col">Action</th>
-			</tr>
-		</thead>
-		<tbody>
-			<%
-			BookDAOImpl dao = new BookDAOImpl(DBConnect.getConn());
-			List<BookDtls> list = dao.getAllBooks();
-			for (BookDtls b : list) {
-			%>
-			<tr>
-				<th><%=b.getBookId()%></th>
-				<td><img src="../book/<%=b.getPhotoName()%>"
-					style="width: 80px; height: 80px"></td>
-				<td><%=b.getBookName()%></td>
-				<td><%=b.getAuthor()%></td>
-				<td><%=b.getPrice()%></td>
-				<td><%=b.getBookCategory()%></td>
-				<td><%=b.getStatus()%></td>
-				<td><a href="edit_books.jsp?id=<%=b.getBookId()%>"
+							<%
+							BookDAOImpl dao = new BookDAOImpl(DBConnect.getConn());
+							List<BookDtls> list = dao.getAllBooks();
+							for (BookDtls b : list) {
+							%>
+
+							<tr  > 
+									<th scope="row"><h3 class="text"><%=b.getBookId()%></h3></th>
+									<td><img class="text" src="../book/<%=b.getPhotoName()%>"
+												style="width: 80px; height: 80px"></td>
+									<td><h3 class="text"><%=b.getBookName()%></h3></td> 
+
+									<td><h3 class="text"><%=b.getAuthor()%></h3></td>
+									<td><h3 class="text"><%=b.getPrice()%></h3></td>
+									<td><h3 class="text"><%=b.getBookCategory()%></h3></td>
+									<td><h3 class="text"><%=b.getStatus()%></h3></td> 
+									<td> 
+										<%-- <a style=" "
+						 				href="orderDetails.jsp?order_id=<%=b.getOrderId()%>"
+										class="btn btn-sm btn-danger"><i class="fas fa-search"></i></a> --%>
+										
+										<a href="edit_books.jsp?id=<%=b.getBookId()%>"
 					class="btn btn-sm btn-primary"><i style="padding: 5%;" class="fas fa-edit"></i>Edit</a> <a href="../delete?id=<%=b.getBookId()%>"
-					class="btn btn-sm btn-danger"><i  style="padding: 5%;" class="fas fa-trash-alt"></i>Delete</a></td>
-			</tr>
-			<%
-			}
-			%>
+					class="btn btn-sm btn-danger"><i  style="padding: 5%;" class="fas fa-trash-alt"></i>Delete</a>
+										</td>
+								</tr>
 
-		</tbody>
-	</table>
+								<%
+								}
+								%> 
 
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			</div>
+			
+	 
+	 
+ 
 	<!--  End Old Book--> 
 		<%@include file="footer.jsp"%></div>
 

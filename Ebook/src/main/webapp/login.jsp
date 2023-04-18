@@ -5,7 +5,7 @@
 	Trong bai co nhung => Chay bi loi
 	 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page isELIgnored="false"%>
+<%@ page isELIgnored="false"%> 
 
 <!DOCTYPE html>
 <html>
@@ -31,8 +31,7 @@
 	<%
 	User u = (User) session.getAttribute("userobj");
 	%>
-
-
+ 
 	<div class="container infinity-container">
 		<div class="row">
 			<div class="col-md-1 infinity-left-space"></div>

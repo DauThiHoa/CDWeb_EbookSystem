@@ -46,6 +46,9 @@ a:hover {
 	text-decoration: none;
 	color: orange;
 }
+ .bold {
+    font-weight: bold;
+  }
 </style>
 </head>
 <body style="background-color: #f0f1f2">
@@ -59,16 +62,20 @@ a:hover {
 
 <!-- #e1ffd3 -->
 
-	<div class="container" style="margin-top: 5%">
+	<div class="container" style="margin-top: 10%">
+	<c:if test="${not empty userobj }">
+			<h1 class="text-center" style="font-weight: bold;">Hello, ${userobj.name }</h1>
+		</c:if>
+		
 		<div class="row p-5">
-
+		 
 
 			<div class="col-md-3">
 				<a href="add_books.jsp">
 					<div class="card">
 						<div class="card-body text-center">
-							<i class="fas fa-plus-square fa-3x"  style="color: green;"></i><br>
-							<h4>Add Books</h4>
+							<i class="fas fa-plus-square fa-5x"  style="color: green;"></i><br>
+							<h1 class="bold">Add Books</h1>
 							<p>--------------</p>
 						</div>
 					</div>
@@ -80,21 +87,21 @@ a:hover {
 				<a href="all_books.jsp">
 					<div class="card">
 						<div class="card-body text-center">
-							<i class="fas fa-book-open fa-3x text-danger"></i><br>
-							<h4>All Books</h4>
+							<i class="fas fa-book-open fa-5x text-danger"></i><br>
+							<h1  class="bold">All Books</h1>
 							<p>--------------</p>
 						</div>
 					</div>
 				</a>
 			</div>
-
+ 
 
 			<div class="col-md-3">
 				<a href="orders.jsp">
 					<div class="card">
 						<div class="card-body text-center">
-							<i class="fas fa-box-open fa-3x text-warning"></i><br>
-							<h4>Orders</h4>
+							<i class="fas fa-box-open fa-5x text-warning"></i><br>
+							<h1  class="bold">Orders</h1>
 							<p>--------------</p>
 						</div>
 					</div>
@@ -106,8 +113,8 @@ a:hover {
 				<a href="" data-toggle="modal" data-target="#exampleModalCenter">
 					<div class="card">
 						<div class="card-body text-center">
-							<i class="fas fa-sign-out-alt fa-3x text-primary"></i><br>
-							<h4>Logout</h4>
+							<i class="fas fa-sign-out-alt fa-5x text-primary"></i><br>
+							<h1  class="bold">Logout</h1>
 							<p>--------------</p>
 						</div>
 					</div>

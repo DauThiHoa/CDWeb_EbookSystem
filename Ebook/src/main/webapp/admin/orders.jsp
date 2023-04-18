@@ -27,6 +27,17 @@
  
  
 <%@include file="allCss.jsp"%>
+
+<style type="text/css">
+ 	.bold {
+ 		font-weight: bold;
+ 		text-align: center;
+ 	}
+ 	.text { 
+ 		text-align: center;
+ 	}
+</style>
+
 </head>
 <body style="background-color: #f0f2f2;">
 	<%@include file="navbar.jsp"%>
@@ -40,10 +51,86 @@
 		<c:redirect url="login.jsp" />
 	</c:if>
 	
-	<h3 class="text-center p-3">Hello Admin</h3>
+	<!-- <h3 class="text-center p-3">Hello Admin</h3> -->
 
 
-	<table class="table table-striped">
+
+ 	<div class="container " style="margin-top: 1%">
+ 	
+ 	<!-- <a href="setting.jsp">
+		<i class="fas fa-caret-square-left" style="font-size: 347%; background: #f7f7f7; color: green;"></i>
+	</a> -->
+
+		<!-- <div class="row"> -->
+			<div class=""> 
+				<div class="card bg-white" style="width: 130%; margin-left: -15%" >
+					<div class="card-body">
+					
+					<h1 class="text-center text-success" style="font-weight: bold;">ALL ORDERS</h1>
+					 
+					<c:if test="${not empty succMsg }">
+						<div class="text-center alert alert-success" role="alert">${succMsg }</div>
+						<c:remove var="succMsg" scope="session" />
+					</c:if>
+
+					<c:if test="${not empty failedMsg }">
+						<div class="text-center alert alert-danger text-center" role="alert">${failedMsg }</div>
+						<c:remove var="failedMsg" scope="session" />
+					</c:if>
+
+<br><br>
+					<table class="table table-striped"  >
+					
+							<thead>
+								<tr style="background: #5acce6;color: white;">
+									<th scope="col"><h2 class="bold" >Order Id</h2></th>
+									<th scope="col"><h2 class="bold" >Name</h2></th>
+									<th scope="col"><h2 class="bold" >Email</h2></th>
+									<th scope="col"><h2 class="bold" >Address</h2></th>
+									<th scope="col"><h2 class="bold" >Ph No</h2></th>
+									<th scope="col"><h2 class="bold" >Book Name</h2></th>
+									<th scope="col"><h2 class="bold" >Author</h2></th>
+									<th scope="col"><h2 class="bold" >Price</h2></th>
+									<th scope="col"><h2 class="bold" >Payment type</h2></th>
+								</tr>
+							</thead>
+							<tbody>
+
+							<%
+							BookOrderImpl dao = new BookOrderImpl(DBConnect.getConn());
+							List<Book_Order> blist = dao.getAllOrder();
+							for (Book_Order b : blist) {
+								 OrderDetailsDAOImpl dao1 = new OrderDetailsDAOImpl (DBConnect.getConn());
+								 OrderDetails bookOrder = dao1.getOrderDetailsById(b.getOrderId());
+							%>
+
+							<tr  > 
+									<th scope="row"><h3 class="text"><%=b.getOrderId()%></h3></th> 
+									<td><h3 class="text"><%=b.getUserName()%></h3></td> 
+
+									<td><h3 class="text"><%=b.getEmail()%></h3></td>
+									<td><h3 class="text"><%=b.getFulladd()%></h3></td>
+									<td><h3 class="text"><%=b.getPhno()%></h3></td>
+									<td><h3 class="text"><%=bookOrder.getBookName()%></h3></td> 
+									<td><h3 class="text"><%=bookOrder.getAuthor()%></h3></td>  
+									<td><h3 class="text"><%=b.getPrice()%></h3></td>
+									<td><h3 class="text"><%=b.getPaymentType()%></h3></td>
+								</tr>
+
+								<%
+								}
+								%> 
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			</div>
+
+
+
+	<%-- <table class="table table-striped">
 		<thead class="bg-primary text-white">
 			<tr>
 				<th scope="col">Order Id</th>
@@ -87,7 +174,7 @@
 				
 			 
 		</tbody>
-	</table>
+	</table> --%>
 
 
 </body>

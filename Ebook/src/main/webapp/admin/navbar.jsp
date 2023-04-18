@@ -22,52 +22,93 @@
  
  
  
- 
+ <style type="text/css">
   
+  .bold {
+    font-weight: bold;
+  }
+  
+ </style>
+ 
+ 
+	<!-- header section starts  -->
 
-<div class="container-fluid p-3 bg-light">
-	<div class="row" style="margin-top: 0%;">
-		<!-- <div class="col-md-3 text-success">
-			<h3 style="color: black; font-weight: bold;">
-				<i class="fas fa-book"></i > Ebooks
-			</h3>
-		</div> -->
- 
-  <!--  logo -->
-  
- 		<div class="col-md-3 text-success">
-			<h3 style="color: black; font-weight: bold;">
-				<span> <img alt="" style="width: 20%; height: 20%" src="../img/icon1.png"></span> 
+	<header class="header">
+
+		<!--  logo -->
+		<div class="logo"> 
+		<a href="../index.jsp"  > <span><img alt=""
+				style="width: 20%; height: 20%" src="../img/icon1.png"></span> 
+				</a>
+				<a  href="home.jsp">
 				EBOOK
-			</h3>
+				  
+				</a>
+				 
 		</div>
+      
+		<!--  THANH menu  -->
+		<nav style="margin-left: -20%" class="navbar">
+			<a href="add_books.jsp"  >Add books</a> 
+			<a href="all_books.jsp"  >All books</a>  
+			<a href="orders.jsp"   >Orders</a>  
+		</nav>
+
+
+
+		<c:if test="${not empty userobj }">
+ 
+			<!-- CAC ICON SEARCH - LOGIN  -->
+			<div class="icons" >  
+				
+				</a> <a href="../login.jsp">
+					<div id="login-btn" class="fas fa-user"  >
+					 
+					</div> 
+
+				</a> <a href="" data-toggle="modal" data-target="#exampleModalCenter">
+					<div id="login-btn" class="fas fa-sign-in-alt"></div>
+					
+				</a> <a href="home.jsp">
+					<div id="login-btn" class="fas fa-cog"></div>
+				</a>
+			</div>
+			 
+			   
+			
+	<!-- Begin Logout Modal -->
+
+ 
+		</c:if>
+
+
+		<c:if test="${empty userobj }">
+
+			<!-- CAC ICON SEARCH - LOGIN  -->
+			<div class="icons">
+				<div id="menu-btn" class="fas fa-bars"></div>
+				<div id="search-btn" class="fas fa-search"></div>
+
+				</a> <a href="../login.jsp">
+					<div id="login-btn" class="fas fa-user"></div>
+					
+				</a> <a href="../register.jsp">
+					<div id="login-btn" class="fas fa-user-plus"></div>
+					
+				</a> <a href="home.jsp">
+					<div id="login-btn" class="fas fa-cog"></div>
+				</a>
+				 
+			</div>
+			  
+		</c:if>
+   
+	 
 		 
-
-		<div class="col-md-3" style="margin-left: 85%; margin-top: -3%;">
-			<c:if test="${not empty userobj }">
-
-				<a class="btn btn-success text-white" style="font-weight: bold;">
-				<i style="padding: 5px;" class="fas fa-user"></i>${userobj.name }</a>
-				<a data-toggle="modal" data-target="#exampleModalCenter" style="font-weight: bold;"
-					class="btn btn-primary text-white"><i style="padding: 5px;" 
-					class="fas fa-sign-in-alt"></i>Logout</a>
-
-			</c:if>
-			<c:if test="${ empty userobj }">
-				<a href="login.jsp" class="btn btn-success" style="font-weight: bold;"><i
-					class="fas fa-sign-in-alt"></i>Login</a>
-				<a href="../register.jsp" class="btn btn-primary text-white" style="font-weight: bold;"><i
-					class="fas fa-user-plus"></i>Register</a>
-			</c:if>
-		</div>
-
-
-
-	</div>
-</div>
-
-<!-- Begin Logout Modal -->
-
+			
+	</header>
+ 
+    
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1"
@@ -99,32 +140,6 @@
 </div>
 <!-- End Logout Modal -->
 
-
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-custom" style="background: #27ae60;">
-
-	<a class="navbar-brand" href="#"><i style="font-size: 140%;" class="fa fa-home"></i></a>
-
-
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarSupportedContent"
-		aria-controls="navbarSupportedContent" aria-expanded="false"
-		aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
- 
-
-			<li class="nav-item active"><a class="nav-link" href="home.jsp" style="font-weight: bold;">
-					Home <span class="sr-only">(current)</span>
-			</a></li>
- 
-		</ul>
- 
-	</div>
-</nav>  
  
  	<script src="js/script.js"></script>
 	<script src="js/script1.js"></script>
