@@ -58,7 +58,7 @@
 		<a href="index.jsp" class="logo"> <span><img alt=""
 				style="width: 15%; height: 15%" src="img/icon1.png"></span>
 			 
-				 <span><img alt="" style="width: 15%; height: 15%" src="img/ebook3.png"></span>
+				 <span><img alt="" style="width: 22%; height: 22%" src="img/ebook1.png"></span>
 		</a>
 
 		<!--  THANH menu  -->

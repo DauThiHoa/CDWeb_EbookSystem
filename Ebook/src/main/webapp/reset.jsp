@@ -61,7 +61,10 @@
 			<div
 				class="col-lg-10 col-md-10 col-sm-12 col-xs-12 text-center infinity-form">
 				<div class="text-center mb-3 mt-5">
-					<img src="loginRegister/logo.png" width="150px">
+					<span><img alt=""
+				style="width: 20%; height: 20%" src="img/icon1.png"></span>
+			 
+				 <span><img alt="" style="width: 40%; height: 40%" src="img/ebook1.png"></span>
 				</div>
 				<div class="reset-form d-block">
 

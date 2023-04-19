@@ -38,17 +38,16 @@
 		<!--  logo -->
 		<div class="logo"> 
 		<a href="../index.jsp"  > <span><img alt=""
-				style="width: 20%; height: 20%" src="../img/icon1.png"></span> 
+				style="width: 10%; height: 10%" src="../img/icon1.png"></span> 
 				</a>
 				<a  href="home.jsp">
-				EBOOK
-				  
+				 	<span><img alt="" style="width: 20%; height: 20%" src="../img/ebook2.png"></span> 
 				</a>
 				 
 		</div>
       
 		<!--  THANH menu  -->
-		<nav style="margin-left: -20%" class="navbar">
+		<nav style="margin-left: -40%" class="navbar">
 			<a href="add_books.jsp"  >Add books</a> 
 			<a href="all_books.jsp"  >All books</a>  
 			<a href="orders.jsp"   >Orders</a>  
