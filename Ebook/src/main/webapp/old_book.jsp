@@ -71,47 +71,7 @@ a:hover {
 		<c:remove var="failedMsg" scope="session" />
 	</c:if>
 
-
-
-	<%-- <div class="container p-5" style="margin-top: 8%">
-		<table class="table table-striped">
-			<thead class="bg-primary text-white">
-				<tr>
-					<th scope="col"><h3>Book Name</h3> </th>
-					<th scope="col"><h3>Author</h3> </th>
-					<th scope="col"><h3>Price</h3>   </th>
-					<th scope="col"><h3>Category</h3> </th>
-					<th scope="col"><h3>Action</h3> </th>
-				</tr>
-			</thead>
-			<tbody>
-
-				<%
-				User u = (User) session.getAttribute("userobj");
-				String email = u.getEmail();
-				BookDAOImpl dao = new BookDAOImpl(DBConnect.getConn());
-				List<BookDtls> list = dao.getBookByOld(email, "Old");
-				for (BookDtls b : list) {
-				%>
-				<tr>
-					<th><h4><%=b.getBookName()%></h4> </th>
-					<td><h4><%=b.getAuthor()%></h4> </td>
-					<td><h4><%=b.getPrice()%></h4> </td>
-					<td><h4><%=b.getBookCategory()%></h4> </td>
-					<td><a
-						href="delete_old_book?em=<%=email%>&&id=<%=b.getBookId()%>"
-						class="btn btn-sm btn-danger">Delete</a></td>
-				</tr>
-				<%
-				}
-				%>
-
-			</tbody>
-		</table>
-	</div> --%>
-
-
- 
+  
 
 	<div class="container " style="margin-top: 8%">
 		<!-- <div class="row"> -->
@@ -162,13 +122,13 @@ a:hover {
 								<tr  >
 									<th  scope="row"><img alt="" src="book/<%=b.getPhotoName()%>"
 										style="width: 100px; height: 120px"></th>
-									<th scope="row"><h3 style="margin-top: 16%"><%=b.getBookName()%></h3></th>
-									<td><h3 style="margin-top: 25%"><%=b.getAuthor()%></h3></td> 
+									<th scope="row"><br> <br><br><h3 style=" "><%=b.getBookName()%></h3></th>
+									<td><br> <br><br><h3 style=" "><%=b.getAuthor()%></h3></td> 
 
-									<td><h3 style="margin-top: 53%"><%=b.getPrice()%></h3></td>
-									<td><h3 style="margin-top: 29%"><%=b.getBookCategory()%></h3></td>
-									<td> 
-										<a style="margin-top: 25%; background: red"
+									<td><br> <br><br><h3 style=" "><%=b.getPrice()%></h3></td>
+									<td><br> <br><br><h3 style=" "><%=b.getBookCategory()%></h3></td>
+									<td> <br> <br><br>
+										<a style=" background: red"
 						 				href="delete_old_book?em=<%=email%>&&id=<%=b.getBookId()%>"
 										class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
 										

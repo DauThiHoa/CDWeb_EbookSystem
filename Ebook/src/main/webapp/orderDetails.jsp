@@ -125,12 +125,12 @@
 								<tr  >
 									<th  scope="row"><img alt="" src="book/<%=o.getImage()%>"
 										style="width: 100px; height: 120px"></th>
-									<th scope="row"><h3 style="margin-top: 30%"><%=o.getBookName()%></h3></th>
-									<td><h3 style="margin-top: 30%"><%=o.getAuthor()%></h3></td>
+									<th scope="row"><br> <br><br><h3 style=" "><%=o.getBookName()%></h3></th>
+									<td><br> <br><br><h3 style=" "><%=o.getAuthor()%></h3></td>
 
 									<td>
-										<form action="updateQuantity" method="get">
-										<h3 style="margin-top: 15%">
+										<form action="updateQuantity" method="get"><br> <br><br>
+										<h3 style=" ">
 											<input name="quantity" type="number"
 												value="<%=o.getQuantity()%>"
 												style="width: 50%; text-align: center; margin-left: 17%" readonly> 
@@ -140,8 +140,8 @@
 										</form>
 									</td>
 
-									<td><h3 style="margin-top: 55%"><%=o.getPrice()%></h3></td>
-									<td><h3 style="margin-top: 55%"><%=o.getTotal_price()%></h3></td>
+									<td><br> <br><br><h3 style=" "><%=o.getPrice()%></h3></td>
+									<td><br> <br><br><h3 style=" "><%=o.getTotal_price()%></h3></td>
 									<%-- <td><a style="margin-top: 25%; background: red"
 										href="remove_book?bid=<%=c.getBid()%>&&uid=<%=c.getUserId()%>&&cid=<%=c.getCid()%>"
 										class="btn btn-sm btn-danger" ><i class="fas fa-trash-alt"></i></a></td> --%>

@@ -65,18 +65,7 @@
 		<nav style="margin-left: -31%" class="navbar">
 			<a href="index.jsp">home</a> 
 			<a href="shop.jsp">shop</a> 
-
-			<!-- <div class="btn-group">
-				<button type="button" class="btn btn-secondary dropdown-toggle"
-					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					shop</button>
-				<div class="dropdown-menu dropdown-menu-right">
-					<button class="dropdown-item" type="button">Action</button>
-					<button class="dropdown-item" type="button">Another action</button>
-					<button class="dropdown-item" type="button">Something else
-						here</button>
-				</div>
-			</div> -->
+ 
 
 			<a href="about.jsp">about</a> 
 		
@@ -155,11 +144,8 @@
   	</button>   
   
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background: width; 
-  						margin-left: -713%; width: 814%; height: 1153%;top: 10px;"> 
-    <!-- <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a> -->
-    
+  						margin-left: -1104%; width: 1207%; height: 1805%;top: 23px;"> 
+ 
     <table class="table table-striped dropdown-item" style="background:; overflow-y: auto; width: 100%; height: 100%">
 					
 							<thead style="background: ;">

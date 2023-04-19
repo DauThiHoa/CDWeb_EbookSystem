@@ -107,32 +107,37 @@
 									totalPrice += c.getTotalPrice();
 								%>
 
-								<tr  >
+								<tr >
 									<th  scope="row"><img alt="" src="book/<%=c.getImage()%>"
 										style="width: 100px; height: 120px"></th>
-									<th scope="row"><h3 style="margin-top: 30%"><%=c.getBookName()%></h3></th>
-									<td><h3 style="margin-top: 30%"><%=c.getAuthor()%></h3></td>
+									<th scope="row">
+									<br> <br><br>
+									<h3 style=" "><%=c.getBookName()%></h3>
+									</th>
+									<td><br> <br><br>
+									<h3 style=" "><%=c.getAuthor()%></h3>
+									</td>
 
 									<td>
-										<form action="updateQuantity" method="get">
-										<h3 style="margin-top: 15%">
+										<form action="updateQuantity" method="get"><br> <br><br>
+										<h3 style="  ">
 											<input name="quantity" type="number"
 												value="<%=c.getQuantity()%>"
-												style="width: 50%; text-align: center; margin-left: 17%"> 
+												style=" width: 50%; text-align: center; margin-left: 17%"> 
 												
 												</h3>
-												<h3 style="margin-top: 30%"><input
+												<h3 style=" "><input
 												type="hidden" name="bid" value="<%=c.getBid()%>"> </h3>
-												<h3 style="margin-top: 30%"><input
+												<h3 style=" "><input
 												type="hidden" name="uid" value="<%=c.getUserId()%>"> </h3>
-												<h3 style="margin-top: 30%"><input
+												<h3 style=" "><input
 												type="hidden" name="cid" value="<%=c.getCid()%>"></h3>
 										</form>
 									</td>
 
-									<td><h3 style="margin-top: 55%"><%=c.getPrice()%></h3></td>
-									<td><h3 style="margin-top: 55%"><%=c.getTotalPrice()%></h3></td>
-									<td><a style="margin-top: 25%; background: red"
+									<td><br> <br><br><h3 style=" "><%=c.getPrice()%></h3></td>
+									<td><br> <br><br><h3 style=" "><%=c.getTotalPrice()%></h3></td>
+									<td><br> <br><br><a style=" background: red"
 										href="remove_book?bid=<%=c.getBid()%>&&uid=<%=c.getUserId()%>&&cid=<%=c.getCid()%>"
 										class="btn btn-sm btn-danger" ><i class="fas fa-trash-alt"></i></a></td>
 								</tr>
@@ -142,12 +147,12 @@
 								%>
 
 								<tr>
-									<td><h2  style="margin-top: 10%">Total Price</h2></td>
+									<td><h2  style=" ">Total Price</h2></td>
 									<td></td>
 									<td></td>
 									<td></td>
 									<td></td>
-									<td><h3 style="margin-top: 20%"><%=totalPrice%></h3></td>
+									<td><h3 style=" "><%=totalPrice%></h3></td>
 								</tr>
 
 							</tbody>

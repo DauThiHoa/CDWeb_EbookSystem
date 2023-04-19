@@ -70,7 +70,7 @@
 	<div class="container " style="margin-top: 8%">
 		<!-- <div class="row"> -->
 			<div class=""> 
-				<div class="card bg-white"  >
+				<div class="card bg-white p-2"  >
 					<div class="card-body">
 					
 					<h1 class="text-center text-success">Your Selected Item</h1>
@@ -119,18 +119,18 @@
 									<th style="margin: auto;" scope="row"><img alt="" src="book/<%=f.getPhotoName()%>"
 										style="width: 100px; height: 120px"></th>
 								</a>
-									<th scope="row"><h3 style=""><%=f.getBookName()%></h3></th>
-									<td><h3 style=""><%=f.getAuthor()%></h3></td>
+									<th scope="row"><br> <br><br><h3 style=""><%=f.getBookName()%></h3></th>
+									<td><br> <br><br><h3 style=""><%=f.getAuthor()%></h3></td>
   
-									<td><h3 style=""><%=f.getPrice()%></h3></td> 
+									<td><br> <br><br><h3 style=""><%=f.getPrice()%></h3></td> 
 									
-									<td>
+									<td><br> <br><br>
 									
 										<a style="margin-left: 5%" href="view_books.jsp?id=<%=f.getBid()%>"
 									 class="btn btn-success btn-sm"><i class="fas fa-eye"></i></a>
 									</td> 
 									
-									<td>
+									<td><br> <br><br>
 										<a style="margin-top: 4%; background: red"
 										href="remove_favourite?bid=<%=f.getBid()%>&&uid=<%=f.getUid()%>"
 										class="btn btn-sm btn-danger" ><i class="fas fa-trash-alt"></i></a>
@@ -161,7 +161,7 @@
              
 								<!-- <a href="order.jsp" class="btn btn-warning" style="background: orange;">Order Now</a> -->
 								
-								<a href="index.jsp" class="btn btn-success"> Continue Shopping</a>
+								<a href="index.jsp" class="btn btn-success p-2"> Continue Shopping</a>
 			</div>
 
 <%@include file="all_component/footer.jsp"%>
